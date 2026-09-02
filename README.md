@@ -1,2 +1,2 @@
 # trhoades89.github.io
-Property Affordability Home Page
+Price & Place Home Page
