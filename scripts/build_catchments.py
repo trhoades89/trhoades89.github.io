@@ -21,6 +21,7 @@ Run after build_school_data.py (it reads schools/data/schools.json for school na
 
 import argparse
 import collections
+import concurrent.futures
 import datetime as dt
 import html
 import io
@@ -28,6 +29,7 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 import urllib.parse
 from html.parser import HTMLParser
@@ -37,6 +39,7 @@ from build_school_data import OUT, ROOT, Fetcher, decode, log  # noqa: E402
 
 MAX_PAGES = 30
 MAX_DOCS = 30
+BOROUGH_BUDGET_S = 420
 THIS_YEAR = dt.date.today().year
 
 LINK_RX = re.compile(
@@ -416,7 +419,11 @@ def crawl_borough(fx, b, matcher):
     queue = [(u, 0, "seed") for u in b.get("seeds", [])] + [(u, 0, "known doc") for u in b.get("docs", [])]
     seen, results = set(), []
     pages = docs = 0
+    started = time.time()
     while queue:
+        if time.time() - started > BOROUGH_BUDGET_S:
+            report["errors"].append(f"stopped after {BOROUGH_BUDGET_S}s with {len(queue)} links left")
+            break
         url, depth, why = queue.pop(0)
         url = url.split("#")[0]
         if url in seen:
@@ -426,7 +433,7 @@ def crawl_borough(fx, b, matcher):
         if (is_doc_url and docs >= MAX_DOCS) or (not is_doc_url and pages >= MAX_PAGES):
             continue
         try:
-            raw = fx.get(url, tries=2)
+            raw = fx.get(url, tries=2, timeout=45)
         except Exception as e:
             report["errors"].append(f"{url}: {type(e).__name__}: {str(e)[:120]}")
             continue
@@ -505,33 +512,43 @@ def main():
 
     fx = Fetcher(args.cache)
     all_best, reports = [], []
+    lock = threading.Lock()
     only = {s.strip().lower() for s in args.only.split(",")} if args.only else None
-    for b in cfg["boroughs"]:
-        if only and b["name"].lower() not in only:
-            continue
+    todo = [b for b in cfg["boroughs"] if not only or b["name"].lower() in only]
+
+    def write_outputs():
+        out = collections.defaultdict(list)
+        for r in all_best:
+            out[str(r["urn"])].append({k: r[k] for k in ("entry", "year", "mi", "basis", "row", "src", "borough")})
+        with open(os.path.join(OUT, "catchment.json"), "w", encoding="utf-8") as f:
+            json.dump({"built": dt.date.today().isoformat(), "region": args.region, "schools": out}, f,
+                      ensure_ascii=False, separators=(",", ":"))
+        with open(os.path.join(OUT, "catchment_report.json"), "w", encoding="utf-8") as f:
+            json.dump(sorted(reports, key=lambda r: r["name"]), f, ensure_ascii=False, indent=1)
+        return len(out)
+
+    def run(b):
+        t0 = time.time()
         schools = [s for la in b["las"] for s in by_la.get(la, [])]
         matcher = Matcher(schools)
-        log(f"\n== {b['name']} ({len(schools)} state schools)")
-        records, rep = crawl_borough(fx, b, matcher)
+        try:
+            records, rep = crawl_borough(fx, b, matcher)
+        except Exception as e:
+            records, rep = [], {"name": b["name"], "errors": [f"crawl failed: {type(e).__name__}: {e}"]}
         best = pick_best(records)
-        rep["schools_with_cutoff"] = len(best)
-        rep["schools_total"] = len(schools)
-        years = collections.Counter(r["year"] for r in best)
-        rep["years"] = dict(years)
-        log(f"   pages {rep['fetched_pages']}, docs {rep['fetched_docs']}, errors {len(rep['errors'])}; "
-            f"cut-offs for {len(best)} schools; years {dict(years)}")
-        all_best.extend(best)
-        reports.append(rep)
+        rep.update({"schools_with_cutoff": len(best), "schools_total": len(schools),
+                    "years": dict(collections.Counter(r["year"] for r in best)), "seconds": round(time.time() - t0)})
+        with lock:
+            all_best.extend(best)
+            reports.append(rep)
+            n = write_outputs()  # after every borough, so a partial run still leaves usable output
+        log(f"== {b['name']}: {len(best)}/{len(schools)} schools with cut-offs; years {rep['years']}; "
+            f"pages {rep.get('fetched_pages')}, docs {rep.get('fetched_docs')}, errors {len(rep['errors'])}; "
+            f"{rep['seconds']}s (running total {n})")
 
-    out = collections.defaultdict(list)
-    for r in all_best:
-        out[str(r["urn"])].append({k: r[k] for k in ("entry", "year", "mi", "basis", "row", "src", "borough")})
-    with open(os.path.join(OUT, "catchment.json"), "w", encoding="utf-8") as f:
-        json.dump({"built": dt.date.today().isoformat(), "region": args.region, "schools": out}, f,
-                  ensure_ascii=False, separators=(",", ":"))
-    with open(os.path.join(OUT, "catchment_report.json"), "w", encoding="utf-8") as f:
-        json.dump(reports, f, ensure_ascii=False, indent=1)
-    log(f"\nWrote cut-off distances for {len(out)} schools across {len(reports)} boroughs")
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+        list(pool.map(run, todo))
+    log(f"\nWrote cut-off distances for {write_outputs()} schools across {len(reports)} boroughs")
 
 
 if __name__ == "__main__":

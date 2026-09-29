@@ -39,6 +39,9 @@ jobs:
         run: python3 scripts/build_school_data.py
       - name: Collect London cut-off distances from council sites
         if: github.event_name != 'workflow_dispatch' || inputs.part != 'schools'
+        # Council sites are slow and change often: never let this step block the school data commit.
+        timeout-minutes: 25
+        continue-on-error: true
         run: python3 scripts/build_catchments.py --region london
       - name: Commit updated data
         run: |
