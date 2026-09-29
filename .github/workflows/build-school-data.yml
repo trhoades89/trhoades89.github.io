@@ -53,4 +53,9 @@ jobs:
             exit 0
           fi
           git commit -m "Update school data ($(date -u +%Y-%m-%d))"
-          git push
+          # Someone may have pushed while the build ran; replay the data commit on top.
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin "${GITHUB_REF_NAME}" && git push && exit 0
+            sleep 10
+          done
+          exit 1
