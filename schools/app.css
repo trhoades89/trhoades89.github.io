@@ -131,7 +131,7 @@ a { color: var(--accent); }
 /* ---------- Map ---------- */
 #mapWrap { flex: 1; position: relative; min-width: 0; }
 #map { position: absolute; inset: 0; background: var(--bg-soft); }
-.fab { display: none; }
+.fab, .mobile-only { display: none; }
 .home-pin { background: var(--accent); border: 3px solid #fff; border-radius: 50%; box-shadow: var(--shadow); }
 .leaflet-tooltip.school-tip { font-size: 12px; padding: 3px 7px; }
 
@@ -200,6 +200,8 @@ dialog h3 { font-size: 15px; margin: 16px 0 4px; }
     box-shadow: var(--shadow); transform: translateX(0); transition: transform 0.2s ease;
   }
   #sidebar.collapsed { transform: translateX(-105%); }
+  .mobile-only { display: inline-block; float: right; padding: 6px 10px; font-size: 13px; }
+  .brand { position: sticky; top: -16px; margin: -16px -16px 0; padding: 16px 16px 2px; background: var(--bg); z-index: 6; }
   .fab {
     display: block; position: absolute; left: 16px; top: 16px; z-index: 1000; box-shadow: var(--shadow);
   }

@@ -133,7 +133,7 @@
     map.getContainer().style.cursor = i >= 0 ? "pointer" : "";
     if (i >= 0) {
       const s = state.S[i];
-      tip.setLatLng([s.lat, s.lng]).setContent(esc(s.name) + " · " + esc(ofstedName(s.o)));
+      tip.setLatLng([s.lat, s.lng]).setContent(esc(s.name) + " · " + esc(ratingLabel(s)));
       if (!map.hasLayer(tip)) tip.addTo(map);
     } else if (map.hasLayer(tip)) {
       map.removeLayer(tip);
@@ -147,6 +147,8 @@
   // ---------- Colour ----------
   const ofstedRow = (o) => OFSTED.find((x) => x[0] === o) || OFSTED[OFSTED.length - 1];
   function ofstedName(o) { return ofstedRow(o)[1]; }
+  // Label for a specific school: independents aren't in Ofsted's state-funded dataset.
+  const ratingLabel = (s) => (s.o === 0 && s.sec === "i" ? "Independent (inspected separately)" : ofstedName(s.o));
   function ofstedColour(o) { return css(ofstedRow(o)[2]); }
   const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   function fmtDate(d) {
@@ -270,7 +272,14 @@
     return la[s.urn] || {};
   }
 
+  const isNarrow = () => window.matchMedia("(max-width: 820px)").matches;
+  function setSidebar(open) {
+    $("sidebar").classList.toggle("collapsed", !open);
+    $("toggleSidebar").setAttribute("aria-expanded", String(open));
+  }
+
   async function selectSchool(s, opts = {}) {
+    if (isNarrow()) setSidebar(false);
     state.selected = s;
     catchmentLayer.clearLayers();
     history.replaceState(null, "", "#urn=" + s.urn);
@@ -292,7 +301,7 @@
   function header(s, d = {}) {
     const o = d.ofsted || {};
     const when = s.o === 5 ? (o.rc ? o.rc.date : o.date) : o.oeDate;
-    const label = s.o === 5 ? (o.rc ? "Ofsted report card" : "Ofsted: no overall grade") : ofstedName(s.o);
+    const label = s.o === 5 ? (o.rc ? "Ofsted report card" : "Ofsted: no overall grade") : ratingLabel(s);
     const rating = `<span class="badge rating" style="background:${ofstedColour(s.o)}">${esc(label)}${when ? " · " + esc(when.slice(0, 4)) : ""}</span>`;
     const phase = (PHASES.find((p) => p[0] === s.ph) || [0, ""])[1];
     const bits = [phase, state.data.lk.type[s.t], s.g === "B" ? "Boys" : s.g === "G" ? "Girls" : null,
@@ -387,7 +396,7 @@
 
   function section(title, p) {
     const rows = (p.m || []).map(([k, v, nat, max]) => [k, v, nat, max]);
-    return `<h4>${esc(title)} <span class="muted">· ${esc(p.year)}${p.cohort ? `, ${esc(p.cohort)} pupils` : ""}</span></h4>${kv(rows)}`;
+    return `<h4>${esc(title)} <span class="muted">· ${esc(p.year)}${p.cohort ? `, ${esc(p.cohort)} pupils` : ""}</span></h4>${kv(rows)}${p.note ? `<p class="note">${esc(p.note)}</p>` : ""}`;
   }
 
   function gradeClass(v) {
@@ -443,6 +452,7 @@
       const loc = await geocode(q);
       setHome(loc);
       msg.textContent = "";
+      if (isNarrow()) setSidebar(false);
     } catch (err) {
       msg.className = "msg err"; msg.textContent = err.message;
     }
@@ -486,7 +496,7 @@
       if (s.ks4 != null) extra.push(`Att8 ${s.ks4.toFixed(1)}`);
       if (s.dem != null) extra.push(`${s.dem.toFixed(1)} 1st prefs/place`);
       return `<li data-i="${i}"><span class="dot" style="background:${ofstedColour(s.o)}"></span>
-        <span class="nm">${esc(s.name)}<small>${esc(ofstedName(s.o))}${extra.length ? " · " + extra.join(" · ") : ""}</small></span>
+        <span class="nm">${esc(s.name)}<small>${esc(ratingLabel(s))}${extra.length ? " · " + extra.join(" · ") : ""}</small></span>
         <span class="km">${fmtDist(km).split(" (")[0]}</span></li>`;
     }).join("");
   }
@@ -507,7 +517,7 @@
     }
     ul.innerHTML = hits.map((i) => {
       const s = state.S[i];
-      return `<li role="option" data-i="${i}">${esc(s.name)}<small>${esc(state.data.lk.la[s.la] || "")} · ${esc(ofstedName(s.o))}</small></li>`;
+      return `<li role="option" data-i="${i}">${esc(s.name)}<small>${esc(state.data.lk.la[s.la] || "")} · ${esc(ratingLabel(s))}</small></li>`;
     }).join("");
   });
   $("nameResults").addEventListener("click", (e) => {
@@ -524,12 +534,9 @@
   $("fNoFaith").addEventListener("change", (e) => { state.noFaith = e.target.checked; applyFilters(); });
   $("fMixed").addEventListener("change", (e) => { state.mixed = e.target.checked; applyFilters(); });
   $("aboutLink").addEventListener("click", (e) => { e.preventDefault(); $("about").showModal(); });
-  $("toggleSidebar").addEventListener("click", () => {
-    const sb = $("sidebar");
-    sb.classList.toggle("collapsed");
-    $("toggleSidebar").setAttribute("aria-expanded", String(!sb.classList.contains("collapsed")));
-  });
-  if (window.matchMedia("(max-width: 820px)").matches) $("sidebar").classList.add("collapsed");
+  $("toggleSidebar").addEventListener("click", () => setSidebar($("sidebar").classList.contains("collapsed")));
+  $("hideSidebar").addEventListener("click", () => setSidebar(false));
+  if (isNarrow()) setSidebar(false);
   window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => { refreshColours(); renderLegend(); dots.redraw(); });
 
   // ---------- Boot ----------

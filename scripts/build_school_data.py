@@ -649,7 +649,10 @@ def build(args):
         table.append([
             urn, r["EstablishmentName"].strip(), s["lat"], s["lng"], s["ph"], s["sec"], type_ix[typ],
             o["h"] if o else 0, gender, faith_ix[fk], selective, la,
-            perf["ks2"].get(urn, {}).get("h"), perf["ks4"].get(urn, {}).get("h"), perf["ks5"].get(urn, {}).get("h"),
+            perf["ks2"].get(urn, {}).get("h"),
+            # Independent schools' KS4 figures mostly exclude IGCSEs, so they aren't comparable on the map.
+            perf["ks4"].get(urn, {}).get("h") if s["sec"] != "i" else None,
+            perf["ks5"].get(urn, {}).get("h"),
             a["ratio"] if a else None,
         ])
         lo, hi = r.get("StatutoryLowAge", "").strip(), r.get("StatutoryHighAge", "").strip()
@@ -676,6 +679,9 @@ def build(args):
             p = perf[k].get(urn)
             if p:
                 d[k] = {"year": p["year"], "cohort": p["cohort"], "m": p["m"]}
+                if k == "ks4" and s["sec"] == "i":
+                    d[k]["note"] = ("Performance tables largely exclude IGCSEs and other qualifications many independent "
+                                    "schools use, so these figures can understate results and aren't comparable.")
         details[la][str(urn)] = {k: v for k, v in d.items() if v not in (None, "", [])}
 
     if os.path.isdir(os.path.join(OUT, "la")):
