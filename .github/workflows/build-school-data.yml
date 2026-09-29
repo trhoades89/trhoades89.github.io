@@ -1,15 +1,13 @@
 name: Build school data
 
+# Runs only when started by hand (Actions tab > Build school data > Run workflow)
+# or when the build script itself changes on main.
 on:
-  schedule:
-    # Weekly, Monday 05:17 UTC. Ofsted publishes monthly, GIAS daily, DfE performance/admissions yearly.
-    - cron: "17 5 * * 1"
   workflow_dispatch:
   push:
-    branches: [main, "claude/uk-schools-map"]
+    branches: [main]
     paths:
       - scripts/build_school_data.py
-      - .github/workflows/build-school-data.yml
 
 permissions:
   contents: write
