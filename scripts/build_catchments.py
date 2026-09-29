@@ -28,14 +28,16 @@ import io
 import json
 import os
 import re
+import subprocess
 import sys
 import threading
 import time
+import urllib.error
 import urllib.parse
 from html.parser import HTMLParser
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build_school_data import OUT, ROOT, Fetcher, decode, log  # noqa: E402
+from build_school_data import OUT, ROOT, UA, Fetcher, decode, log  # noqa: E402
 
 MAX_PAGES = 30
 MAX_DOCS = 30
@@ -50,7 +52,9 @@ LINK_RX = re.compile(
     re.I)
 SKIP_RX = re.compile(
     r"arrangements|consultation|polic(y|ies)|privacy|cookie|supplementary|in.?year|nursery|appeal(s)? (form|hearing)|"
-    r"transport|travel|uniform|term dates|free school meals|\.(jpg|png|gif|svg)$|mailto:|tel:|javascript:",
+    r"transport|travel|uniform|term dates|free school meals|\.(jpg|png|gif|svg)$|mailto:|tel:|javascript:|"
+    r"housing|council.?tax|parking|planning|eforms|feedback|/news|jobs|careers|login|sign.?in|facebook|twitter|"
+    r"linkedin|instagram|youtube|contact.?us|accessibility",
     re.I)
 DOC_URL_RX = re.compile(r"\.(pdf|xlsx?|docx?|csv)(\?|$)|/download|/media/document|/__data/assets|/downloads/file", re.I)
 SECONDARY_RX = re.compile(r"secondary|year 7|transfer to sec|\btss\b|high school|y7", re.I)
@@ -63,18 +67,34 @@ NUM_RX = re.compile(r"^\s*(\d{1,5}(?:\.\d+)?)\s*$")
 
 # ------------------------------------------------------------------ HTML helpers
 
+BLOCK_TAGS = {"p", "div", "li", "h1", "h2", "h3", "h4", "h5", "h6", "tr", "dt", "dd", "section", "article",
+              "table", "ul", "ol", "caption", "summary", "details", "td", "th"}
+
+
 class PageParser(HTMLParser):
-    """Collect links (href, text) and tables (rows of cell text) from an HTML page."""
+    """Collect links (href, text), tables (rows of cell text) and block-level text lines from a page."""
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self.links, self.tables = [], []
+        self.links, self.tables, self.lines = [], [], []
         self._a = None
         self._tables = []  # stack of tables being built
         self._cell = None
+        self._line = ""
+        self._skip = 0
+
+    def _flush(self):
+        t = " ".join(self._line.split())
+        if t:
+            self.lines.append(t)
+        self._line = ""
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if tag in ("script", "style", "noscript", "svg"):
+            self._skip += 1
+        if tag in BLOCK_TAGS or tag == "br":
+            self._flush() if tag not in ("td", "th") else None
         if tag == "a" and a.get("href"):
             self._a = [a["href"], ""]
         elif tag == "table":
@@ -83,10 +103,13 @@ class PageParser(HTMLParser):
             self._tables[-1].append([])
         elif tag in ("td", "th") and self._tables:
             self._cell = ""
+            self._line += " | "
         elif tag == "br" and self._cell is not None:
             self._cell += " "
 
     def handle_endtag(self, tag):
+        if tag in ("script", "style", "noscript", "svg") and self._skip:
+            self._skip -= 1
         if tag == "a" and self._a:
             self.links.append((self._a[0], " ".join(self._a[1].split())))
             self._a = None
@@ -99,12 +122,17 @@ class PageParser(HTMLParser):
             t = self._tables.pop()
             if t:
                 self.tables.append([r for r in t if r])
+        if tag in BLOCK_TAGS and tag not in ("td", "th"):
+            self._flush()
 
     def handle_data(self, data):
+        if self._skip:
+            return
         if self._a is not None:
             self._a[1] += data
         if self._cell is not None:
             self._cell += data
+        self._line += data
 
 
 def page_title(text):
@@ -133,6 +161,7 @@ def rows_from_pdf(raw):
                 for line in text.splitlines():
                     if line.strip():
                         rows.append([c.strip() for c in re.split(r"\s{2,}|\t", line) if c.strip()] or [line])
+                rows.append(["<table end>"])
     return rows
 
 
@@ -177,16 +206,21 @@ def rows_from_docx(raw):
 
 
 def rows_from_html(text):
+    """Tables first; then the page's text lines (for pages that list schools in paragraphs or accordions)."""
     p = PageParser()
     try:
         p.feed(text)
+        p._flush()
     except Exception:
         pass
     rows = []
     for t in p.tables:
         rows.extend(t)
         rows.append(["<table end>"])
-    return rows, p.links
+    rows.append(["<text>"])
+    rows.extend([[c.strip() for c in ln.split(" | ") if c.strip()] or [ln] for ln in p.lines if "|" not in ln or True])
+    rows.append(["<table end>"])
+    return rows, p.links, "\n".join(p.lines)
 
 
 def sniff(raw, url):
@@ -202,12 +236,15 @@ def sniff(raw, url):
 # ------------------------------------------------------------------ school matching
 
 STOP = {
-    "school", "schools", "primary", "academy", "the", "and", "of", "community", "voluntary", "aided", "controlled",
-    "foundation", "free", "federation", "trust", "college", "church", "england", "ce", "rc", "cofe", "vc", "va",
-    "catholic", "roman", "c", "e", "cte", "specialist", "sports", "language", "arts", "technology", "science",
-    "mixed", "day", "with", "for", "a", "an", "at", "in", "london", "borough", "nursery", "centre", "unit",
+    "school", "schools", "primary", "secondary", "academy", "the", "and", "of", "community", "voluntary", "aided",
+    "controlled", "foundation", "free", "federation", "trust", "college", "church", "england", "ce", "rc", "cofe",
+    "vc", "va", "catholic", "roman", "c", "e", "cte", "specialist", "sports", "language", "arts", "technology",
+    "science", "mixed", "day", "with", "for", "a", "an", "at", "in", "london", "borough", "nursery", "centre",
+    "unit", "children", "childrens", "centres",
 }
 DENOMS = {"ce", "rc", "jewish", "muslim", "islamic", "sikh", "hindu", "methodist", "christian"}
+COMMON_FIRST = {"st", "holy", "our", "saint", "sacred", "christ", "all", "new", "north", "south", "east", "west",
+                "upper", "lower", "great", "little", "oasis", "harris", "ark", "unity", "hope", "grace", "trinity"}
 
 
 def norm_tokens(s):
@@ -238,16 +275,18 @@ class Matcher:
             self.aliases[" ".join(c)].add(urn)
         prefixes = collections.defaultdict(set)
         for urn, c in full.items():
-            for k in (2, 3):
+            for k in (1, 2, 3):
                 if len(c) > k:
                     prefixes[" ".join(c[:k])].add(urn)
         for p, urns in prefixes.items():
-            if len(urns) == 1 and len(p) >= 8 and p not in self.aliases:
+            one_word = " " not in p
+            if len(urns) == 1 and p not in self.aliases and (
+                    (not one_word and len(p) >= 8) or (one_word and len(p) >= 6 and p not in COMMON_FIRST)):
                 self.aliases[p] |= urns
         self.denoms = {s["urn"]: set(norm_tokens(s["name"])) & DENOMS for s in schools}
         self.by_urn = {s["urn"]: s for s in schools}
 
-    def match(self, text):
+    def match(self, text, phase=None):
         toks = norm_tokens(text)
         r = " " + " ".join(core(toks)) + " "
         present = set(toks) & DENOMS
@@ -256,6 +295,11 @@ class Matcher:
             if len(alias) < 3 or f" {alias} " not in r:
                 continue
             cands = list(urns)
+            if len(cands) > 1 and phase:
+                # e.g. "Avanti House School" (secondary) vs "Avanti House Primary School"
+                same = [u for u in cands if (self.by_urn[u]["ph"] == "P") == (phase == "P")]
+                if len(same) == 1:
+                    cands = same
             if len(cands) > 1:
                 # Same core name (e.g. two "St Mary's"): use denomination words to pick one.
                 scored = sorted(cands, key=lambda u: -len(self.denoms[u] & present))
@@ -273,6 +317,17 @@ class Matcher:
 
 # ------------------------------------------------------------------ distance extraction
 
+MILES_DEC = re.compile(r"\d{1,2}\.\d{3,4}")
+METRES_DEC = re.compile(r"\d{2,5}\.\d{1,2}")
+YEAR_CELL = re.compile(r"(?<!\d)(20[12]\d)(?!\d)|^(?:NOD\s*)?(\d{2})\s*/\s*\d{2}$")
+LABEL_RX = re.compile(r"^\s*(band|criteri|crit\b|distance|any other|other|remaining|community|open|catchment|"
+                      r"non.?sibling|all other|general|random|priority|last|furthest|offered|places?|oversub|"
+                      r"[A-E]\b|\d(\.\d)?\b|tier|inner|outer|zone|nearest|home|local)", re.I)
+SIBLING_RX = re.compile(r"sibling", re.I)
+FAITH_RX = re.compile(r"faith|catholic|baptis|church|practis|religio|sikh|jewish|muslim|hindu|christian|parish|worship", re.I)
+PREFER_RX = re.compile(r"distance|any other|other applicant|remaining|community|open|band|last|furthest|general|all other", re.I)
+
+
 def to_miles(v, unit):
     unit = unit.lower()
     if unit.startswith("mi") or unit.startswith("ml"):
@@ -283,10 +338,10 @@ def to_miles(v, unit):
 
 
 def doc_unit_hint(rows):
-    text = " ".join(" ".join(r) for r in rows[:400]).lower()
+    text = " ".join(" ".join(r) for r in rows[:600]).lower()
     counts = {"miles": len(re.findall(r"\bmiles?\b", text)),
-              "metres": len(re.findall(r"\bmet(re|er)s\b|\(m\)", text)),
-              "km": len(re.findall(r"\bkm\b|kilomet", text))}
+              "metres": len(re.findall(r"\bmet(re|er)s\b|\(m\)|\bmetres\b", text)),
+              "km": len(re.findall(r"\bkms?\b|kilomet", text))}
     unit, n = max(counts.items(), key=lambda kv: kv[1])
     return unit if n else None
 
@@ -307,42 +362,84 @@ def header_info(row):
     return (best[1], best[2]) if best else (None, None)
 
 
-def distance_from_row(cells, col, col_unit, hint):
-    """Return (miles, how) or (None, None)."""
-    text = " | ".join(cells)
-    if re.search(r"\ball\b.{0,30}(offered|applicants)|no distance|not oversubscribed|undersubscribed", text, re.I) and not UNIT_RX.search(text):
-        return None, "all offered"
-    # 1) The column the header says holds the distance
-    if col is not None and col < len(cells):
-        c = cells[col]
-        m = UNIT_RX.search(c)
+def year_columns(row):
+    """Header cells that are years (e.g. 2024 | 2025 | 2026, or 24/25): {index: year}."""
+    out = {}
+    for i, c in enumerate(row):
+        c = c.strip()
+        if len(c) > 30:
+            continue
+        m = YEAR_CELL.search(c)
         if m:
-            return to_miles(float(m.group(1).replace(",", ".")), m.group(2)), "column+unit"
-        m = NUM_RX.match(c.replace(",", ""))
-        if m and (col_unit or hint):
-            return to_miles(float(m.group(1)), col_unit or hint), "column"
-    # 2) Any value written with a unit in the row (use the last one: tables put the cut-off last)
-    ms = [m for m in UNIT_RX.finditer(text) if not re.search(r"sibling", text[max(0, m.start() - 25):m.start()], re.I)]
+            y = int(m.group(1)) if m.group(1) else 2000 + int(m.group(2))
+            if 2010 <= y <= THIS_YEAR:
+                out[i] = y
+    return out if len(out) >= 2 else {}
+
+
+def value_in(cell, unit_hint):
+    """Parse one cell as a distance in miles, or None."""
+    m = UNIT_RX.search(cell)
+    if m:
+        return to_miles(float(m.group(1).replace(",", ".")), m.group(2))
+    c = cell.strip().replace(",", "")
+    if NUM_RX.match(c):
+        v = float(c)
+        if unit_hint:
+            return to_miles(v, unit_hint)
+        if "." in c:
+            return to_miles(v, "metres" if v >= 20 else "miles")
+    return None
+
+
+def distance_from_row(cells, col, col_unit, hint, year_cols=None):
+    """Return (miles, how, year_or_None)."""
+    text = " | ".join(cells)
+    if (re.search(r"\ball\b.{0,40}(offered|applicants|preferences met)|no distance|not oversubscribed|undersubscribed|"
+                  r"no cut.?off|places? available", text, re.I) and not UNIT_RX.search(text)):
+        return None, "all offered", None
+    # 1) Columns headed by year: take the newest year with a value
+    if year_cols:
+        for i, y in sorted(year_cols.items(), key=lambda kv: -kv[1]):
+            if i < len(cells):
+                v = value_in(cells[i], col_unit or hint)
+                if v is not None:
+                    return v, f"year column {y}", y
+    # 2) The column the header says holds the distance
+    if col is not None and col < len(cells):
+        v = value_in(cells[col], col_unit or hint)
+        if v is not None:
+            return v, "column", None
+    # 3) Any value written with a unit in the row (use the last one: tables put the cut-off last)
+    ms = [m for m in UNIT_RX.finditer(text) if not SIBLING_RX.search(text[max(0, m.start() - 40):m.start()])]
     if ms:
         m = ms[-1]
-        return to_miles(float(m.group(1).replace(",", ".")), m.group(2)), "unit in row"
-    # 3) Miles documents: a bare decimal like 0.532 in a cell
-    if hint == "miles":
-        vals = [float(c) for c in cells if re.fullmatch(r"\d{1,2}\.\d{2,4}", c.strip())]
+        return to_miles(float(m.group(1).replace(",", ".")), m.group(2)), "unit in row", None
+    # 4) Bare decimals: 0.532 style in miles/km documents, 1234.56 style in metres documents
+    toks = [t for c in cells for t in c.split()]
+    if hint in ("miles", "km", None):
+        vals = [float(t) for t in toks if MILES_DEC.fullmatch(t)]
         if vals:
-            return vals[-1], "decimal (miles doc)"
-    if hint == "km":
-        vals = [float(c) for c in cells if re.fullmatch(r"\d{1,2}\.\d{2,4}", c.strip())]
+            return to_miles(vals[-1], hint or "miles"), f"decimal ({hint or 'assumed miles'})", None
+    if hint in ("metres", None):
+        vals = [float(t) for t in toks if METRES_DEC.fullmatch(t) and float(t) >= 20]
         if vals:
-            return vals[-1] / 1.609344, "decimal (km doc)"
-    return None, None
+            return to_miles(vals[-1], "metres"), "decimal (metres)", None
+    return None, None, None
 
 
 # ------------------------------------------------------------------ per-document processing
 
+def years_in(s):
+    """Years mentioned in a title or URL, reading ranges like 2018-26 as ending in 2026."""
+    ys = [int(y) for y in re.findall(r"(?<!\d)(20[12]\d)(?!\d)", s)]
+    ys += [2000 + int(m.group(1)) for m in re.finditer(r"20[12]\d\s*[-–]\s*(\d{2})(?!\d)", s)]
+    return [y for y in ys if y <= THIS_YEAR]
+
+
 def doc_year(title, url, rows):
     head = " ".join(" ".join(r) for r in rows[:30])
-    cand = [int(y) for y in re.findall(r"20[12]\d", f"{title} {urllib.parse.unquote(url)}") if int(y) <= THIS_YEAR]
+    cand = years_in(f"{title} {urllib.parse.unquote(url)}")
     if not cand:
         cand = [int(y) for y in re.findall(r"20[12]\d", head) if int(y) <= THIS_YEAR]
     if not cand:
@@ -373,40 +470,132 @@ def entry_for(school, phase_hint):
     return None
 
 
+def choose_block(lines):
+    """From the distance lines under a school heading, pick the general cut-off.
+
+    Sibling and faith-priority lines are ignored when other lines exist; among the rest, prefer lines
+    that name distance/other applicants/bands and take the widest (bands each have their own cut-off).
+    """
+    pool = [x for x in lines if not SIBLING_RX.search(x[2]) or re.search(r"non.?sibling", x[2], re.I)] or lines
+    pool = [x for x in pool if not FAITH_RX.search(x[2])] or pool
+    pool = [x for x in pool if PREFER_RX.search(x[2])] or pool
+    return max(pool, key=lambda x: x[0])
+
+
 def process_doc(rows, matcher, title, url, borough):
     hint = doc_unit_hint(rows)
     year = doc_year(title, url, rows)
     phase = doc_phase(title, url, rows)
-    col, col_unit = None, None
     found, unmatched = [], []
-    for cells in rows:
-        if cells == ["<table end>"]:
-            col, col_unit = None, None
-            continue
-        text = " | ".join(cells)
-        h_col, h_unit = header_info(cells)
-        if h_col is not None and not matcher.match(text):
-            col, col_unit = h_col, h_unit
-            continue
-        urn = matcher.match(text)
-        mi, how = distance_from_row(cells, col, col_unit, hint)
-        if urn is None:
-            if mi is not None and len(unmatched) < 25:
-                unmatched.append(text[:200])
-            continue
+    col = col_unit = None
+    year_cols = {}
+    section_year = None
+    in_text = False
+    have_table_hits = False
+    cur = None  # (urn, heading text, [distance lines], rows since heading, all_offered)
+
+    def add(urn, mi, how, row, y):
         school = matcher.by_urn[urn]
         entry = entry_for(school, phase)
         if entry is None or (phase == "S" and school["ph"] == "P") or (phase == "P" and school["ph"] == "S"):
-            continue
+            return
         if mi is not None and not (0.02 <= mi <= 15):
             how, mi = f"rejected {mi:.2f} mi", None
-        found.append({"urn": urn, "entry": entry, "year": year, "mi": round(mi, 3) if mi is not None else None,
-                      "how": how, "row": text[:300], "src": url, "title": title[:150], "borough": borough["name"],
-                      "basis": borough.get("basis")})
+        found.append({"urn": urn, "entry": entry, "year": y or section_year or year,
+                      "mi": round(mi, 3) if mi is not None else None, "how": how, "row": row[:300], "src": url,
+                      "title": title[:150], "borough": borough["name"], "basis": borough.get("basis")})
+
+    def flush():
+        nonlocal cur
+        if cur:
+            urn, head, lines, _, all_off = cur
+            if lines:
+                mi, how, text = choose_block(lines)
+                add(urn, mi, f"block: {how}", f"{head} … {text}", None)
+            elif all_off:
+                add(urn, None, "all offered", head, None)
+            else:
+                add(urn, None, None, head, None)
+        cur = None
+
+    for cells in rows:
+        if cells == ["<text>"]:
+            flush()
+            in_text = True
+            col = col_unit = None
+            year_cols = {}
+            continue
+        if in_text and have_table_hits:
+            break  # the page's tables already gave us the data; its text repeats them
+        if cells == ["<table end>"]:
+            flush()
+            col = col_unit = None
+            year_cols = {}
+            continue
+        text = " | ".join(cells)
+        urn = matcher.match(text, phase)
+        # Header rows: a distance column, or one column per year
+        yc = year_columns(cells)
+        h_col, h_unit = header_info(cells)
+        if urn is None and (yc or h_col is not None) and not re.search(r"\d\.\d", text):
+            if yc:
+                year_cols = yc
+                col_unit = h_unit or col_unit
+            if h_col is not None:
+                col, col_unit = h_col, h_unit
+            continue
+        mi, how, y = distance_from_row(cells, col, col_unit, hint, year_cols)
+        if urn is None:
+            # Year sub-heading ("2026", "Offers made in April 2025") inside multi-year documents
+            ym = re.search(r"(?<!\d)(20[12]\d)(?!\d)", text)
+            if ym and mi is None and len(text) <= 80 and int(ym.group(1)) <= THIS_YEAR:
+                flush()
+                section_year = int(ym.group(1))
+                continue
+            first = next((c for c in cells if c.strip()), "")
+            label_like = LABEL_RX.match(first) or len([c for c in cells if c.strip()]) <= 2
+            if cur and label_like and cur[3] < 25:
+                if mi is not None:
+                    cur[2].append((mi, how, text))
+                elif how == "all offered":
+                    cur = (cur[0], cur[1], cur[2], cur[3], True)
+                cur = (cur[0], cur[1], cur[2], cur[3] + 1, cur[4])
+            elif mi is not None and len(unmatched) < 25:
+                unmatched.append(text[:200])
+            continue
+        flush()
+        if mi is not None or how == "all offered":
+            add(urn, mi, how, text, y)
+            have_table_hits = have_table_hits or (mi is not None and not in_text)
+        else:
+            cur = (urn, text[:160], [], 0, False)
+    flush()
     return found, unmatched, {"unit": hint, "year": year, "phase": phase}
 
 
 # ------------------------------------------------------------------ crawl
+
+def fetch(fx, url):
+    """Download with the shared fetcher; if the site refuses Python's client, retry once with curl."""
+    try:
+        return fx.get(url, tries=2, timeout=45)
+    except urllib.error.HTTPError as e:
+        if e.code not in (401, 403, 406, 429, 301, 302):
+            raise
+        first = e
+    except Exception as e:  # redirect loops needing cookies, TLS quirks
+        first = e
+    try:
+        out = subprocess.run(
+            ["curl", "-sSL", "--compressed", "--max-time", "60", "-c", "/dev/null", "-A", UA["User-Agent"],
+             "-H", "Accept-Language: en-GB,en;q=0.9", "-H", "Accept: text/html,application/pdf,*/*", "-f", url],
+            capture_output=True, timeout=90)
+        if out.returncode == 0 and out.stdout:
+            return out.stdout
+    except Exception:
+        pass
+    raise first
+
 
 def same_site(a, b):
     ha, hb = urllib.parse.urlparse(a).netloc.lower(), urllib.parse.urlparse(b).netloc.lower()
@@ -433,19 +622,19 @@ def crawl_borough(fx, b, matcher):
         if (is_doc_url and docs >= MAX_DOCS) or (not is_doc_url and pages >= MAX_PAGES):
             continue
         try:
-            raw = fx.get(url, tries=2, timeout=45)
+            raw = fetch(fx, url)
         except Exception as e:
             report["errors"].append(f"{url}: {type(e).__name__}: {str(e)[:120]}")
             continue
         kind = sniff(raw, url)
         title = why
-        links = []
+        links, page_text = [], ""
         try:
             if kind == "html":
                 pages += 1
                 text = decode(raw)
                 title = page_title(text) or why
-                rows, links = rows_from_html(text)
+                rows, links, page_text = rows_from_html(text)
             else:
                 docs += 1
                 rows = {"pdf": rows_from_pdf, "xlsx": rows_from_xlsx, "xls": rows_from_xls, "docx": rows_from_docx}[kind](raw)
@@ -460,7 +649,17 @@ def crawl_borough(fx, b, matcher):
         if unmatched:
             entry["unmatched_with_distance"] = unmatched[:12]
         if found:
-            entry["sample"] = [f"{matcher.by_urn[f['urn']]['name']} -> {f['mi']} ({f['how']}) :: {f['row'][:120]}" for f in found[:8]]
+            entry["sample"] = [f"{matcher.by_urn[f['urn']]['name']} -> {f['mi']} ({f['how']}) :: {f['row'][:140]}" for f in found[:10]]
+        if not with_dist:
+            # Diagnostics for pages/documents that gave nothing: where might the data be?
+            if kind == "html":
+                entry["links"] = [f"{t[:60]} -> {urllib.parse.urljoin(url, h)[:160]}" for h, t in links
+                                  if re.search(r"offer|alloc|distance|places|statist|data|\.pdf|\.xls|download", f"{t} {h}", re.I)][:40]
+                m = re.search(r"miles?\b|metres|cut.?off|furthest", page_text, re.I)
+                if m:
+                    entry["snippet"] = page_text[max(0, m.start() - 300):m.start() + 500]
+            else:
+                entry["head"] = [" | ".join(r)[:160] for r in rows[:30]]
         (report["pages"] if kind == "html" else report["docs"]).append(entry)
         results.extend(found)
         # Follow links
