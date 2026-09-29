@@ -273,15 +273,15 @@
   async function selectSchool(s, opts = {}) {
     state.selected = s;
     catchmentLayer.clearLayers();
-    dots.redraw();
-    if (opts.pan !== false) {
-      const target = map.getZoom() < 13 ? 14 : map.getZoom();
-      map.setView([s.lat, s.lng], target, { animate: true });
-    }
     history.replaceState(null, "", "#urn=" + s.urn);
     $("panel").hidden = false;
     $("panelBody").innerHTML = header(s) + '<p class="muted">Loading details…</p>';
     map.invalidateSize();
+    if (opts.pan !== false) {
+      const target = map.getZoom() < 13 ? 14 : map.getZoom();
+      map.setView([s.lat, s.lng], target, { animate: true });
+    }
+    dots.redraw();
     const d = await loadDetail(s);
     if (state.selected !== s) return;
     $("panelBody").innerHTML = header(s, d) + body(s, d);
@@ -484,7 +484,7 @@
       const extra = [];
       if (s.ks2 != null) extra.push(`KS2 ${s.ks2}%`);
       if (s.ks4 != null) extra.push(`Att8 ${s.ks4.toFixed(1)}`);
-      if (s.dem != null) extra.push(`${s.dem.toFixed(1)} apps/place`);
+      if (s.dem != null) extra.push(`${s.dem.toFixed(1)} 1st prefs/place`);
       return `<li data-i="${i}"><span class="dot" style="background:${ofstedColour(s.o)}"></span>
         <span class="nm">${esc(s.name)}<small>${esc(ofstedName(s.o))}${extra.length ? " · " + extra.join(" · ") : ""}</small></span>
         <span class="km">${fmtDist(km).split(" (")[0]}</span></li>`;
