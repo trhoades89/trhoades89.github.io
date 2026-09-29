@@ -192,7 +192,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 86,
   "years": {},
-  "seconds": 7
+  "seconds": 5
  },
  {
   "name": "Brent",
@@ -226,27 +226,43 @@
     "title": "Place allocation for Secondary schools 2026",
     "rows": 23,
     "matched": 7,
-    "with_distance": 4,
+    "with_distance": 0,
     "unit": "miles",
     "year": 2026,
     "phase": "S",
-    "unmatched_with_distance": [
-     "Alperton Community School (324) | EHCP Looked After Children/ Previously Looked After Sibling Feeder School Distance Total | 3 1 112 132 76 324 | 7228.01 4081.35 1584.73 | Oversubscribed 694 applicati",
-     "Claremont High School (270) | EHCP Looked After Children/ Previously Looked After Sibling Children Of Staff Feeder School Aptitude In Music Distance Total | 10 1 103 2 125 27 2 270 | 6278.48 4929.37 7",
-     "Kingsbury High School (336) | EHCP Sibling Children Of Staff Feeder School Distance Nearest school with a vacancy Total | 6 123 2 81 80 44 336 | 5592.67 4900.78 34503.04 5014.14 | Fully subscribed 539",
-     "Preston Manor School (252) | EHCP Looked After Children/ Previously Looked After Reserved for children in Year 6 Sibling Distance Nearest school with a vacancy Total | 12 2 60 44 97 37 252 | 6914.97 4",
-     "Queens Park Community School (216) | EHCP Looked After Children/ Previously Looked After Sibling 12 Distance Feeder School Total | 4 1 70 12 129 216 | 4010.19 814.29 1687.11 | Oversubscribed 563 appli",
-     "St Gregory’s Catholic Science College (192) | EHCP Catholic - L A C/ Adopted Bapt Cath With Certificate Of Catholic Practice, All Saints Trust Bapt Cath With Certificate Of Catholic Practice, Sibling ",
-     "Wembley High Technology College (210) | Looked After Children/ Previously Looked After Social/Medical Sibling Children of Staff Feeder School-East Lane Primary School Feeder School Total | 1 1 102 1 4"
-    ],
     "sample": [
-     "Ark Academy -> 0.887 (decimal (metres)) :: Ark Academy (180) | EHCP Looked After Children/ Previously Looked After Reserved for children in Year 6 Sibling Distance Total | 2 1 47 47 8",
-     "Ark Elvin Academy -> 1.645 (decimal (metres)) :: Ark Elvin Academy (210) | EHCP Looked After Children/ Previously Looked After Sibling Distance Total | 5 1 61 143 210 | 4913.27 2646.8 | Ove",
+     "Ark Academy -> None (None) :: Ark Academy (180) | EHCP Looked After Children/ Previously Looked After Reserved for children in Year 6 Sibling Distance Total | 2 1 47 47 8",
+     "Ark Elvin Academy -> None (None) :: Ark Elvin Academy (210) | EHCP Looked After Children/ Previously Looked After Sibling Distance Total | 5 1 61 143 210 | 4913.27 2646.8 | Ove",
      "Harris Lowe Academy Willesden -> None (all offered) :: Harris Lowe Academy Willesden (180) | Sibling Distance Nearest school with a vacancy Total | 49 65 44 158 | 12536 63004.04 2895.52 | Undersu",
-     "Michaela Community School -> 4.059 (decimal (metres)) :: Michaela Community School (120) | EHCP Children Of Staff Siblings At The School Children Who Live Within A 5 Mile Radius Total | 8 2 36 74 1",
+     "Michaela Community School -> None (None) :: Michaela Community School (120) | EHCP Children Of Staff Siblings At The School Children Who Live Within A 5 Mile Radius Total | 8 2 36 74 1",
      "Newman Catholic College -> None (all offered) :: Newman Catholic College (120) | EHCP Practising Catholic, Priest Ref, With Sibling Practising Catholic, Priest Ref, Distance Nearest school ",
-     "North Brent School -> 0.438 (decimal (metres)) :: North Brent School (180) | Looked After Children/ Previously Looked After Sibling Distance - Zone A Distance - Zone B Total | 1 37 129 43 21",
+     "North Brent School -> None (None) :: North Brent School (180) | Looked After Children/ Previously Looked After Sibling Distance - Zone A Distance - Zone B Total | 1 37 129 43 21",
      "Saint Claudine's Catholic School for Girls -> None (all offered) :: St Claudine's Catholic School for Girls (180) | EHCP Practising Catholic Applicants Christian, Bapt, Reg Church Att, Minister Support, Paren"
+    ],
+    "head": [
+     "How places were allocated at Brent secondary schools - September 2026",
+     "Data as at 2 March 2026 (National Offer Day)",
+     "EHCP = Education, Health and Care Plan",
+     "School Name | Offers |  |  | ",
+     "(Published Admission Number) | Criteria/Band | Number of offers | Max distance in metres | Status",
+     "Alperton Community School (324) | EHCP Looked After Children/ Previously Looked After Sibling Feeder School Distance Total | 3 1 112 132 76 324 | 7228.01 4081.3",
+     "Ark Academy (180) | EHCP Looked After Children/ Previously Looked After Reserved for children in Year 6 Sibling Distance Total | 2 1 47 47 83 180 | 4084.53 1427",
+     "Ark Elvin Academy (210) | EHCP Looked After Children/ Previously Looked After Sibling Distance Total | 5 1 61 143 210 | 4913.27 2646.8 | Oversubscribed 603 appl",
+     "Claremont High School (270) | EHCP Looked After Children/ Previously Looked After Sibling Children Of Staff Feeder School Aptitude In Music Distance Total | 10 ",
+     "E-ACT Crest Academy (330) | Sibling Feeder School Distance Nearest school with a vacancy Total | 13 25 24 44 106 | 2127.91 8634.76 3174.95 6289.41 | Undersubscr",
+     "Harris Lowe Academy Willesden (180) | Sibling Distance Nearest school with a vacancy Total | 49 65 44 158 | 12536 63004.04 2895.52 | Undersubscribed 285 applica",
+     "JFS (300) | EHCP Sibling With C R P Feeder Sinai Feeder Nwljds All Other Crp Priority Applicants Total | 12 188 26 8 116 350 | 14673.12 20482.47 11356.52 25201.",
+     "Kingsbury High School (336) | EHCP Sibling Children Of Staff Feeder School Distance Nearest school with a vacancy Total | 6 123 2 81 80 44 336 | 5592.67 4900.78",
+     "Michaela Community School (120) | EHCP Children Of Staff Siblings At The School Children Who Live Within A 5 Mile Radius Total | 8 2 36 74 120 | 12536.92 6532.4",
+     "Newman Catholic College (120) | EHCP Practising Catholic, Priest Ref, With Sibling Practising Catholic, Priest Ref, Distance Nearest school with a vacancy Total",
+     "North Brent School (180) | Looked After Children/ Previously Looked After Sibling Distance - Zone A Distance - Zone B Total | 1 37 129 43 210 | 7798.16 4894.51 ",
+     "Preston Manor School (252) | EHCP Looked After Children/ Previously Looked After Reserved for children in Year 6 Sibling Distance Nearest school with a vacancy ",
+     "Queens Park Community School (216) | EHCP Looked After Children/ Previously Looked After Sibling 12 Distance Feeder School Total | 4 1 70 12 129 216 | 4010.19 8",
+     "St Claudine's Catholic School for Girls (180) | EHCP Practising Catholic Applicants Christian, Bapt, Reg Church Att, Minister Support, Parent Cath Edu Other Bap",
+     "St Gregory’s Catholic Science College (192) | EHCP Catholic - L A C/ Adopted Bapt Cath With Certificate Of Catholic Practice, All Saints Trust Bapt Cath With Ce",
+     "Wembley High Technology College (210) | Looked After Children/ Previously Looked After Social/Medical Sibling Children of Staff Feeder School-East Lane Primary ",
+     "<table end>",
+     "<table end>"
     ]
    },
    {
@@ -255,26 +271,17 @@
     "title": "Place allocation for Secondary schools 2025",
     "rows": 23,
     "matched": 7,
-    "with_distance": 5,
+    "with_distance": 1,
     "unit": "miles",
     "year": 2025,
     "phase": "S",
-    "unmatched_with_distance": [
-     "Alperton Community School (324) | EHCP Looked After Children/ Previously Looked After Sibling Feeder School Distance Total | 2 2 124 143 53 324 | 5866.53 11328.94 1307.62 | Oversubscribed",
-     "Claremont High School (270) | EHCP Looked After Children/ Previously Looked After Sibling Children Of Staff Feeder School Aptitude In Music Total | 1 1 114 1 133 20 270 | 6497.31 5160.62 6190.9 | Over",
-     "Kingsbury High School (336) | EHCP Looked After Children/ Previously Looked After Sibling Children Of Staff Feeder School Distance Nearest school with a vacancy Total | 3 1 108 1 107 101 15 336 | 5751",
-     "Preston Manor School (252) | Looked After Children/ Previously Looked After Reserved for children in Year 6 Sibling Distance Nearest school with a vacancy Total | 2 60 27 100 63 252 | 3241.62 9921.13 ",
-     "Queens Park Community School (216) | EHCP Sibling 12 Distance Feeder School Total | 4 85 12 115 216 | 3308.93 908.94 1445.68 | Oversubscribed",
-     "St Gregory’s Catholic Science College (192) | EHCP Catholic - L A C/ Adopted Bapt Cath With Certificate Of Catholic Practice, All Saints Trust Bapt Cath With Certificate Of Catholic Practice, Sibling ",
-     "Wembley High Technology College (210) | Looked After Children/ Previously Looked After Sibling Feeder School-East Lane Primary School Feeder School Total | 2 89 59 80 230 | 9266.73 5498.04 1010.46 | O"
-    ],
     "sample": [
-     "Ark Academy -> 1.059 (decimal (metres)) :: Ark Academy (180) | EHCP Looked After Children/ Previously Looked After Reserved for children in Year 6 Sibling Distance Total | 4 1 51 47 7",
+     "Ark Academy -> None (None) :: Ark Academy (180) | EHCP Looked After Children/ Previously Looked After Reserved for children in Year 6 Sibling Distance Total | 4 1 51 47 7",
      "Ark Elvin Academy -> 2.378 (decimal (metres)) :: Ark Elvin Academy (210) | Sibling Distance Total | 62 148 210 | 5164.57 3826.36 | Oversubscribed",
-     "Harris Lowe Academy Willesden -> 1.744 (decimal (metres)) :: Harris Lowe Academy Willesden (210) | EHCP Sibling Distance Nearest school with a vacancy Total | 2 63 89 26 180 | 6591.79 10138.34 2806.79 ",
-     "Michaela Community School -> 3.516 (decimal (metres)) :: Michaela Community School (120) | EHCP Looked After Children/ Previously Looked After Siblings At The School Children Who Live Within A 5 Mi",
+     "Harris Lowe Academy Willesden -> None (None) :: Harris Lowe Academy Willesden (210) | EHCP Sibling Distance Nearest school with a vacancy Total | 2 63 89 26 180 | 6591.79 10138.34 2806.79 ",
+     "Michaela Community School -> None (None) :: Michaela Community School (120) | EHCP Looked After Children/ Previously Looked After Siblings At The School Children Who Live Within A 5 Mi",
      "Newman Catholic College -> None (all offered) :: Newman Catholic College (120) | EHCP Practising Catholic, Priest Ref, With Sibling Practising Catholic, Priest Ref, Distance Nearest school ",
-     "North Brent School -> 0.968 (decimal (metres)) :: North Brent School (180) | Sibling Distance - Zone A Distance - Zone B Total | 15 161 54 230 | 5402.51 4817.95 1557.44 | Oversubscribed",
+     "North Brent School -> None (None) :: North Brent School (180) | Sibling Distance - Zone A Distance - Zone B Total | 15 161 54 230 | 5402.51 4817.95 1557.44 | Oversubscribed",
      "Saint Claudine's Catholic School for Girls -> None (all offered) :: St Claudine's Catholic School for Girls (180) | Catholic - L A C/ Adopted Practising Catholic Applicants, Sibling Practising Catholic Applic"
     ]
    },
@@ -284,23 +291,18 @@
     "title": "Place allocation for Primary Schools 2026",
     "rows": 82,
     "matched": 49,
-    "with_distance": 16,
+    "with_distance": 0,
     "unit": "metres",
     "year": 2026,
     "phase": "P",
     "unmatched_with_distance": [
-     "Ark Franklin Primary Academy (90) Children At Af Nursery Eligible For The Eypp, Pp Or Sp Sibling Distance | 349 | 90 5 38 47 | 1656.2 671.53 | Oversubscribed",
      "Sibling 6 2940.17",
-     "Any Other Applicant 18 2807.87",
-     "Our Lady of Grace RC Infant and Nursery School (60) Baptised Catholic Children In The Parish Sibling Baptised Catholic Children In The Parish Baptised Catholic Children Resident In Other Parishes Sibl",
-     "Sinai Jewish Primary School (90) EHCP Children Attending Sinai's Nursery Rec Pp With A Compl And Valid Crp 2 Siblings Of Pupils Attending With A Completed And Valid Crp 2 Children Attending Sinai's Nu",
-     "St Joseph's RC Infant School (70) 2i Cath, Ccp, In Parish, Sibling 2e Cath, Ccp, St Erconwald's 10% 2 Cath, Ccp, In Parish 3i Cath,ccp, Out Of Parish,sibling 3 Cath, Out Of Parish, 4 Other Cath, In Pa",
-     "Uxendon Manor Primary School (90) EHCP L A C And Previously L A C Staff Child Sibling Any Other Applicant | 202 | 90 2 1 1 31 55 | 1229.58 5621.91 6337.87 1343.03 | Oversubscribed"
+     "Any Other Applicant 18 2807.87"
     ],
     "sample": [
      "Anson Primary School -> None (all offered) :: Anson Primary School (52) Staff Child Sibling Any Other Applicant | 168 | 55* 1 22 32 | 3446.01 5179.52 | Undersubscribed",
-     "Ark Academy -> 0.304 (decimal (metres)) :: Ark Academy (60) EHCP Staff Child Sibling Distance | 314 | 60 2 2 32 24 | 5212.34 490.03 | Oversubscribed",
-     "Avigdor Hirsch Torah Temimah Primary School -> 8.37 (decimal (metres)) :: Avigdor Hirsch Torah Temimah Primary School (25) Orthodox Jew And Sibling Orthodox Jew | 35 | 25 12 13 | 9166.13 13469.44 | Oversubscribed",
+     "Ark Academy -> None (None) :: Ark Academy (60) EHCP Staff Child Sibling Distance | 314 | 60 2 2 32 24 | 5212.34 490.03 | Oversubscribed",
+     "Avigdor Hirsch Torah Temimah Primary School -> None (None) :: Avigdor Hirsch Torah Temimah Primary School (25) Orthodox Jew And Sibling Orthodox Jew | 35 | 25 12 13 | 9166.13 13469.44 | Oversubscribed",
      "Barham Primary School -> None (all offered) :: Barham Primary School (120) Looked After Children/ Previously Looked After Sibling Any Other Applicant Nearest school with a vacancy | 234 |",
      "Braintcroft E-ACT Primary Academy -> None (all offered) :: Braintcroft E-Act Primary Academy (90) Sibling Any Other Applicants Nearest school with a vacancy | 100 | 63 27 34 2 | 1727.83 5099.32 | Und",
      "Brentfield Primary School -> None (all offered) :: Brentfield Primary School (90) EHCP Staff Child Sibling Any Other Applicant | 87 | 31 1 2 17 11 | 1918.61 2685.89 | Undersubscribed",
@@ -308,6 +310,48 @@
      "Chalkhill Primary School -> None (all offered) :: Chalkhill Primary School (60) Sibling Any Other Applicant Nearest school with a vacancy | 107 | 37 15 20 2 | 2372.28 2673.31 | Undersubscrib",
      "Christ Church CofE Primary School -> None (all offered) :: Christ Church CofE Primary School (30) Sibling Any Other Applicants Nearest school with a vacancy | 27 | 9 4 2 3 | 946.25 5174.59 | Undersub",
      "Convent of Jesus and Mary RC Infant School -> None (all offered) :: Convent of Jesus and Mary RC Infant School (90) Bapt Practising Catholic, In Parish, Priest Support Sib St Mary Magdalenes Bapt Practising C"
+    ],
+    "head": [
+     "How places were offered at Brent Schools - Reception Admissions 2026",
+     "Data correct as of 16/04/2026",
+     "School / Offer Criteria (Published Admission Number, PAN) | Number of applications | Number of offers | Furthest distance offered (metres) | Over/Under subscrib",
+     "Anson Primary School (52) Staff Child Sibling Any Other Applicant | 168 | 55* 1 22 32 | 3446.01 5179.52 | Undersubscribed",
+     "Ark Academy (60) EHCP Staff Child Sibling Distance | 314 | 60 2 2 32 24 | 5212.34 490.03 | Oversubscribed",
+     "Ark Franklin Primary Academy (90) Children At Af Nursery Eligible For The Eypp, Pp Or Sp Sibling Distance | 349 | 90 5 38 47 | 1656.2 671.53 | Oversubscribed",
+     "Avigdor Hirsch Torah Temimah Primary School (25) Orthodox Jew And Sibling Orthodox Jew | 35 | 25 12 13 | 9166.13 13469.44 | Oversubscribed",
+     "Barham Primary School (120) Looked After Children/ Previously Looked After Sibling Any Other Applicant Nearest school with a vacancy | 234 | 111 2 44 62 3 | 254",
+     "Braintcroft E-Act Primary Academy (90) Sibling Any Other Applicants Nearest school with a vacancy | 100 | 63 27 34 2 | 1727.83 5099.32 | Undersubscribed",
+     "Brentfield Primary School (90) EHCP Staff Child Sibling Any Other Applicant | 87 | 31 1 2 17 11 | 1918.61 2685.89 | Undersubscribed",
+     "Carlton Vale Infant School (60) EHCP Sibling Any Other Applicant | 23 | 8 1 1 6 | 236.03 5084.76 | Undersubscribed",
+     "Chalkhill Primary School (60) Sibling Any Other Applicant Nearest school with a vacancy | 107 | 37 15 20 2 | 2372.28 2673.31 | Undersubscribed",
+     "Christ Church CofE Primary School (30) Sibling Any Other Applicants Nearest school with a vacancy | 27 | 9 4 2 3 | 946.25 5174.59 | Undersubscribed",
+     "Convent of Jesus and Mary RC Infant School (90) Bapt Practising Catholic, In Parish, Priest Support Sib St Mary Magdalenes Bapt Practising Catholic, In Parish, ",
+     "Donnington Primary School (30) Sibling Any Other Applicant Nearest school with a vacancy | 63 | 28 9 17 2 | 2625.96 8274.43 | Undersubscribed",
+     "East Lane Primary School (90) EHCP Sibling Distance | 376 | 120 ** 2 33 85 | 5933.99 1294.11 | Oversubscribed",
+     "Elsley Primary School (120) EHCP Sibling Any Other Applicant Nearest school with a vacancy | 154 | 58 2 26 28 2 | 2349.4 3566.93 | Undersubscribed",
+     "<table end>",
+     "<table end>",
+     "How places were offered at Brent Schools - Reception Admissions 2026",
+     "Data correct as of 16/04/2026",
+     "School / Offer Criteria (Published Admission Number, PAN) | Number of applications | Number of offers | Furthest distance offered (metres) | Over/Under subscrib",
+     "Fryent Primary School (90) Sibling Any Other Applicant | 92 | 39 24 15 | 2424.15 3108.38 | Undersubscribed",
+     "Furness Primary School (60) Sibling Distance Nearest school with a vacancy | 67 | 28 15 9 4 | 3402.9 2443.93 | Undersubscribed",
+     "Gladstone Park Primary School (90) Sibling All Other Applicants Nearest school with a vacancy | 144 | 49 26 22 1 | 4840.4 2945.63 | Undersubscribed",
+     "Harlesden Primary School (60) Social Medical Need Sibling Any Other Applicant Nearest school with a vacancy | 85 | 30 1 9 18 2 | 533.91 3413.69 | Undersubscribe",
+     "Harris Primary Academy South Kenton (150) Sibling Any Other Applicants | 80 | 40 30 10 | 6059.11 6670.38 | Undersubscribed",
+     "Islamia Primary School (60) Children of Staff Muslim Children Of At Least One Parent Who Has Converted To Islam Muslim Children Of Parents Who Are Former Pupils",
+     "John Keble CofE Primary School (60) EHCP Committed Member Of Another Anglican Church Committed Member Of Other Christian Denominations Regular Worship At A S, S",
+     "Kilburn Grange School (30) EHCP Sibling Distance | 41 | 20 1 5 14 | 4218.67 5552.86 | Undersubscribed",
+     "Kingsbury Green Primary School (90) EHCP Staff Child Sibling Any Other Applicant Nearest school with a vacancy | 141 | 47 4 1 17 23 2 | 2438.25 6325.79 | Unders",
+     "Leopold Primary School (60) Sibling Any Other Applicant | 101 | 47 24 23 | 2408.59 3716.23 | Undersubscribed",
+     "Lyon Park Primary School (120) EHCP Sibling Any Other Applicant Nearest school with a vacancy | 155 | 99 1 32 63 3 | 1214.42 3191.49 | Undersubscribed",
+     "Malorees Primary School (60) L A C And Previously L A C Sibling Any Other Applicant | 248 | 60 1 18 41 | 5439.43 1470.35 | Oversubscribed",
+     "Mitchell Brook Primary School (60) Sibling Any Other Applicant | 135 | 60 31 29 | 2703.89 757.75 | Oversubscribed",
+     "Mora Primary School (60) Sibling Any Other Applicant Nearest school with a vacancy | 126 | 51 17 33 1 | 2192.61 4601.65 | Undersubscribed",
+     "Mount Stewart Infant School (90) L A C And Previously L A C Sibling Any Other Applicant | 160 | 78 1 31 46 | 3906.66 4104.68 | Undersubscribed",
+     "<table end>",
+     "Newfield Primary School (60) 61 24 Undersubscribed",
+     "Sibling 6 2940.17"
     ]
    },
    {
@@ -316,26 +360,22 @@
     "title": "Place allocation for Primary Schools 2025",
     "rows": 79,
     "matched": 48,
-    "with_distance": 21,
+    "with_distance": 2,
     "unit": "metres",
     "year": 2025,
     "phase": "P",
     "unmatched_with_distance": [
-     "Ark Franklin Primary Academy (90) Children At Af Nursery Eligible For The Eypp, Pp Or Sp Sibling Distance | 90 3 34 53 | 5507.94 864.16 | Oversubscribed",
-     "Our Lady of Grace RC Infant and Nursery School (60) Baptised Catholic Children In The Parish Baptised Catholic Children In The Parish Sibling Baptised Catholic Children Resident In Other Parishes Bapt",
      "Sibling 29 5493.61",
      "Open Place - Reside In Deanery Of Brent 20 1644.57",
      "Church Place - Other Church, Reside In Deanery Of Brent 1 793.55",
      "Any Other Applicants 2 4022.75",
-     "Nearest school with a vacancy 1 283.3",
-     "St Joseph's RC Infant School (70) 2 Cath, Ccp, In Parish, Sibling 3 Cath,ccp, Out Of Parish,sibling 4 Cath,ccp,in Parish 4i Cath,ccp,st Erconwald's 5 Cath,ccp,out Of Parish | 70 22 1 44 2 1 | 2202.04 ",
-     "Uxendon Manor Primary School (90) Staff Child Sibling Any Other Applicant | 90 2 36 52 | 2661.5 872.56 | Oversubscribed"
+     "Nearest school with a vacancy 1 283.3"
     ],
     "sample": [
-     "Anson Primary School -> 0.632 (decimal (metres)) :: Anson Primary School (52) Sibling Any Other Applicant | 52 26 26 | 1815.86 1017.79 | Oversubscribed",
-     "Ark Academy -> 0.414 (decimal (metres)) :: Ark Academy (60) Looked After Children/ Previously Looked After Sibling Distance | 60 2 22 36 | 5325.46 666.51 | Oversubscribed",
-     "Avigdor Hirsch Torah Temimah Primary School -> 8.413 (decimal (metres)) :: Avigdor Hirsch Torah Temimah Primary School (25) Orthodox Jew And Sibling Orthodox Jew | 25 14 11 | 9082.08 13540.03 | Oversubscribed",
-     "Barham Primary School -> 0.774 (decimal (metres)) :: Barham Primary School (120) Sibling Any Other Applicant | 120 48 72 | 3079.48 1245.12 | Oversubscribed",
+     "Anson Primary School -> None (None) :: Anson Primary School (52) Sibling Any Other Applicant | 52 26 26 | 1815.86 1017.79 | Oversubscribed",
+     "Ark Academy -> None (None) :: Ark Academy (60) Looked After Children/ Previously Looked After Sibling Distance | 60 2 22 36 | 5325.46 666.51 | Oversubscribed",
+     "Avigdor Hirsch Torah Temimah Primary School -> None (None) :: Avigdor Hirsch Torah Temimah Primary School (25) Orthodox Jew And Sibling Orthodox Jew | 25 14 11 | 9082.08 13540.03 | Oversubscribed",
+     "Barham Primary School -> None (None) :: Barham Primary School (120) Sibling Any Other Applicant | 120 48 72 | 3079.48 1245.12 | Oversubscribed",
      "Braintcroft E-ACT Primary Academy -> None (all offered) :: Braintcroft E-Act Primary Academy (90) Sibling Any Other Applicants Nearest school with a vacancy | 74 26 39 9 | 4126.29 4034.52 891.94 | Un",
      "Brentfield Primary School -> None (all offered) :: Brentfield Primary School (90) Sibling Any Other Applicant Nearest school with a vacancy | 41 24 16 1 | 2002.66 2669.45 393.89 | Undersubscr",
      "Carlton Vale Infant School -> None (all offered) :: Carlton Vale Infant School (60) Sibling Any Other Applicant Nearest school with a vacancy | 9 1 7 1 | 326.26 4326.2 146.11 | Undersubscribed",
@@ -354,9 +394,6 @@
     "unit": "metres",
     "year": 2026,
     "phase": "P",
-    "unmatched_with_distance": [
-     "St Joseph's RC Junior School (70) EHCP 2i Cath, Ccp, In Parish, Yr 2 Infants 2ii Cath, Ccp, In Parish, Sibling Inf/jnr 2 Cath, Ccp, In Parish 3i Other Cath, Ccp, Yr 2 Infants | 86 | 70 1 66 1 1 1 | 32"
-    ],
     "head": [
      "How places were offered at Brent Schools - Year 3 Admission to Junior Schools 2026",
      "Data (cid:3)correct(cid:3) as(cid:3) of (cid:3)16/04/2026(cid:3)",
@@ -384,9 +421,6 @@
     "unit": "metres",
     "year": 2025,
     "phase": "P",
-    "unmatched_with_distance": [
-     "Our Lady of Grace RC Junior School EHCP Baptised Catholics Attending Ologi Baptised Catholics Resident In Other Parish Catchumens And Eastern Orthodox Church Other Children Who Are In Year 2 At Ologi "
-    ],
     "head": [
      "How places were offered - Junior 2025",
      "Data correct as of 16/04/2025",
@@ -409,13 +443,12 @@
   "errors": [],
   "fetched_pages": 1,
   "fetched_docs": 6,
-  "schools_with_cutoff": 28,
+  "schools_with_cutoff": 3,
   "schools_total": 93,
   "years": {
-   "2026": 20,
-   "2025": 8
+   "2025": 3
   },
-  "seconds": 24
+  "seconds": 21
  },
  {
   "name": "Bromley",
@@ -499,7 +532,7 @@
     "title": "Primary education in Bromley 2027/2028 PDF 7.6MB Download",
     "rows": 2378,
     "matched": 228,
-    "with_distance": 40,
+    "with_distance": 35,
     "unit": "miles",
     "year": 2023,
     "phase": "P",
@@ -535,7 +568,7 @@
     "title": "Secondary education in Bromley 2027/2028 PDF 7.94MB Download",
     "rows": 1618,
     "matched": 70,
-    "with_distance": 11,
+    "with_distance": 9,
     "unit": "miles",
     "year": 2026,
     "phase": "S",
@@ -550,8 +583,8 @@
      "30",
      "31",
      "42",
-     "Band 1 0.81 0.692 0.673 Band 1 Random Allocation",
-     "Band 2 1.202 1.763 1.354 Band 2 Random Allocation"
+     "Bullers Wood School for Boys 2 0 1.861 1.531 1.597 |  |  |  |  |  |  |  | ",
+     "Band 1 0.81 0.692 0.673 Band 1 Random Allocation"
     ],
     "sample": [
      "St Olave's and St Saviour's Grammar School -> None (None) :: 18 September 2026 St Olave’s Grammar School Stage 1 entrance test",
@@ -570,12 +603,12 @@
   "errors": [],
   "fetched_pages": 4,
   "fetched_docs": 2,
-  "schools_with_cutoff": 51,
+  "schools_with_cutoff": 44,
   "schools_total": 106,
   "years": {
-   "2026": 51
+   "2026": 44
   },
-  "seconds": 166
+  "seconds": 157
  },
  {
   "name": "Camden",
@@ -794,7 +827,7 @@
    "2026": 1,
    "2025": 9
   },
-  "seconds": 199
+  "seconds": 192
  },
  {
   "name": "Ealing",
@@ -883,8 +916,7 @@
      "4 | Distance | 172 | 154 | 18 | 0.911 of a mile (town hall) 1.764 miles (school)",
      "3 | Distance | 183 | 169 | 14 | 1.604 miles",
      "3 | Distance | 328 | 83 | 245 | 0.500 of a mile",
-     "4 | Distance | 263 | 208 | 55 | 0.731 of a mile",
-     "20 points with a sibling | 13 | 10 | 3 | 1.741 miles"
+     "4 | Distance | 263 | 208 | 55 | 0.731 of a mile"
     ],
     "sample": [
      "Ada Lovelace Church of England High School -> 0.637 (block: decimal (miles)) :: Ada Lovelace CE High School: |  |  |  |  |  … 3 | Distance | 409 | 100 | 309 | 0.637 of a mile",
@@ -910,7 +942,7 @@
   "years": {
    "2026": 7
   },
-  "seconds": 19
+  "seconds": 20
  },
  {
   "name": "Enfield",
@@ -926,7 +958,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 98,
   "years": {},
-  "seconds": 5
+  "seconds": 4
  },
  {
   "name": "Greenwich",
@@ -1128,7 +1160,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 93,
   "years": {},
-  "seconds": 7
+  "seconds": 6
  },
  {
   "name": "Hackney",
@@ -1311,18 +1343,18 @@
     "year": 2026,
     "phase": "S",
     "unmatched_with_distance": [
-     "Education, Health and Care Plan Catholic L A C Baptised Catholic Other L A C Other Christian Other Faith Distance Maximum Distance (miles) Non Preference Offers | 1 0 2 0 1 0 7 1.983 | 1 0 2 0 3 0 7 3",
-     "Education, Health and Care Plan Catholic L A C Baptised Catholic - C C P Baptised Catholic Other L A C Catechumens Other Christian Other Faith Non Faith Sibling Distance Maximum Distance (miles) Non P",
-     "Education, Health and Care Plan Looked After Child Child Protection Plan Sibling Medical/Social Children of Staff Distance Maximum Distance (miles) | 0 0 0 5 0 1 39 1.657 | 0 0 0 12 0 0 33 0.619 | 3 1",
-     "Education, Health and Care Plan Looked After Child Sibling Former Sibling Staff Distance Maximum Distance (miles) | 2 0 11 0 0 23 0.614 | 1 0 7 0 1 27 0.746 | 0 1 13 0 0 22 0.747 | 2 1 12 0 0 21 0.885",
      "Distance 39 33 25 22 119 Maximum Distance (miles) 0.614 0.746 0.747 0.885 0.758",
      "Maximum Distance (miles) 1.657 0.619 0.358 0.448 Total 36 36 36 36 36 180",
-     "Education, Health and Care Plan Looked After Child Child Protection Plan Sibling Children of staff Distance Maximum Distance (miles) Non Preference Offers | 0 0 0 7 0 25 350.7 | 1 0 0 12 0 26 5.552 | ",
-     "Education, Health and Care Plan Looked After Child Child Protection Plan (nearest) Children of staff Sibling Attends Mossbourne Riverside Distance Maximum Distance (miles) | 1 0 0 1 19 11 10 0.326 | 1",
-     "Education, Health and Care Plan Looked After Child Sibling Medical/Social Children of Staff Distance Maximum Distance (miles) Non Preference Offers | 0 0 7 0 0 10 1.7 | 1 0 10 0 0 8 1.59 | 1 0 6 0 0 1",
-     "Education, Health and Care Plan Looked After Child Child Protection Plan Medical/Social Sibling Children of staff Distance Maximum Distance (miles) | 1 0 0 0 15 1 46 7.21 | 2 1 1 0 20 1 41 0.877 | 1 0",
-     "Education, Health and Care Plan Looked After Child Child Protection Plan Sibling Children of Staff Distance Maximum Distance (miles) | 0 0 0 3 0 22 2.379 | 2 0 0 8 0 18 2.91 | 0 0 0 7 0 30 3.584 | 0 1",
-     "Education, Health and Care Plan Looked After Child Child Protection Plan Sibling City of London Residents Children of Staff Distance Maximum Distance (miles) | 0 0 0 14 0 1 30 0.799 | 1 0 0 10 0 2 32 "
+     "Maximum Distance (miles) |  | 0.293 | 2.616 | 1.386 | ",
+     "Distance Maximum Distance (miles) | 29 0.995 | 30 0.766 | 26 0.747 | 27 0.865 | 24 0.954 | 136",
+     "Medical/Social 2 2 Maximum Distance (miles) 0.995 0.766 0.747 0.865 0.954",
+     "Distance Maximum Distance (miles) Non Preference Offers | 12 1.94 | 15 6.606 | 16 1.979 | 13 1.739 | 22 2.973 | 78 5",
+     "Distance Maximum Distance (miles) | 48 1.766 | 40 1.085 | 43 0.897 | 40 1.385 | 171",
+     "Distance Maximum Distance (miles) Non Preference Offers | 10 350.77 | 18 2.696 | 27 2.135 | 25 1.51 | 22 2.257 | 102 9",
+     "Distance Maximum Distance (miles) | 29 1.122 | 29 0.754 | 24 0.792 | 18 0.482 | 100",
+     "Maximum Distance (miles) | 1.547 | 2.934 | 3.972 | 1.618 | ",
+     "Maximum Distance (miles) | 3.643 | 2.99 | 1.886 | 1.27 |  | 1.63 | 1.653 | 351.708 | ",
+     "Maximum Distance (miles) | 1.287 | 1.343 | 2.549 | 1.014 | "
     ],
     "sample": [
      "Haggerston School -> None (all offered) :: Offers at Haggerston School (PAN: 180 Applications: 617) Offers at Lubavitch Senior Girls School (PAN: 30 Applications: 14)",
@@ -1347,7 +1379,7 @@
    "2026": 37,
    "2024": 2
   },
-  "seconds": 117
+  "seconds": 111
  },
  {
   "name": "Hammersmith & Fulham",
@@ -1694,12 +1726,13 @@
     "title": "Maps of cutoff distances for secondary transfer 2026 (pdf, 6 page(s), 3.47 MB)",
     "rows": 25,
     "matched": 8,
-    "with_distance": 5,
+    "with_distance": 4,
     "unit": "miles",
     "year": 2026,
     "phase": "S",
     "unmatched_with_distance": [
-     "Alexandra Park Furthest Distance Offered 2026—0.477 miles"
+     "Alexandra Park Furthest Distance Offered 2026—0.477 miles",
+     "Highgate Wood Cut-Off Distance 2026—1.167 miles"
     ],
     "sample": [
      "Fortismere School -> 1.226 (unit in row) :: Fortismere Cut-Off Distance 2026—1.226 miles",
@@ -1707,7 +1740,7 @@
      "Greig City Academy -> 1.961 (unit in row) :: Greig City Academy Cut-Off Distance 2026—1.961 miles",
      "Greig City Academy -> None (None) :: for admission to year 7 in September 2026 at Greig City Academy.",
      "Heartlands High School -> 1.19 (unit in row) :: Heartlands High Furthest Distance Offered 2026—1.190 miles",
-     "Heartlands High School -> 1.167 (block: unit in row) :: for admission to year 7 in September 2026 at Heartlands High School. … Highgate Wood Cut-Off Distance 2026—1.167 miles",
+     "Heartlands High School -> None (None) :: for admission to year 7 in September 2026 at Heartlands High School.",
      "St Thomas More Catholic School -> 0.219 (unit in row) :: St Thomas More Catholic, Non-Faith Cut-Off Distance 2026—0.219 miles",
      "St Thomas More Catholic School -> None (None) :: for admission to year 7 in September 2026 at St Thomas More Catholic School."
     ]
@@ -1730,7 +1763,6 @@
      "Our Lady of Muswell RC | 196 | 60 |  | For full admissions details contact the school directly. |  |  |  |  | 19 | 2.4719",
      "Rokesly Inf | 224 | 60 |  |  |  | 28 |  |  | 32 | 0.4557",
      "South Harringay Inf | 181 | 60 |  | 1 |  | 23 |  |  | 36 | 0.1884",
-     "St Michael's CE (N6) | 199 | 60 |  |  | Last child offered under '7 Points' criterion. For full admissions details contact the school directly. |  |  |  |  | 0.8316",
      "Trinity | 212 | 60 |  |  |  | 18 |  | 17 | 25 | 0.4733"
     ],
     "sample": [
@@ -1752,17 +1784,13 @@
     "title": "Secondary transfer offers 2025 (pdf, 3 page(s), 65.57 KB)",
     "rows": 62,
     "matched": 15,
-    "with_distance": 1,
+    "with_distance": 0,
     "unit": "miles",
     "year": 2025,
     "phase": "S",
     "unmatched_with_distance": [
      "Alexandra Park | 1508 | 232 | 11 | 8 | 4 | 83 | 2 | 124 | 0.4991",
      "Highgate Wood | 890 | 243 | 15 | 2 | 0 | 69 | 0 | 158 | 1.0224",
-     "Band 1 | 499 | 154 | 15 | 1 | 2 | 0 | 0 | 3 | 0.2392",
-     "Band 2 |  |  |  |  | 4 | 2 |  | 4 | 0.4287",
-     "Band 4 |  |  |  |  | 7 | 1 |  | 15 | 0.6809",
-     "Band 5 |  |  |  |  | 5 | 7 |  | 19 | 1.7431",
      "Did Not Attend Banding Test |  |  |  |  | 0 | 0 |  | 0 | None offered",
      "Total |  |  |  |  | 30 | 20 |  | 88 | "
     ],
@@ -1771,12 +1799,54 @@
      "Gladesmore Community School -> None (rejected 180.00 mi) :: Gladesmore | 568 | 243 | 6 | 4 | 0 | 53 | 0 | 180 | 5.2496",
      "Greig City Academy -> None (rejected 189.00 mi) :: Greig City | 560 | 200 | 10 | 1 | 0 | n/a | n/a | 189 | 2.5562",
      "Heartlands High School -> None (rejected 147.00 mi) :: Heartlands High | 730 | 210 | 12 | 0 | 0 | 51 | n/a | 147 | 1.0298",
-     "St Thomas More Catholic School -> 3.538 (decimal (miles)) :: St. Thomas More Catholic | 595 | 219 | 3 | Last child offered under ‘Children of other Christian denominations' criterion For full admission",
+     "St Thomas More Catholic School -> None (rejected 19.00 mi) :: St. Thomas More Catholic | 595 | 219 | 3 | Last child offered under ‘Children of other Christian denominations' criterion For full admission",
      "Park View School -> None (None) :: Woodside and Park View School.",
      "Duke's Aldridge -> None (None) :: Duke's Aldridge Academy | 278 | 210 | 144 | 8 | 3 |  |  |  | 10 | 165",
      "Fortismere School -> None (None) :: Fortismere Secondary School | 1200 | 270 | 187 | 59 | 18 | 5 | 1 |  |  | 270",
      "Gladesmore Community School -> None (None) :: Gladesmore Community School | 568 | 243 | 190 | 37 | 8 | 6 | 1 | 1 |  | 243",
      "Greig City Academy -> None (None) :: Greig City Academy | 560 | 200 | 139 | 41 | 11 | 7 | 2 |  |  | 200"
+    ],
+    "head": [
+     "Secondary Transfer 2025 – How offers were made",
+     "The schools in this table received more applications than places available and this means places could not be offered to every applicant. The",
+     "table gives information about on time offers as at 3 March 2025. These figures will change if places are declined and then offered to other",
+     "pupils from the waiting list.",
+     " | On-time applications | Total places offered | Children with EHCPs | Children looked after & previously looked after | Exceptional social or medical need | Si",
+     "Alexandra Park | 1508 | 232 | 11 | 8 | 4 | 83 | 2 | 124 | 0.4991",
+     "Fortismere | 1200 | 270 | 7 | 0 | 1 | 79 | 1 | 182 | 1.1404",
+     "Gladesmore | 568 | 243 | 6 | 4 | 0 | 53 | 0 | 180 | 5.2496",
+     "Greig City | 560 | 200 | 10 | 1 | 0 | n/a | n/a | 189 | 2.5562",
+     "Heartlands High | 730 | 210 | 12 | 0 | 0 | 51 | n/a | 147 | 1.0298",
+     "Highgate Wood | 890 | 243 | 15 | 2 | 0 | 69 | 0 | 158 | 1.0224",
+     "St. Thomas More Catholic | 595 | 219 | 3 | Last child offered under ‘Children of other Christian denominations' criterion For full admissions criteria details c",
+     "<table end>",
+     "Harris Academy Tottenham | On-time applications | Total places offered | Children with EHCPs | Children looked after & previously looked after | Siblings | Chil",
+     "Band 1 | 499 | 154 | 15 | 1 | 2 | 0 | 0 | 3 | 0.2392",
+     "Band 2 |  |  |  |  | 4 | 2 |  | 4 | 0.4287",
+     "Band 3 |  |  |  |  | 5 | 1 |  | 11 | All offered",
+     "Band 4 |  |  |  |  | 7 | 1 |  | 15 | 0.6809",
+     "Band 5 |  |  |  |  | 5 | 7 |  | 19 | 1.7431",
+     "Band 6 |  |  |  |  | 5 | 5 |  | 20 | All offered",
+     "Band 7 |  |  |  |  | 1 | 3 |  | 6 | All offered",
+     "Band 8 |  |  |  |  | 1 | 1 |  | 6 | All offered",
+     "Band 9 |  |  |  |  | 0 | 0 |  | 4 | All offered",
+     "Did Not Attend Banding Test |  |  |  |  | 0 | 0 |  | 0 | None offered",
+     "Total |  |  |  |  | 30 | 20 |  | 88 | ",
+     "<table end>",
+     "Places could be offered to every applicant who applied on-time to: Duke’s Aldridge Academy, Hornsey School for Girls, Mulberry Academy",
+     "Woodside and Park View School.",
+     "<table end>",
+     "Secondary Transfer 2025 - Offers by Haringey School",
+     "Secondary Transfer Offers as at offer day 3 March 2025 (includes late & SEN applications)",
+     "School | On-Time Applications | Published Admission No. | Number of Offers by Preference |  |  |  |  |  |  | Total Places Offered",
+     " |  |  | First | Second | Third | Fourth | Fifth | Sixth | Allocations* | ",
+     "Alexandra Park School | 1508 | 232 | 227 | 4 | 1 |  |  |  |  | 232",
+     "Duke's Aldridge Academy | 278 | 210 | 144 | 8 | 3 |  |  |  | 10 | 165",
+     "Fortismere Secondary School | 1200 | 270 | 187 | 59 | 18 | 5 | 1 |  |  | 270",
+     "Gladesmore Community School | 568 | 243 | 190 | 37 | 8 | 6 | 1 | 1 |  | 243",
+     "Greig City Academy | 560 | 200 | 139 | 41 | 11 | 7 | 2 |  |  | 200",
+     "Harris Academy Tottenham | 499 | 150 | 138 | 12 | 2 | 2 |  |  |  | 154",
+     "Heartlands High School | 730 | 210 | 166 | 23 | 15 | 5 |  | 1 |  | 210"
     ]
    },
    {
@@ -1785,12 +1855,13 @@
     "title": "Maps of cutoff distances for secondary transfer 2025 (pdf, 5 page(s), 2.92 MB)",
     "rows": 20,
     "matched": 6,
-    "with_distance": 4,
+    "with_distance": 3,
     "unit": "miles",
     "year": 2025,
     "phase": "S",
     "unmatched_with_distance": [
-     "Alexandra Park Furthest Distance Offered 2025—0.4991 miles"
+     "Alexandra Park Furthest Distance Offered 2025—0.4991 miles",
+     "Highgate Wood Cut-Off Distance 2025—1.0224 miles"
     ],
     "sample": [
      "Fortismere School -> 1.14 (unit in row) :: Fortismere Cut-Off Distance 2025—1.1404 miles",
@@ -1798,7 +1869,7 @@
      "Greig City Academy -> 2.556 (unit in row) :: Greig City Academy Cut-Off Distance 2025—2.5562 miles",
      "Greig City Academy -> None (None) :: for admission to year 7 in September 2025 at Greig City Academy.",
      "Heartlands High School -> 1.03 (unit in row) :: Heartlands High Furthest Distance Offered 2025—1.0298 miles",
-     "Heartlands High School -> 1.022 (block: unit in row) :: for admission to year 7 in September 2025 at Heartlands High School. … Highgate Wood Cut-Off Distance 2025—1.0224 miles"
+     "Heartlands High School -> None (None) :: for admission to year 7 in September 2025 at Heartlands High School."
     ]
    },
    {
@@ -1817,7 +1888,6 @@
      "Bruce Grove | 96 | 30 | 1 |  |  | 7 |  |  | 22 | 0.372",
      "Noel Park | 216 | 90 |  |  |  | 33 | 2 |  | 55 | 0.6446",
      "South Harringay Inf | 192 | 60 |  |  |  | 16 | 1 |  | 43 | 0.2482",
-     "St Michael's CE (N6) | 158 | 60 |  |  | Last child offered under '4 Points' criterion. For full admissions details contact the school directly. |  |  |  |  | 0.4026",
      "Trinity | 190 | 60 |  |  |  | 23 |  | 16 | 21 | 0.4796"
     ],
     "sample": [
@@ -1839,19 +1909,13 @@
     "title": "Secondary transfer offers 2024 (pdf, 4 page(s), 86.06 KB)",
     "rows": 62,
     "matched": 15,
-    "with_distance": 1,
+    "with_distance": 0,
     "unit": "miles",
     "year": 2024,
     "phase": "S",
     "unmatched_with_distance": [
      "Alexandra Park | 1587 | 232 | 10 | 6 | 2 | 77 | 8 | 129 | 0.5267",
      "Highgate Wood | 943 | 243 | 10 | 0 | 1 | 63 | 0 | 169 | 0.9631",
-     "Band 1 | 561 | 154 | 7 | 1 | 4 | 2 | 0 | 0 | 0.7267",
-     "Band 2 |  |  |  |  | 6 | 3 |  | 1 | 0.1403",
-     "Band 3 |  |  |  |  | 5 | 5 |  | 8 | 0.8215",
-     "Band 4 |  |  |  |  | 7 | 7 |  | 11 | 0.6045",
-     "Band 5 |  |  |  |  | 2 | 6 |  | 22 | 1.3401",
-     "Band 9 |  |  |  |  | 0 | 2 |  | 4 | 1.0307",
      "Did Not Attend Banding Test |  |  |  |  | 0 | 0 |  | 0 | None offered",
      "Total |  |  |  |  | 31 | 33 |  | 82 | "
     ],
@@ -1860,12 +1924,54 @@
      "Gladesmore Community School -> None (rejected 170.00 mi) :: Gladesmore | 678 | 243 | 16 | 1 | 0 | 55 | 1 | 170 | 1.2563",
      "Greig City Academy -> None (rejected 193.00 mi) :: Greig City | 595 | 200 | 7 | 0 | 0 | n/a | n/a | 193 | 2.9270",
      "Heartlands High School -> None (rejected 183.00 mi) :: Heartlands High | 742 | 240 | 7 | 0 | 0 | 50 | n/a | 183 | 1.506",
-     "St Thomas More Catholic School -> 1.78 (decimal (miles)) :: St. Thomas More Catholic | 647 | 192 | 8 | Last child offered under ‘Children of other Christian denominations' criterion For full admission",
+     "St Thomas More Catholic School -> None (rejected 22.00 mi) :: St. Thomas More Catholic | 647 | 192 | 8 | Last child offered under ‘Children of other Christian denominations' criterion For full admission",
      "Park View School -> None (None) :: Woodside and Park View School.",
      "Duke's Aldridge -> None (None) :: Duke's Aldridge Academy | 267 | 210 | 125 | 15 | 5 | 1 |  |  | 29 | 175",
      "Fortismere School -> None (None) :: Fortismere Secondary School | 1169 | 270 | 188 | 64 | 13 | 4 | 1 |  |  | 270",
      "Gladesmore Community School -> None (None) :: Gladesmore Community School | 678 | 243 | 209 | 25 | 4 | 3 | 2 |  |  | 243",
      "Greig City Academy -> None (None) :: Greig City Academy | 595 | 200 | 142 | 33 | 16 | 7 | 1 | 1 |  | 200"
+    ],
+    "head": [
+     "Secondary Transfer 2024 – How offers were made",
+     "The schools in this table received more applications than places available and this means places could not be offered to every applicant. The",
+     "table gives information about on time offers as at 1 March 2024. These figures will change if places are declined and then offered to other",
+     "pupils from the waiting list.",
+     " | On-time applications | Total places offered | Children with EHCPs | Children looked after & previously looked after | Exceptional social or medical need | Si",
+     "Alexandra Park | 1587 | 232 | 10 | 6 | 2 | 77 | 8 | 129 | 0.5267",
+     "Fortismere | 1169 | 270 | 9 | 1 | 0 | 70 | 0 | 190 | 1.1532",
+     "Gladesmore | 678 | 243 | 16 | 1 | 0 | 55 | 1 | 170 | 1.2563",
+     "Greig City | 595 | 200 | 7 | 0 | 0 | n/a | n/a | 193 | 2.9270",
+     "Heartlands High | 742 | 240 | 7 | 0 | 0 | 50 | n/a | 183 | 1.506",
+     "Highgate Wood | 943 | 243 | 10 | 0 | 1 | 63 | 0 | 169 | 0.9631",
+     "St. Thomas More Catholic | 647 | 192 | 8 | Last child offered under ‘Children of other Christian denominations' criterion For full admissions criteria details c",
+     "<table end>",
+     "Harris Academy Tottenham | On-time applications | Total places offered | Children with EHCPs | Children looked after & previously looked after | Siblings | Chil",
+     "Band 1 | 561 | 154 | 7 | 1 | 4 | 2 | 0 | 0 | 0.7267",
+     "Band 2 |  |  |  |  | 6 | 3 |  | 1 | 0.1403",
+     "Band 3 |  |  |  |  | 5 | 5 |  | 8 | 0.8215",
+     "Band 4 |  |  |  |  | 7 | 7 |  | 11 | 0.6045",
+     "Band 5 |  |  |  |  | 2 | 6 |  | 22 | 1.3401",
+     "Band 6 |  |  |  |  | 5 | 4 |  | 13 | All offered",
+     "Band 7 |  |  |  |  | 0 | 3 |  | 15 | All offered",
+     "Band 8 |  |  |  |  | 2 | 1 |  | 8 | All offered",
+     "Band 9 |  |  |  |  | 0 | 2 |  | 4 | 1.0307",
+     "Did Not Attend Banding Test |  |  |  |  | 0 | 0 |  | 0 | None offered",
+     "Total |  |  |  |  | 31 | 33 |  | 82 | ",
+     "<table end>",
+     "Places could be offered to every applicant who applied on-time to: Duke’s Aldridge Academy, Hornsey School for Girls, Mulberry Academy",
+     "Woodside and Park View School.",
+     "<table end>",
+     "Secondary Transfer 2024 - Offers by Haringey School",
+     "Secondary Transfer Offers as at offer day 1 March 2024 (includes late & SEN applications)",
+     "School | On-Time Applications | Published Admission No. | Number of Offers by Preference |  |  |  |  |  |  | Total Places Offered",
+     " |  |  | First | Second | Third | Fourth | Fifth | Sixth | Allocations* | ",
+     "Alexandra Park School | 1587 | 232 | 228 | 3 | 1 |  |  |  |  | 232",
+     "Duke's Aldridge Academy | 267 | 210 | 125 | 15 | 5 | 1 |  |  | 29 | 175",
+     "Fortismere Secondary School | 1169 | 270 | 188 | 64 | 13 | 4 | 1 |  |  | 270",
+     "Gladesmore Community School | 678 | 243 | 209 | 25 | 4 | 3 | 2 |  |  | 243",
+     "Greig City Academy | 595 | 200 | 142 | 33 | 16 | 7 | 1 | 1 |  | 200",
+     "Harris Academy Tottenham | 561 | 150 | 131 | 16 | 5 |  | 2 |  |  | 154",
+     "Heartlands High School | 742 | 240 | 148 | 59 | 19 | 10 | 3 | 1 |  | 240"
     ]
    },
    {
@@ -1874,12 +1980,13 @@
     "title": "Maps of cutoff distances for secondary transfer 2024 (pdf, 6 page(s), 3.74 MB)",
     "rows": 24,
     "matched": 8,
-    "with_distance": 5,
+    "with_distance": 4,
     "unit": "miles",
     "year": 2024,
     "phase": "S",
     "unmatched_with_distance": [
-     "Alexandra Park Furthest Distance Offered 2024—0.5267 miles"
+     "Alexandra Park Furthest Distance Offered 2024—0.5267 miles",
+     "Highgate Wood Cut-Off Distance 2024—0.9631 miles"
     ],
     "sample": [
      "Fortismere School -> 1.153 (unit in row) :: Fortismere Cut-Off Distance 2024—1.1532 miles",
@@ -1889,7 +1996,7 @@
      "Greig City Academy -> 2.927 (unit in row) :: Greig City Academy Cut-Off Distance 2024—2.9270 miles",
      "Greig City Academy -> None (None) :: for admission to year 7 in September 2024 at Greig City Academy.",
      "Heartlands High School -> 1.506 (unit in row) :: Heartlands High Furthest Distance Offered 2024—1.5060 miles",
-     "Heartlands High School -> 0.963 (block: unit in row) :: for admission to year 7 in September 2024 at Heartlands High School. … Highgate Wood Cut-Off Distance 2024—0.9631 miles"
+     "Heartlands High School -> None (None) :: for admission to year 7 in September 2024 at Heartlands High School."
     ]
    },
    {
@@ -1898,7 +2005,7 @@
     "title": "Primary reception transfer offers 2023 (pdf, 3 page(s), 90.02 KB)",
     "rows": 124,
     "matched": 57,
-    "with_distance": 2,
+    "with_distance": 1,
     "unit": "miles",
     "year": 2024,
     "phase": "P",
@@ -1909,7 +2016,6 @@
      "Harris Philip Lane Lancasterian | 200 166 | 60 60 |  |  |  | 18 23 | 1 |  | 41 37 | 0.3447 0.4523",
      "Noel Park | 207 | 90 | 2 |  |  | 25 | 1 |  | 62 | 0.9440",
      "South Harringay Inf | 176 | 60 | 1 | 1 |  | 18 | 1 |  | 39 | 0.3089",
-     "St Michael's CE (N6) | 124 | 60 |  |  | Last child offered under '3 Points' criterion. For full admissions details contact the school directly. |  |  |  |  | 1.6315",
      "Trinity | 198 | 60 | 1 |  |  | 24 |  | 15 | 20 | 0.4367"
     ],
     "sample": [
@@ -1921,7 +2027,7 @@
      "Harris Primary Academy Coleraine Park -> None (rejected 42.00 mi) :: Harris Coleraine Park | 119 | 60 |  |  |  | 18 |  |  | 42 | 2.5762",
      "Muswell Hill Primary School -> None (rejected 40.00 mi) :: Muswell Hill | 377 | 60 | 1 |  |  | 19 |  |  | 40 | 0.4131",
      "Rhodes Avenue Primary School -> None (rejected 52.00 mi) :: Rhodes Avenue | 368 | 90 | 1 |  |  | 37 |  |  | 52 | 0.3718",
-     "St John Vianney RC Primary School -> 0.211 (decimal (miles)) :: St John Vianney RC | 79 | 30 |  | Last child offered under Distance criterion. For full admissions details contact the school directly. |  |",
+     "St John Vianney RC Primary School -> None (None) :: St John Vianney RC | 79 | 30 |  | Last child offered under Distance criterion. For full admissions details contact the school directly. |  |",
      "Stroud Green Primary School -> None (rejected 44.00 mi) :: Stroud Green | 150 | 60 |  |  |  | 15 | 1 | n/a | 44 | 0.5560"
     ]
    },
@@ -1971,7 +2077,7 @@
    "2023": 1,
    "2024": 2
   },
-  "seconds": 97
+  "seconds": 95
  },
  {
   "name": "Harrow",
@@ -2174,7 +2280,7 @@
    "2024": 1,
    "2023": 1
   },
-  "seconds": 22
+  "seconds": 19
  },
  {
   "name": "Havering",
@@ -3162,7 +3268,7 @@
    "2024": 9,
    "2023": 3
   },
-  "seconds": 128
+  "seconds": 120
  },
  {
   "name": "Hillingdon",
@@ -3392,7 +3498,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 98,
   "years": {},
-  "seconds": 30
+  "seconds": 26
  },
  {
   "name": "Hounslow",
@@ -3496,14 +3602,15 @@
     "title": "Starting school in Hounslow in September 2027 (PDF)",
     "rows": 2397,
     "matched": 125,
-    "with_distance": 13,
+    "with_distance": 12,
     "unit": null,
     "year": null,
     "phase": "P",
     "unmatched_with_distance": [
      "*last distance - 2.672 miles",
      "**last distance - 1.414 miles",
-     "Grove Road Primary School 11 1 18 - 0.487 miles 30 143 in the London Borough of Hounslow or junior • Feltham Hill Infant and Nursery School and"
+     "Grove Road Primary School 11 1 18 - 0.487 miles 30 143 in the London Borough of Hounslow or junior • Feltham Hill Infant and Nursery School and",
+     "Lionel Primary School 1 22 1 36 -2.647 miles 60 184 School linked to Strand on the Green Junior"
     ],
     "sample": [
      "Spring Grove Primary School -> None (None) :: Children with their fifth birthday between 1 January and 31 March (Spring born) | Compulsory school age from the following April: A school p",
@@ -3558,7 +3665,7 @@
    "2025": 2,
    "2026": 12
   },
-  "seconds": 100
+  "seconds": 88
  },
  {
   "name": "Islington",
@@ -3706,7 +3813,7 @@
    "2026": 21,
    "2025": 3
   },
-  "seconds": 6
+  "seconds": 5
  },
  {
   "name": "Kingston and Richmond",
@@ -3752,7 +3859,7 @@
   "years": {
    "2023": 7
   },
-  "seconds": 5
+  "seconds": 7
  },
  {
   "name": "Lambeth",
@@ -4425,12 +4532,9 @@
     "unit": "metres",
     "year": 2026,
     "phase": "S",
-    "unmatched_with_distance": [
-     "Last distance offered not inc SEN/EHCP (metres, straight line) | 5971.81"
-    ],
     "sample": [
      "La Retraite Roman Catholic Girls' School -> None (None) :: La Retraite Roman Catholic Girls' School",
-     "La Retraite Roman Catholic Girls' School -> 4.781 (block: decimal (metres)) :: La Retraite Roman Catholic Girls’ School … Last distance offered for final criteria (metres, straight line) | 7694.28"
+     "La Retraite Roman Catholic Girls' School -> 5.073 (block: decimal (metres)) :: La Retraite Roman Catholic Girls’ School … Furthest distance offered out of all catholic criteria | 8163.67"
     ]
    },
    {
@@ -4444,16 +4548,11 @@
     "year": 2026,
     "phase": "S",
     "unmatched_with_distance": [
-     "1 | 25 | 24 | 0 | 7 | 0 | 0 | 17 | 14452.70 | 1",
-     "2 | 25 | 24 | 0 | 7 | 0 | 0 | 17 | 3404.21 | 1",
-     "3 | 25 | 24 | 0 | 7 | 0 | 0 | 17 | 2295.90 | 1",
-     "4 | 25 | 24 | 1 | 4 | 0 | 0 | 19 | 3221.10 | 1",
-     "5 | 25 | 23 | 0 | 6 | 1 | 0 | 16 | 2295.9 | 2",
      "Z non ability | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "sample": [
      "Lilian Baylis Technology School -> None (None) :: Lilian Baylis Technology School",
-     "Lilian Baylis Technology School -> 0.03 (block: decimal (metres)) :: Lilian Baylis Technology School … 238 sat the test and are not bursary divide by 5 = 47.6 start point for band set-up rankings"
+     "Lilian Baylis Technology School -> 8.98 (block: column) :: Lilian Baylis Technology School … 1 | 25 | 24 | 0 | 7 | 0 | 0 | 17 | 14452.70 | 1"
     ]
    },
    {
@@ -4489,18 +4588,9 @@
     "unit": "metres",
     "year": 2026,
     "phase": "S",
-    "unmatched_with_distance": [
-     "1 | 33 | 117 - 138 | 32 | 0 | 8 | 0 | 1 | 23 | 1778.07 |  |  | 1",
-     "2 | 33 | 110 - 116 | 32 | 0 | 7 | 2 | 0 | 23 | 1538.37 |  |  | 1",
-     "3 | 32 | 103 – 109 | 31 | 0 | 8 | 0 | 0 | 23 | 1362.64 |  |  | 1",
-     "4 | 32 | 93 - 102 | 31 | 0 | 11 | 0 | 0 | 20 | 1344.22 |  |  | 1",
-     "5 | 32 | 59 - 92 | 30 | 0 | 12 | 0 | 0 | 18 | 799.86 |  |  | 2",
-     "678 sat the test and are not bursary divide by 5 = 135.6 children in each band, this start point was amended",
-     "The initial band set up was not exactly 135.6 per band, it was best fit to ensure that those with the same"
-    ],
     "sample": [
      "The Norwood School -> None (None) :: The Norwood School",
-     "The Norwood School -> 0.084 (block: decimal (metres)) :: The Norwood School … 678 sat the test and are not bursary divide by 5 = 135.6 start point for band set-up rankings"
+     "The Norwood School -> 1.105 (block: column) :: The Norwood School … 1 | 33 | 117 - 138 | 32 | 0 | 8 | 0 | 1 | 23 | 1778.07 |  |  | 1"
     ]
    },
    {
@@ -4749,12 +4839,9 @@
     "unit": "metres",
     "year": 2025,
     "phase": "S",
-    "unmatched_with_distance": [
-     "Last distance offered not inc SEN/EHCP (metres, straight line) | 5061.05"
-    ],
     "sample": [
      "La Retraite Roman Catholic Girls' School -> None (None) :: La Retraite Roman Catholic Girls' School",
-     "La Retraite Roman Catholic Girls' School -> 5.597 (block: decimal (metres)) :: La Retraite Roman Catholic Girls’ School … Last distance offered for final criteria (metres, straight line) | 9007.5"
+     "La Retraite Roman Catholic Girls' School -> 5.597 (block: decimal (metres)) :: La Retraite Roman Catholic Girls’ School … Furthest distance offered out of all catholic criteria | 9007.5"
     ]
    },
    {
@@ -4809,18 +4896,9 @@
     "unit": "metres",
     "year": 2025,
     "phase": "S",
-    "unmatched_with_distance": [
-     "1 | 33 | 117 - 138 | 30 | 0 | 6 | 1 | 0 | 23 | 2062.87 | 3",
-     "2 | 33 | 110 - 116 | 30 | 0 | 6 | 0 | 0 | 24 | 1524.01 | 3",
-     "3 | 32 | 103 – 109 | 29 | 0 | 8 | 0 | 0 | 21 | 1418.49 | 3",
-     "4 | 32 | 93 - 102 | 29 | 0 | 9 | 1 | 0 | 19 | 1150.02 | 3",
-     "5 | 32 | 59 - 92 | 29 | 0 | 14 | 1 | 0 | 14 | 902.27 | 3",
-     "661 sat the test and are not bursary divide by 5 = 132.2 children in each band, this start point was amended",
-     "The initial band set up was not exactly 132.2 per band, it was best fit to ensure that those with the same"
-    ],
     "sample": [
      "The Norwood School -> None (None) :: The Norwood School",
-     "The Norwood School -> 0.082 (block: decimal (metres)) :: The Norwood School … 661 sat the test and are not bursary divide by 5 = 132.2 start point for band set-up rankings"
+     "The Norwood School -> 1.282 (block: column) :: The Norwood School … 1 | 33 | 117 - 138 | 30 | 0 | 6 | 1 | 0 | 23 | 2062.87 | 3"
     ]
    },
    {
@@ -5037,18 +5115,11 @@
     "year": 2024,
     "phase": "S",
     "unmatched_with_distance": [
-     "1 | 25 | 23 | 0 | 2 | 0 | 0 | 22 | 8461.60 | 2",
-     "2 | 25 | 25 | 0 | 5 | 0 | 0 | 20 | 2581.36 | 0",
-     "3 | 25 | 24 | 0 | 5 | 1 | 0 | 18 | 2072.94 | 1",
-     "4 | 25 | 24 | 0 | 5 | 2 | 0 | 17 | 1031.64 | 1",
-     "5 | 25 | 23 | 0 | 2 | 1 | 0 | 20 | 1211.64 | 2",
-     "Z non ability | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0",
-     "342 sat the test and are not bursary divide by 5 = 68.4 children in each band, this start point was amended",
-     "The initial band set up was not exactly 68.4 per band, it was best fit to ensure that those with the same test"
+     "Z non ability | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0"
     ],
     "sample": [
      "Lilian Baylis Technology School -> None (None) :: Lilian Baylis Technology School",
-     "Lilian Baylis Technology School -> 0.043 (block: decimal (metres)) :: Lilian Baylis Technology School … 342 sat the test and are not bursary divide by 5 = 68.4 start point for band set-up rankings"
+     "Lilian Baylis Technology School -> 5.258 (block: column) :: Lilian Baylis Technology School … 1 | 25 | 23 | 0 | 2 | 0 | 0 | 22 | 8461.60 | 2"
     ]
    },
    {
@@ -5085,18 +5156,11 @@
     "year": 2024,
     "phase": "S",
     "unmatched_with_distance": [
-     "Bursary | 18 | n/a | 18 | 0 | 0 | 0 | 0 | 18 | 4290.87 | 0",
-     "1 | 33 | 116 - 140 | 32 | 0 | 5 | 1 | 0 | 25 | 1698.16 | 1",
-     "2 | 33 | 109 - 115 | 32 | 0 | 12 | 0 | 0 | 20 | 1233.12 | 1",
-     "3 | 32 | 100 – 108 | 31 | 1 | 7 | 0 | 0 | 23 | 1242.08 | 1",
-     "4 | 32 | 91 - 99 | 31 | 1 | 10 | 1 | 0 | 19 | 1224.56 | 1",
-     "5 | 32 | 59 - 98 | 31 | 3 | 8 | 0 | 0 | 20 | 1056.75 | 1",
-     "669 sat the test and are not bursary divide by 5 = 133.8 children in each band, this start point was amended",
-     "The initial band set up was not exactly 133.8 per band, it was best fit to ensure that those with the same"
+     "Bursary | 18 | n/a | 18 | 0 | 0 | 0 | 0 | 18 | 4290.87 | 0"
     ],
     "sample": [
      "The Norwood School -> None (None) :: The Norwood School",
-     "The Norwood School -> 0.083 (block: decimal (metres)) :: The Norwood School … 669 sat the test and are not bursary divide by 5 = 133.8 start point for band set-up rankings"
+     "The Norwood School -> 1.055 (block: column) :: The Norwood School … 1 | 33 | 116 - 140 | 32 | 0 | 5 | 1 | 0 | 25 | 1698.16 | 1"
     ]
    },
    {
@@ -5214,7 +5278,7 @@
    "2025": 4,
    "2024": 1
   },
-  "seconds": 124
+  "seconds": 128
  },
  {
   "name": "Lewisham",
@@ -5402,7 +5466,7 @@
   "years": {
    "2026": 21
   },
-  "seconds": 26
+  "seconds": 27
  },
  {
   "name": "Merton",
@@ -5481,16 +5545,13 @@
     "unmatched_with_distance": [
      "1",
      " |  |  |  |  |  |  |  |  |  |  |  |  | 381.08 |  |  | 687.90 |  |  | 2501.59 | ",
-     "St Mark’s |  |  | 30 | 115 |  |  | <5 | 0 | 0 | 0 | 13 | 714.37 | 714.37 |  |  | 1428.84",
-     "St Mark’s |  |  | 30 | 108 | <5 | 0 | 0 | 0 | 12 | 2974.99 | 2974.99 |  | 2974.99 | ",
-     "Wimbledon Chase |  |  | 90 | 360 | <5 | 0 | 0 | 0 | 28 APA | 599.35 in APA |  |  | 603.81 in APA |  |  | 1489.17 sib not in APA |  | ",
      "485.07",
      "606.40",
-     "St Mark’s |  |  | 30 | 103 | <5 | 0 | 0 | <5 | 7 | 819.52 | 819.52 |  | 819.52 | ",
      "Wimbledon Park |  |  | 90 | 345 | 0 | <5 | 0 | <5 | 38 |  | 332.04 |  |  | 369.67 |  |  | 454.93 | ",
      "514.16",
      "765.59",
-     "St Mark’s |  |  | 30 | 128 | 0 | 0 | 0 | 0 | 11 |  |  | 442.80 |  |  | 442.80 |  |  | 485.19 |  | "
+     "Wimbledon Park | 90 | 346 | 0 | <5 | 0 | 0 | 42 | 394.64 (APA) | 394.64 (APA) |  |  | 394.64 (APA)",
+     " | West |  | 30 | 124 | 124 |  | 0 | 0 | <5 | <5 | 18 |  |  | 483.86 |  |  | 487.11 | 487.11 |  | 487.11 |  | "
     ],
     "sample": [
      "Raynes Park High School -> None (all offered) ::  | Raynes Park |  | 180 | 573 | 13 | <5 | 0 | 43 |  | 0 | All applicants offered |  |  |  | ",
@@ -5516,7 +5577,7 @@
    "2025": 1,
    "2024": 4
   },
-  "seconds": 53
+  "seconds": 50
  },
  {
   "name": "Newham",
@@ -5756,7 +5817,7 @@
   "years": {
    "2026": 20
   },
-  "seconds": 73
+  "seconds": 64
  },
  {
   "name": "Redbridge",
@@ -5945,7 +6006,8 @@
     "year": 2025,
     "phase": "P",
     "unmatched_with_distance": [
-     "Distance: On time distance applications offered 0.787 miles"
+     "Distance: On time distance applications offered 0.787 miles",
+     "Other Churches Wanstead/aldersbrook 0.955"
     ],
     "sample": [
      "Redbridge Primary School -> None (None) :: Please see below for allocations to Redbridge community primary schools, academies and",
@@ -6030,7 +6092,7 @@
    "2025": 20,
    "2026": 29
   },
-  "seconds": 42
+  "seconds": 38
  },
  {
   "name": "Southwark",
@@ -6149,7 +6211,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 68,
   "years": {},
-  "seconds": 4
+  "seconds": 3
  },
  {
   "name": "Tower Hamlets",
@@ -6378,7 +6440,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 95,
   "years": {},
-  "seconds": 45
+  "seconds": 44
  },
  {
   "name": "Waltham Forest",
@@ -6544,14 +6606,18 @@
     "title": "Choose a Wandsworth Secondary School booklet",
     "rows": 3679,
     "matched": 110,
-    "with_distance": 2,
+    "with_distance": 0,
     "unit": null,
     "year": null,
     "phase": "S",
     "unmatched_with_distance": [
+     "Bolingbroke Academy Wakehurst Road, Battersea, SW11 6BF Telephone: (020) 7924 8200 info@arkbolingbrokeacademy.org www.arkbolingbrokeacademy.org Principal: Ms Claire Edis BSc (Hons), MA DFE number: 212",
      "Belleville Wix 13 1492m",
      "result of the withdrawal of successful the school week. Belleville Wix 12 3543m",
-     "prioritise applicants for admission to Honeywell 30 2352m"
+     "prioritise applicants for admission to Honeywell 30 2352m",
+     "Chestnut Grove Academy BalhamChe Chestnut Grove, lseaBr BatA telb re sr et aBr Bid Queenstow SW12 8JZ rg ie Telephone: (020) 8673 8737 Battersea Park dgeRoA alb dertBridgeRd n Nin Se tewEl artm ss RoL",
+     "onRoad Everslei ElsleyRoad am Road uQ ee EsteRoad ns G Wr ea lhv ayhe tRr oe e ro Da d RoadnSa bi RneeRoad oy enS c Hillho GSh oi wrl re ieyoG RdrAshleyCrl TaybridgeRoad o m Lava dder 9MarneyRdBStormo",
+     "Southfields Academy 333 Merton Road Wandsworth SW18 5JU Telephone: (020) 8875 2600 info@southfieldsacademy.com www.southfieldsacademy.com Principal: Ms J Valin Headteacher: Ms W Golinska DFE number: 2"
     ],
     "sample": [
      "Ashcroft Technology Academy -> None (None) :: for Ashcroft Technology",
@@ -6564,6 +6630,48 @@
      "Saint John Bosco College -> None (None) :: Technology St John Bosco College",
      "Chestnut Grove Academy -> None (None) :: Chestnut",
      "Southfields Academy -> None (None) :: Southfields"
+    ],
+    "head": [
+     "AAppppllyy bbyy",
+     "3311 OOccttoobbeerr",
+     "22002266",
+     "Choose a Wandsworth",
+     "Secondary School",
+     "A guide for admission to secondary",
+     "schools in Wandsworth in September 2027",
+     "Designed and produced by wdp@wandsworth.gov.uk",
+     "CS16 (8.26)",
+     "<table end>",
+     "Contents",
+     "Introduction 1",
+     "About this booklet 2",
+     "Before you apply 2",
+     "Choosing and applying",
+     "How and when to apply 3",
+     "The variety of schools in Wandsworth and location map 4",
+     "Section 1",
+     "The variety of school places 5",
+     "Open days and evenings 6",
+     "The transfer timetable 7",
+     "Applying for places - step by step 8-15",
+     "Frequently asked questions 16",
+     "The schools 17",
+     "Section 2 The schools - Detailed information on all the schools including",
+     "admission criteria and appeal arrangements 18-50",
+     "Admission of children already of secondary school age 51",
+     "Special schools and other information 53",
+     "Other information 54",
+     "Section 3 Children with special educational needs 55",
+     "Special Schools 56-58",
+     "Financial assistance 59",
+     "Education for 16-19 year olds 60",
+     "Section 4 The Wandsworth Year 6 Test 61",
+     "The Wandsworth Year 6 Test 61-63",
+     "Schools in other boroughs 64",
+     "If there are any further questions you want to ask, or if there is anything you do",
+     "not understand, staff in the School Admissions, Place Planning and Exclusions",
+     "team will be pleased to help you. You can contact them by:",
+     "• Telephoning: (020) 8871 7316"
     ]
    },
    {
@@ -6887,7 +6995,7 @@
    "2024": 6,
    "2023": 2
   },
-  "seconds": 182
+  "seconds": 173
  },
  {
   "name": "Westminster and Kensington & Chelsea",
@@ -6904,18 +7012,17 @@
     "year": null,
     "phase": null,
     "unmatched_with_distance": [
-     "Other Christians | 6 offers to those attending a feeder school up to a distance of 0.758 of a mile",
      "Community places | 80 offers (all Feeder School applicants offered and others offered up to 0.880 mile)",
      "Band A | 54 offers - 0 LACs, 11 siblings, 43 remaining places offered up to 1.091 miles straight-line | ",
-     "Band B | 54 offers - 1 LAC, 17 siblings, 36 remaining places offered up to 0.972 of a mile straight-line | ",
      "Band C | 54 offers - 0 LACs, 9 siblings, 45 remaining places offered up to 1.384 miles straight-line | ",
-     "Band D | 40 offers - 0 LACs, 13 siblings, 27 remaining places offered up to 0.807 of a mile straight-line | ",
      "Living within priority area | 84 offers (up to 0.716 miles straight-line distance within priority area)",
-     "Church of England Places | 24 offers (Category A - all siblings offered and up to 5.581 miles distance) | 50 offers (Category A - all siblings offered and up to 9.557 miles distance) | 24 offers (Cate",
      "Other Christian Places | 8 offers (Category A - all siblings offered and up to 3.194 miles distance) | 16 offers (Category A - all siblings offered and up to 1.993 miles distance) | 8 offers (Category",
-     "Open Places | 6 offers (siblings offered up to 3.975 miles only) | 10 offers (all siblings offered and up to 0.096 miles distance) | 3 offers (siblings offered up to 0.262 of a mile only)",
      "Distance | 139 offers up to 4.122 miles straight-line distance",
-     "Distance | 86 offers up to 0.630 of a mile straight-line distance"
+     "Distance | 86 offers up to 0.630 of a mile straight-line distance",
+     "Distance | 86 offers up to 2.090 miles shortest walking route",
+     "Any Other Applicants (Distance) | 11 offers under criterion 7 up to 0.828 miles straight-line distance",
+     "C of E Places criterion / distance | Up to 2.539 miles in criterion 2.1.2 | Up to 6.412 miles in criterion 2.1.2 | Up to 3.371 miles in criterion 2.1.2 | Up to 7.909 miles in criterion 2.1.2",
+     "Distance | 134 remaining places offered up to 3.579 miles shortest walking route"
     ],
     "sample": [
      "Westminster Academy -> None (None) :: how-places-were-offered-in-westminster-and-kensington-and-chelsea",
@@ -6984,6 +7091,6 @@
   "schools_with_cutoff": 0,
   "schools_total": 97,
   "years": {},
-  "seconds": 15
+  "seconds": 13
  }
 ]
