@@ -1,0 +1,43 @@
+name: Build school data
+
+on:
+  schedule:
+    # Weekly, Monday 05:17 UTC. Ofsted publishes monthly, GIAS daily, DfE performance/admissions yearly.
+    - cron: "17 5 * * 1"
+  workflow_dispatch:
+  push:
+    branches: [main, "claude/uk-schools-map"]
+    paths:
+      - scripts/build_school_data.py
+      - .github/workflows/build-school-data.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-school-data-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyproj==3.7.1
+      - name: Build
+        run: python3 scripts/build_school_data.py
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add schools/data
+          if git diff --cached --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+          git commit -m "Update school data ($(date -u +%Y-%m-%d))"
+          git push

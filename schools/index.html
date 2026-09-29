@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>England School Map</title>
+  <meta name="description" content="Every school in England on one map, with Ofsted ratings, exam results, admissions demand and an approximate catchment area.">
+  <link rel="stylesheet" href="vendor/leaflet.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar" aria-label="Search and filters">
+      <header class="brand">
+        <h1>England School Map</h1>
+        <p class="sub" id="dataStamp">Loading school data…</p>
+      </header>
+
+      <form id="postcodeForm" class="search" autocomplete="off">
+        <label for="postcode" class="lbl">Find schools near</label>
+        <div class="row">
+          <input id="postcode" name="postcode" type="text" inputmode="text" placeholder="Postcode, e.g. SW1A 1AA" aria-describedby="postcodeMsg">
+          <button type="submit">Go</button>
+        </div>
+        <p id="postcodeMsg" class="msg" role="status"></p>
+      </form>
+
+      <div class="search">
+        <label for="nameSearch" class="lbl">Or search by school name</label>
+        <input id="nameSearch" type="search" placeholder="School name or URN" list="nameResults">
+        <ul id="nameResults" class="results" role="listbox"></ul>
+      </div>
+
+      <details class="filters" open>
+        <summary>Filters</summary>
+        <fieldset>
+          <legend>Phase</legend>
+          <div class="chips" id="phaseChips"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Ofsted (latest graded judgement)</legend>
+          <div class="chips" id="ofstedChips"></div>
+        </fieldset>
+        <fieldset>
+          <legend>Sector</legend>
+          <div class="chips" id="sectorChips"></div>
+        </fieldset>
+        <fieldset class="toggles">
+          <label><input type="checkbox" id="fGrammar"> Grammar (selective) only</label>
+          <label><input type="checkbox" id="fNoFaith"> Exclude faith schools</label>
+          <label><input type="checkbox" id="fMixed"> Mixed (co-ed) only</label>
+        </fieldset>
+      </details>
+
+      <div class="colourBy">
+        <label for="colourBy" class="lbl">Colour dots by</label>
+        <select id="colourBy">
+          <option value="ofsted">Ofsted judgement</option>
+          <option value="ks2">KS2: % meeting expected standard (reading, writing &amp; maths)</option>
+          <option value="ks4">KS4: Attainment 8 score</option>
+          <option value="ks5">16–18: A level average grade</option>
+          <option value="demand">Demand: first preferences per place</option>
+        </select>
+        <div id="legend" class="legend" aria-live="polite"></div>
+      </div>
+
+      <p id="countLine" class="count"></p>
+
+      <section id="nearby" class="nearby" hidden>
+        <h2>Nearest matching schools</h2>
+        <ol id="nearbyList"></ol>
+      </section>
+
+      <footer class="foot">
+        <a href="#" id="aboutLink">About the data &amp; caveats</a>
+      </footer>
+    </aside>
+
+    <main id="mapWrap">
+      <div id="map" role="application" aria-label="Map of schools"></div>
+      <button id="toggleSidebar" class="fab" aria-controls="sidebar" aria-expanded="true">Filters</button>
+    </main>
+
+    <aside id="panel" aria-label="School details" hidden>
+      <button id="closePanel" class="close" aria-label="Close details">×</button>
+      <div id="panelBody"></div>
+    </aside>
+  </div>
+
+  <dialog id="about">
+    <article>
+      <h2>About the data</h2>
+      <p>Everything here comes from official open data published by the Department for Education and Ofsted, rebuilt automatically each week. The sources are:</p>
+      <ul id="sourceList"></ul>
+      <h3>Ofsted ratings</h3>
+      <p>Ofsted stopped giving single-word overall judgements in September 2024, and since November 2025 inspections produce <em>report cards</em> graded across several areas. The dot colour uses the most recent <strong>overall effectiveness</strong> judgement a school has received, which may be several years old. The school panel shows the date, the newer sub-judgements and any report-card grades, so check those before relying on the colour.</p>
+      <h3>Catchment areas</h3>
+      <p>England has no national catchment dataset. Most oversubscribed schools admit on distance, and the effective catchment moves each year with demand. The “approximate catchment” shown is the area that is closer to this school than to any other state school of the same phase (a Voronoi cell). It is a rough guide only. Faith, selective and independent schools usually don’t admit primarily on distance. Always check the local authority’s admissions booklet, which lists the last distance offered.</p>
+      <h3>Admissions</h3>
+      <p>Demand figures come from DfE “Primary and secondary school applications and offers”. They show how many families put the school as first preference compared with the number of offers made at the normal point of entry (Reception or Year 7).</p>
+      <h3>Performance</h3>
+      <p>Exam results come from the DfE school performance tables (“Compare school and college performance”). Small cohorts are suppressed by DfE. There are no KS2 or KS4 progress scores for recent years, because the pandemic cancelled the baseline assessments they depend on.</p>
+      <form method="dialog"><button>Close</button></form>
+    </article>
+  </dialog>
+
+  <script src="vendor/leaflet.js"></script>
+  <script src="vendor/d3-delaunay.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
