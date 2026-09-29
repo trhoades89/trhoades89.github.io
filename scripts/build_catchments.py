@@ -149,25 +149,38 @@ def page_title(text):
 # ------------------------------------------------------------------ document -> rows
 
 def rows_from_pdf(raw):
+    """Table rows and the text around them, in reading order (headings often sit above their table)."""
     import pdfplumber
     rows = []
     with pdfplumber.open(io.BytesIO(raw)) as pdf:
         for page in pdf.pages[:80]:
-            tables = page.extract_tables() or []
-            got = False
+            items = []  # (top, [cells]) in page order
+            try:
+                tables = page.find_tables()
+            except Exception:
+                tables = []
+            boxes = []
             for t in tables:
-                for r in t:
-                    cells = [" ".join((c or "").split()) for c in r]
-                    if any(cells):
-                        rows.append(cells)
-                        got = True
-                rows.append(["<table end>"])
-            if not got:
-                text = page.extract_text() or ""
-                for line in text.splitlines():
-                    if line.strip():
-                        rows.append([c.strip() for c in re.split(r"\s{2,}|\t", line) if c.strip()] or [line])
-                rows.append(["<table end>"])
+                boxes.append(t.bbox)
+                body = [[" ".join((c or "").split()) for c in r] for r in (t.extract() or [])]
+                body = [r for r in body if any(r)]
+                if body:
+                    items.append((t.bbox[1], body + [["<table end>"]]))
+            try:
+                lines = page.extract_text_lines()
+            except Exception:
+                lines = [{"text": ln, "top": 0, "x0": 0, "x1": 0, "bottom": 0} for ln in (page.extract_text() or "").splitlines()]
+            for ln in lines:
+                cx, cy = (ln.get("x0", 0) + ln.get("x1", 0)) / 2, (ln.get("top", 0) + ln.get("bottom", 0)) / 2
+                if any(x0 <= cx <= x1 and y0 <= cy <= y1 for x0, y0, x1, y1 in boxes):
+                    continue  # already captured as part of a table
+                text = ln.get("text", "").strip()
+                if text:
+                    cells = [c.strip() for c in re.split(r"\s{2,}|\t", text) if c.strip()] or [text]
+                    items.append((ln.get("top", 0), [cells]))
+            for _, rs in sorted(items, key=lambda it: it[0]):
+                rows.extend(rs)
+            rows.append(["<table end>"])
     return rows
 
 
@@ -334,7 +347,7 @@ METRES_DEC = re.compile(r"\d{2,5}\.\d{1,2}")
 YEAR_CELL = re.compile(r"(?<!\d)(20[12]\d)(?!\d)|^(?:NOD\s*)?(\d{2})\s*/\s*\d{2}$")
 LABEL_RX = re.compile(r"^\s*(band|criteri|crit\b|distance|any other|other|remaining|community|open|catchment|"
                       r"non.?sibling|all other|general|random|priority|last|furthest|offered|places?|oversub|"
-                      r"[A-E]\b|\d(\.\d)?\b|tier|inner|outer|zone|nearest|home|local)", re.I)
+                      r"[A-E]\b|\d(\.\d)?\b|20[12]\d\b|tier|inner|outer|zone|nearest|home|local)", re.I)
 SIBLING_RX = re.compile(r"sibling", re.I)
 FEEDER_RX = re.compile(r"feeder|attending|attends|linked (infant|junior)|children (at|from) ", re.I)
 FAITH_RX = re.compile(r"faith|catholic|baptis|church|practis|religio|sikh|jewish|muslim|hindu|christian|parish|worship|"
@@ -493,10 +506,13 @@ def choose_block(lines):
     Sibling and faith-priority lines are ignored when other lines exist; among the rest, prefer lines
     that name distance/other applicants/bands and take the widest (bands each have their own cut-off).
     """
+    newest = max((x[3] for x in lines if x[3]), default=None)
+    if newest:  # "previous years" tables: one line per year under each school
+        lines = [x for x in lines if x[3] == newest]
     pool = [x for x in lines if not SIBLING_RX.search(x[2]) or re.search(r"non.?sibling", x[2], re.I)] or lines
     pool = [x for x in pool if not FAITH_RX.search(x[2])] or pool
     pool = [x for x in pool if PREFER_RX.search(x[2])] or pool
-    return max(pool, key=lambda x: x[0])
+    return max(pool, key=lambda x: x[0])[:3] + (newest,)
 
 
 def process_doc(rows, matcher, title, url, borough, context=""):
@@ -530,8 +546,8 @@ def process_doc(rows, matcher, title, url, borough, context=""):
         if cur:
             urn, head, lines, _, all_off = cur
             if lines:
-                mi, how, text = choose_block(lines)
-                add(urn, mi, f"block: {how}", f"{head} … {text}", None)
+                mi, how, text, ly = choose_block(lines)
+                add(urn, mi, f"block: {how}", f"{head} … {text}", ly)
             elif all_off:
                 add(urn, None, "all offered", head, None)
             else:
@@ -571,15 +587,16 @@ def process_doc(rows, matcher, title, url, borough, context=""):
         if urn is None:
             # Year sub-heading ("2026", "Offers made in April 2025") inside multi-year documents
             ym = re.search(r"(?<!\d)(20[12]\d)(?!\d)", text)
-            if ym and mi is None and len(text) <= 80 and int(ym.group(1)) <= THIS_YEAR:
+            if ym and mi is None and len(text) <= 80 and int(ym.group(1)) <= THIS_YEAR and not cur:
                 flush()
                 section_year = int(ym.group(1))
                 continue
             first = next((c for c in cells if c.strip()), "")
             label_like = LABEL_RX.match(first) or len([c for c in cells if c.strip()]) <= 2
-            if cur and label_like and cur[3] < 25:
+            if cur and label_like and cur[3] < 40:
                 if mi is not None:
-                    cur[2].append((mi, how, text))
+                    ly = re.match(r"\s*(20[12]\d)\b", first)
+                    cur[2].append((mi, how, text, int(ly.group(1)) if ly else None))
                 elif how == "all offered":
                     cur = (cur[0], cur[1], cur[2], cur[3], True)
                 cur = (cur[0], cur[1], cur[2], cur[3] + 1, cur[4])
@@ -661,6 +678,8 @@ def crawl_borough(fx, b, matcher):
                     continue
                 title = page_title(text) or why
                 rows, links, page_text = rows_from_html(text)
+                if len(page_text.splitlines()) < 5:
+                    report["errors"].append(f"{url}: page is empty without JavaScript (or behind a bot check)")
                 # Interactive maps (e.g. Greenwich) keep their figures in a script or JSON file beside the page.
                 if re.search(r"catchment|radius|offers.?map|distance", url + " " + title, re.I):
                     for src in re.findall(r'<script[^>]+src=["\']([^"\']+)', text, re.I)[:8]:
@@ -718,12 +737,15 @@ def crawl_borough(fx, b, matcher):
     return results, report
 
 
+MIN_YEAR = THIS_YEAR - 3  # older cut-offs say little about today's demand
+
+
 def pick_best(records):
     """One record per (urn, entry): newest year, then from the document with most matches, with a distance."""
     doc_matches = collections.Counter(r["src"] for r in records if r["mi"] is not None)
     best = {}
     for r in records:
-        if r["mi"] is None:
+        if r["mi"] is None or (r["year"] is not None and r["year"] < MIN_YEAR):
             continue
         key = (r["urn"], r["entry"])
         rank = (r["year"] or 0, doc_matches[r["src"]])
