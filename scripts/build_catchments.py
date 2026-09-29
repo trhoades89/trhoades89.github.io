@@ -292,6 +292,12 @@ class Matcher:
         self.denoms = {s["urn"]: set(norm_tokens(s["name"])) & DENOMS for s in schools}
         self.by_urn = {s["urn"]: s for s in schools}
 
+    def distinct(self, text):
+        """How many different schools a line names (headings that name two are ambiguous)."""
+        r = " " + " ".join(core(norm_tokens(text))) + " "
+        hits = {frozenset(u) for a, u in self.aliases.items() if len(a) >= 5 and f" {a} " in r}
+        return len(hits)
+
     def match(self, text, phase=None):
         toks = norm_tokens(text)
         r = " " + " ".join(core(toks)) + " "
@@ -330,6 +336,7 @@ LABEL_RX = re.compile(r"^\s*(band|criteri|crit\b|distance|any other|other|remain
                       r"non.?sibling|all other|general|random|priority|last|furthest|offered|places?|oversub|"
                       r"[A-E]\b|\d(\.\d)?\b|tier|inner|outer|zone|nearest|home|local)", re.I)
 SIBLING_RX = re.compile(r"sibling", re.I)
+FEEDER_RX = re.compile(r"feeder|attending|attends|linked (infant|junior)|children (at|from) ", re.I)
 FAITH_RX = re.compile(r"faith|catholic|baptis|church|practis|religio|sikh|jewish|muslim|hindu|christian|parish|worship|"
                       r"bursary|music|aptitude|sport|scholarship|nursery|feeder|staff|medical|social|looked after|ehcp|send\b", re.I)
 PREFER_RX = re.compile(r"distance|any other|other applicant|remaining|community|open|band|last|furthest|general|all other", re.I)
@@ -418,7 +425,10 @@ def distance_from_row(cells, col, col_unit, hint, year_cols=None):
         if v is not None:
             return v, "column", None
     # 3) Any value written with a unit in the row (use the last one: tables put the cut-off last)
-    ms = [m for m in UNIT_RX.finditer(text) if not SIBLING_RX.search(text[max(0, m.start() - 40):m.start()])]
+    ms = [m for m in UNIT_RX.finditer(text)
+          if not SIBLING_RX.search(text[max(0, m.start() - 40):m.start()])
+          and not re.search(r"within\s+(a\s+)?$|up to\s+a\s+$", text[max(0, m.start() - 12):m.start()], re.I)
+          and not re.match(r"\s*(radius|catchment)", text[m.end():m.end() + 12], re.I)]
     if ms:
         m = ms[-1]
         return to_miles(float(m.group(1).replace(",", ".")), m.group(2)), "unit in row", None
@@ -428,7 +438,7 @@ def distance_from_row(cells, col, col_unit, hint, year_cols=None):
         vals = [float(t) for t in toks if MILES_DEC.fullmatch(t)]
         if vals:
             return to_miles(vals[-1], hint or "miles"), f"decimal ({hint or 'assumed miles'})", None
-    if hint in ("metres", None):
+    if True:  # a 2-decimal figure of 20+ can only be metres, whatever units the rest of the document uses
         vals = [float(t) for t in toks if METRES_DEC.fullmatch(t) and float(t) >= 20]
         if vals:
             return to_miles(vals[-1], "metres"), "decimal (metres)", None
@@ -545,6 +555,8 @@ def process_doc(rows, matcher, title, url, borough, context=""):
             continue
         text = " | ".join(cells)
         urn = matcher.match(text, phase)
+        if urn is not None and (FEEDER_RX.search(text) or matcher.distinct(text) > 1):
+            urn = None  # "attending Millbank (feeder school)" or two schools side by side: not a heading
         # Header rows: a distance column, or one column per year
         yc = year_columns(cells)
         h_col, h_unit = header_info(cells)
