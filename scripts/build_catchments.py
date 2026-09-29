@@ -447,10 +447,12 @@ def distance_from_row(cells, col, col_unit, hint, year_cols=None):
         return to_miles(float(m.group(1).replace(",", ".")), m.group(2)), "unit in row", None
     # 4) Bare decimals: 0.532 style in miles/km documents, 1234.56 style in metres documents.
     #    Not in prose or near test-score wording, where numbers are scores, averages or counts.
-    def numeric_cell(c):
-        return len(re.findall(r"[A-Za-z]{3,}", c)) <= 2 and not re.search(
-            r"score|test|candidate|\bsat\b|points|mark|divide|average|ratio|%", c, re.I)
-    toks = [t for c in cells if numeric_cell(c) for t in c.split()]
+    #    Judge each number by the words just before it: scores, averages and sums sit next to that wording.
+    toks = []
+    for m in re.finditer(r"(?<![\d.])\d{1,5}\.\d{1,4}(?![\d.])", text):
+        before = text[max(0, m.start() - 60):m.start()]
+        if not re.search(r"score|test|candidate|\bsat\b|points|mark|divide|average|ratio|%|=", before, re.I):
+            toks.append(m.group(0))
     if hint in ("miles", "km", None):
         vals = [float(t) for t in toks if MILES_DEC.fullmatch(t)]
         if vals:
@@ -536,6 +538,8 @@ def process_doc(rows, matcher, title, url, borough, context=""):
 
     def add(urn, mi, how, row, y):
         school = matcher.by_urn[urn]
+        if school.get("sel") and mi is not None and not how.replace("block: ", "").startswith(("unit", "column")):
+            how, mi = "grammar school: needs an explicit distance", None
         entry = entry_for(school, phase)
         if entry is None or (phase == "S" and school["ph"] == "P") or (phase == "P" and school["ph"] == "S"):
             return
@@ -771,7 +775,7 @@ def main():
     by_la = collections.defaultdict(list)
     for r in data["rows"]:
         if r[c["sec"]] in ("m", "a"):  # state schools only; independents don't publish cut-offs
-            by_la[int(r[c["la"]])].append({"urn": r[c["urn"]], "name": r[c["name"]], "ph": r[c["ph"]]})
+            by_la[int(r[c["la"]])].append({"urn": r[c["urn"]], "name": r[c["name"]], "ph": r[c["ph"]], "sel": r[c["sel"]]})
 
     fx = Fetcher(args.cache)
     all_best, reports = [], []
