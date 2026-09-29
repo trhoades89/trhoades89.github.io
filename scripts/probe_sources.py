@@ -1,21 +1,21 @@
 """Temporary: print the shape of each upstream data source so the build script can target it."""
-import csv, datetime, io, json, re, sys, urllib.request, zipfile
+import csv, datetime, io, json, re, sys, urllib.request, urllib.parse, zipfile
 
-UA = {"User-Agent": "Mozilla/5.0 (school-map data probe)"}
+UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36",
+      "Accept": "text/html,application/json,*/*", "Accept-Language": "en-GB,en;q=0.9"}
 
 def get(url, binary=False):
     req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=120) as r:
+    with urllib.request.urlopen(req, timeout=180) as r:
         data = r.read()
         return data if binary else data.decode("utf-8", "replace")
 
-def show_csv(raw, label, n=2):
-    text = raw.decode("cp1252", "replace") if isinstance(raw, bytes) else raw
+def show_csv(raw, label, n=2, skip=0):
+    text = raw.decode("utf-8-sig", "replace") if isinstance(raw, bytes) else raw
     rows = list(csv.reader(io.StringIO(text)))
     print(f"--- {label}: {len(rows)} rows")
-    print("HEADERS:", rows[0])
-    for r in rows[1:1 + n]:
-        print("ROW:", r)
+    for r in rows[:2 + n]:
+        print("ROW:", r[:120])
 
 def section(t):
     print("\n" + "=" * 20, t, "=" * 20, flush=True)
@@ -26,63 +26,94 @@ def safe(fn):
     except Exception as e:
         print("ERROR", type(e).__name__, e)
 
-def gias():
-    section("GIAS")
-    for i in range(0, 6):
-        d = (datetime.date.today() - datetime.timedelta(days=i)).strftime("%Y%m%d")
-        url = f"https://ea-edubase-api-prod.azurewebsites.net/edubase/downloads/public/edubasealldata{d}.csv"
-        try:
-            raw = get(url, binary=True)
-            print("OK", url, len(raw))
-            show_csv(raw, "gias", 1)
-            return
-        except Exception as e:
-            print("miss", url, e)
-
 def ofsted():
-    section("OFSTED gov.uk content api")
-    for slug in ["government/statistical-data-sets/monthly-management-information-ofsteds-school-inspections-outcomes"]:
-        j = json.loads(get("https://www.gov.uk/api/content/" + slug))
-        atts = j.get("details", {}).get("attachments", [])
-        print("attachments:", len(atts))
-        for a in atts[:15]:
-            print(" ", a.get("title"), "|", a.get("url"), "|", a.get("content_type"))
-        docs = j.get("links", {}).get("documents", [])
-        for dct in docs[:5]:
-            print(" doc:", dct.get("title"), dct.get("base_path"))
-        csvs = [a for a in atts if str(a.get("url", "")).lower().endswith(".csv")]
-        for a in csvs[:3]:
-            safe(lambda: show_csv(get(a["url"], binary=True), a.get("title"), 2))
+    section("OFSTED")
+    j = json.loads(get("https://www.gov.uk/api/content/government/statistical-data-sets/monthly-management-information-ofsteds-school-inspections-outcomes"))
+    atts = j.get("details", {}).get("attachments", [])
+    recent = [a for a in atts if re.search(r"202[4-6]", a.get("title", ""))]
+    for a in recent[:40]:
+        print(" ", a.get("title"), "|", a.get("url"), "|", a.get("content_type"), "|", a.get("id"))
+    print("first 3 raw keys:", list(atts[0].keys()))
+    print("links keys:", list(j.get("links", {}).keys()))
+    for k, v in j.get("links", {}).items():
+        for x in v[:8]:
+            print("  link", k, x.get("title"), x.get("base_path"))
+    body = j.get("details", {}).get("body", "")
+    print("BODY excerpt:", re.sub(r"\s+", " ", re.sub("<[^>]+>", " ", body))[:1500])
+    csvs = [a for a in recent if str(a.get("url", "")).lower().endswith(".csv")]
+    for a in csvs[:2]:
+        safe(lambda: show_csv(get(a["url"], binary=True), a.get("title"), 3))
 
-def ees():
-    section("EES")
+def ees_content():
+    section("EES content api variants")
     base = "https://content.explore-education-statistics.service.gov.uk/api"
-    for slug in ["secondary-and-primary-school-applications-and-offers", "key-stage-4-performance",
-                 "key-stage-2-attainment", "a-level-and-other-16-to-18-results", "school-performance-tables",
-                 "schools-pupils-and-their-characteristics"]:
-        print("\n## ", slug)
+    slug = "secondary-and-primary-school-applications-and-offers"
+    for path in [f"/publications/{slug}", f"/publications/{slug}/releases/latest", f"/publications/{slug}/releases",
+                 f"/publications/{slug}/release-series", f"/publications/{slug}/releases/latest/summary",
+                 f"/publications/{slug}/summary", f"/publications/{slug}/title", f"/publications/{slug}/releases/latest/files"]:
         try:
-            j = json.loads(get(f"{base}/publications/{slug}/releases/latest"))
+            t = get(base + path)
+            print("OK", path, len(t), t[:600])
         except Exception as e:
-            print("ERR", e); continue
-        print("keys:", list(j.keys())[:40])
-        print("id:", j.get("id"), "title:", j.get("title"), "slug:", j.get("slug"))
-        for f in j.get("downloadFiles", [])[:40]:
-            print("  file:", f.get("id"), "|", f.get("fileName"), "|", f.get("name"), "|", f.get("size"))
+            print("ERR", path, e)
+    try:
+        html = get(f"https://explore-education-statistics.service.gov.uk/find-statistics/{slug}")
+        print("find-statistics html", len(html))
+        m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', html, re.S)
+        if m:
+            nd = json.loads(m.group(1))
+            s = json.dumps(nd)
+            print("NEXT_DATA len", len(s))
+            for mm in re.finditer(r'"(id|releaseId|fileName|name|dataSetFileId|subjectId)":\s*"([^"]{1,120})"', s):
+                pass
+            print(s[:3000])
+        else:
+            print("no NEXT_DATA; links:", sorted(set(re.findall(r'href="([^"]*(?:download|files|data-catalogue|releases)[^"]*)"', html)))[:60])
+            print("uuids:", sorted(set(re.findall(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}', html)))[:40])
+    except Exception as e:
+        print("ERR find-statistics", e)
 
 def ees_api():
-    section("EES public API")
-    for q in ["applications and offers", "key stage 4", "key stage 2", "16 to 18"]:
-        safe(lambda: print(q, "=>", [(p["id"], p["title"], p["slug"]) for p in json.loads(get(
-            "https://api.education.gov.uk/statistics/v1/publications?search=" + urllib.parse.quote(q))).get("results", [])][:8]))
+    section("EES public API data sets")
+    base = "https://api.education.gov.uk/statistics/v1"
+    pubs = {}
+    page = 1
+    while True:
+        j = json.loads(get(f"{base}/publications?page={page}&pageSize=40"))
+        for p in j["results"]:
+            pubs[p["slug"]] = p["id"]
+        if page >= j["paging"]["totalPages"]:
+            break
+        page += 1
+    print("publications with API data:", len(pubs))
+    for s in sorted(pubs):
+        print("  pub", s)
+    for slug in ["key-stage-4-performance", "key-stage-2-attainment", "a-level-and-other-16-to-18-results",
+                 "secondary-and-primary-school-applications-and-offers", "school-pupils-and-their-characteristics"]:
+        if slug not in pubs:
+            print("NOT IN API:", slug); continue
+        j = json.loads(get(f"{base}/publications/{pubs[slug]}/data-sets?pageSize=40"))
+        print("\n##", slug)
+        for d in j["results"]:
+            lv = d.get("latestVersion", {})
+            print("  ds", d["id"], "|", d["title"], "|", lv.get("version"), "|", lv.get("geographicLevels"), "|", lv.get("timePeriods"))
 
 def cscp():
     section("Compare school performance")
-    html = get("https://www.compare-school-performance.service.gov.uk/download-data")
-    print(len(html))
-    for m in sorted(set(re.findall(r'(?:href|action|value|name)="([^"]{1,200})"', html)))[:200]:
-        print(" ", m)
+    for url in ["https://www.compare-school-performance.service.gov.uk/download-data",
+                "https://www.compare-school-performance.service.gov.uk/",
+                "https://www.find-school-performance-data.service.gov.uk/",
+                "https://www.compare-school-performance.service.gov.uk/download-data?download=true&regions=0&filters=KS2&fileformat=csv&year=2023-2024&meta=false"]:
+        try:
+            req = urllib.request.Request(url, headers=UA)
+            with urllib.request.urlopen(req, timeout=60) as r:
+                b = r.read()
+                print("OK", url, r.status, r.headers.get("content-type"), len(b), r.geturl())
+                print(b[:300])
+        except urllib.error.HTTPError as e:
+            print("HTTP", url, e.code, dict(e.headers).get("Server"), e.read()[:300])
+        except Exception as e:
+            print("ERR", url, e)
 
-import urllib.parse
-for f in [gias, ofsted, ees, ees_api, cscp]:
+for f in [ofsted, ees_content, ees_api, cscp]:
     safe(f)
