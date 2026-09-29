@@ -20,6 +20,7 @@ import argparse
 import collections
 import csv
 import datetime as dt
+import http.cookiejar
 import io
 import json
 import math
@@ -59,10 +60,11 @@ def log(*a):
 class Fetcher:
     def __init__(self, cache_dir=None):
         self.cache_dir = cache_dir
+        self.opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
         if cache_dir:
             os.makedirs(cache_dir, exist_ok=True)
 
-    def get(self, url, tries=3):
+    def get(self, url, tries=3, timeout=300):
         key = None
         if self.cache_dir:
             key = os.path.join(self.cache_dir, re.sub(r"[^A-Za-z0-9._-]+", "_", url)[-180:])
@@ -73,7 +75,7 @@ class Fetcher:
         for attempt in range(tries):
             try:
                 req = urllib.request.Request(url, headers=UA)
-                with urllib.request.urlopen(req, timeout=300) as r:
+                with self.opener.open(req, timeout=timeout) as r:
                     data = r.read()
                 if key:
                     with open(key, "wb") as f:

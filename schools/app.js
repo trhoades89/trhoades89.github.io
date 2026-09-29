@@ -42,6 +42,7 @@
     selected: null,
     home: null,          // {lat,lng,label}
     detailCache: new Map(),
+    cutoffs: {},         // urn -> council-published last distance offered records (where collected)
   };
 
   // ---------- Map ----------
@@ -263,6 +264,22 @@
     return g(a) === g(b) || (b === "A" && (a === "P" || a === "S"));
   }
 
+  // Council-published "last distance offered" figures for a school, most relevant entry first.
+  function cutoffsFor(s) {
+    const recs = state.cutoffs[s.urn] || [];
+    const order = { "Reception": 0, "Year 3": 1, "Year 7": 2 };
+    return recs.slice().sort((a, b) => (s.ph === "S" ? -1 : 1) * ((order[a.entry] ?? 3) - (order[b.entry] ?? 3)));
+  }
+  const MI_M = 1609.344;
+  const fmtMi = (mi) => `${mi.toFixed(2)} mi (${Math.round(mi * MI_M).toLocaleString()} m)`;
+  const isStraight = (r) => /straight/i.test(r.basis || "");
+  function homeVsCutoff(s, r) {
+    if (!state.home) return null;
+    const mi = distKm(state.home, s) * 0.621371;
+    if (!isStraight(r)) return { mi, inside: null };
+    return { mi, inside: mi <= r.mi };
+  }
+
   // ---------- Details panel ----------
   async function loadDetail(s) {
     if (!state.detailCache.has(s.la)) {
@@ -329,7 +346,7 @@
   function body(s, d) {
     const out = [];
     out.push(`<div class="actions">
-      <button type="button" id="btnCatch" class="secondary">Show approximate catchment</button>
+      <button type="button" id="btnCatch" class="secondary">${cutoffsFor(s).length ? "Show catchment (last distance offered)" : "Show approximate catchment"}</button>
       ${d.web ? `<a class="btn" href="${esc(webUrl(d.web))}" target="_blank" rel="noopener">School website</a>` : ""}
       <a class="btn" href="https://get-information-schools.service.gov.uk/Establishments/Establishment/Details/${s.urn}" target="_blank" rel="noopener">GIAS record</a>
     </div><div id="catchNote"></div>`);
@@ -359,6 +376,24 @@
         <p><a href="https://reports.ofsted.gov.uk/search?q=${s.urn}" target="_blank" rel="noopener">Search Ofsted reports</a>${d.inspectorate && /ISI|Independent Schools Inspectorate/i.test(d.inspectorate) ? ` · <a href="https://www.isi.net/" target="_blank" rel="noopener">Independent Schools Inspectorate</a>` : ""}</p></section>`);
     } else {
       out.push(`<section class="sec"><h3>Ofsted</h3><p class="muted">No published inspection yet under this URN, which is common for new schools and academy conversions.</p></section>`);
+    }
+
+    // Council cut-off distances
+    const cuts = cutoffsFor(s);
+    if (cuts.length) {
+      out.push(`<section class="sec"><h3>Catchment: last distance offered</h3>${cuts.map((r) => {
+        const hv = homeVsCutoff(s, r);
+        const you = !hv ? "" : hv.inside === null
+          ? `<p class="muted">Your postcode is ${hv.mi.toFixed(2)} mi away in a straight line. The council measures by ${esc(r.basis)}, which is usually longer.</p>`
+          : `<p class="${hv.inside ? "ok" : "warn"}">${hv.inside ? "✓ Inside" : "✗ Outside"} the ${esc(r.year || "")} cut-off: your postcode is ${hv.mi.toFixed(2)} mi away.</p>`;
+        // Fewer applications (any preference) than places means everyone who applied got in.
+        const spare = d.adm && d.adm.any != null && d.adm.offers != null && d.adm.any < d.adm.offers;
+        const loose = spare || r.mi > (r.entry === "Year 7" ? 5 : 3);
+        return `<h4>${esc(r.entry)}${r.year ? ` · offers in ${esc(r.year)}` : ""}</h4>
+          <dl class="kv"><dt>Furthest distance offered</dt><dd>${fmtMi(r.mi)}</dd><dt>Measured by</dt><dd>${esc(r.basis || "not stated")}</dd></dl>${you}
+          ${loose ? `<p class="note">This school probably had room for everyone who applied, so this is just where the furthest applicant lived, not a real limit.</p>` : ""}
+          <p class="src">Council table row: “${esc(r.row)}”<br><a href="${esc(r.src)}" target="_blank" rel="noopener">Source: ${esc(r.borough)} Council</a></p>`;
+      }).join("")}<p class="note">This is how far away the last child offered a place on distance lived. It changes every year with demand, and siblings and other priority groups are admitted first regardless of distance.</p></section>`);
     }
 
     // Admissions
@@ -413,10 +448,22 @@
 
   function toggleCatchment(s) {
     const btn = $("btnCatch");
+    const cuts = cutoffsFor(s);
     if (catchmentLayer.getLayers().length) {
       catchmentLayer.clearLayers();
-      if (btn) btn.textContent = "Show approximate catchment";
+      if (btn) btn.textContent = cuts.length ? "Show catchment (last distance offered)" : "Show approximate catchment";
       $("catchNote").innerHTML = "";
+      return;
+    }
+    if (cuts.length) {
+      const circles = cuts.slice().sort((a, b) => b.mi - a.mi).map((r, k) =>
+        L.circle([s.lat, s.lng], { radius: r.mi * MI_M, color: css("--accent"), weight: 2, fillOpacity: k === 0 ? 0.12 : 0.06 })
+          .bindTooltip(`${r.entry} ${r.year || ""}: last offer ${r.mi.toFixed(2)} mi`, { sticky: true }));
+      circles.forEach((c) => catchmentLayer.addLayer(c));
+      map.fitBounds(circles[0].getBounds(), { padding: [30, 30], maxZoom: 16 });
+      if (btn) btn.textContent = "Hide catchment";
+      const walk = cuts.some((r) => !isStraight(r));
+      $("catchNote").innerHTML = `<p class="note">Circle: the furthest distance the council offered a place on distance (${cuts.map((r) => `${esc(r.entry)} ${esc(r.year || "")}: ${r.mi.toFixed(2)} mi`).join("; ")}).${walk ? " Distances here are measured by walking route, so the real area is smaller than the circle." : ""} It moves every year with demand.</p>`;
       return;
     }
     const poly = catchmentPolygon(s);
@@ -495,6 +542,11 @@
       if (s.ks2 != null) extra.push(`KS2 ${s.ks2}%`);
       if (s.ks4 != null) extra.push(`Att8 ${s.ks4.toFixed(1)}`);
       if (s.dem != null) extra.push(`${s.dem.toFixed(1)} 1st prefs/place`);
+      const cut = cutoffsFor(s)[0];
+      if (cut) {
+        const hv = homeVsCutoff(s, cut);
+        extra.push(hv && hv.inside !== null ? `${hv.inside ? "✓ inside" : "✗ outside"} ${cut.year || ""} cut-off (${cut.mi.toFixed(2)} mi)` : `cut-off ${cut.mi.toFixed(2)} mi`);
+      }
       return `<li data-i="${i}"><span class="dot" style="background:${ofstedColour(s.o)}"></span>
         <span class="nm">${esc(s.name)}<small>${esc(ratingLabel(s))}${extra.length ? " · " + extra.join(" · ") : ""}</small></span>
         <span class="km">${fmtDist(km).split(" (")[0]}</span></li>`;
@@ -567,6 +619,10 @@
     buildChips("sectorChips", SECTORS, state.sectors);
     computeBreaks();
     renderLegend();
+    try {
+      const cj = await fetch("data/catchment.json").then((r) => (r.ok ? r.json() : null));
+      if (cj && cj.schools) state.cutoffs = cj.schools;
+    } catch (err) { /* optional dataset */ }
     applyFilters();
 
     const m = location.hash.match(/urn=(\d+)/);

@@ -4,10 +4,18 @@ name: Build school data
 # or when the build script itself changes on main.
 on:
   workflow_dispatch:
+    inputs:
+      part:
+        description: "What to rebuild"
+        type: choice
+        default: all
+        options: [all, schools, catchments]
   push:
     branches: [main]
     paths:
       - scripts/build_school_data.py
+      - scripts/build_catchments.py
+      - scripts/catchment_sources/**
 
 permissions:
   contents: write
@@ -19,15 +27,22 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pyproj==3.7.1
-      - name: Build
+      - run: pip install pyproj==3.7.1 pdfplumber==0.11.4 openpyxl==3.1.5 python-docx==1.1.2 xlrd==2.0.1
+      - name: Build school data
+        if: github.event_name != 'workflow_dispatch' || inputs.part != 'catchments'
         run: python3 scripts/build_school_data.py
+      - name: Collect London cut-off distances from council sites
+        if: github.event_name != 'workflow_dispatch' || inputs.part != 'schools'
+        # Council sites are slow and change often: never let this step block the school data commit.
+        timeout-minutes: 25
+        continue-on-error: true
+        run: python3 scripts/build_catchments.py --region london
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
@@ -38,4 +53,9 @@ jobs:
             exit 0
           fi
           git commit -m "Update school data ($(date -u +%Y-%m-%d))"
-          git push
+          # Someone may have pushed while the build ran; replay the data commit on top.
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin "${GITHUB_REF_NAME}" && git push && exit 0
+            sleep 10
+          done
+          exit 1
