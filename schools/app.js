@@ -386,7 +386,9 @@
         const you = !hv ? "" : hv.inside === null
           ? `<p class="muted">Your postcode is ${hv.mi.toFixed(2)} mi away in a straight line. The council measures by ${esc(r.basis)}, which is usually longer.</p>`
           : `<p class="${hv.inside ? "ok" : "warn"}">${hv.inside ? "✓ Inside" : "✗ Outside"} the ${esc(r.year || "")} cut-off: your postcode is ${hv.mi.toFixed(2)} mi away.</p>`;
-        const loose = r.mi > (r.entry === "Year 7" ? 5 : 3) || (d.adm && d.adm.ratio != null && d.adm.ratio < 0.9);
+        // Fewer applications (any preference) than places means everyone who applied got in.
+        const spare = d.adm && d.adm.any != null && d.adm.offers != null && d.adm.any < d.adm.offers;
+        const loose = spare || r.mi > (r.entry === "Year 7" ? 5 : 3);
         return `<h4>${esc(r.entry)}${r.year ? ` · offers in ${esc(r.year)}` : ""}</h4>
           <dl class="kv"><dt>Furthest distance offered</dt><dd>${fmtMi(r.mi)}</dd><dt>Measured by</dt><dd>${esc(r.basis || "not stated")}</dd></dl>${you}
           ${loose ? `<p class="note">This school probably had room for everyone who applied, so this is just where the furthest applicant lived, not a real limit.</p>` : ""}
