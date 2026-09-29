@@ -447,10 +447,10 @@ def distance_from_row(cells, col, col_unit, hint, year_cols=None):
         return to_miles(float(m.group(1).replace(",", ".")), m.group(2)), "unit in row", None
     # 4) Bare decimals: 0.532 style in miles/km documents, 1234.56 style in metres documents.
     #    Not in prose or near test-score wording, where numbers are scores, averages or counts.
-    words = re.findall(r"[A-Za-z]{3,}", text)
-    if len(words) >= 8 or re.search(r"score|test|candidate|\bsat\b|points|mark|divide|average|ratio|%", text, re.I):
-        return None, None, None
-    toks = [t for c in cells for t in c.split()]
+    def numeric_cell(c):
+        return len(re.findall(r"[A-Za-z]{3,}", c)) <= 2 and not re.search(
+            r"score|test|candidate|\bsat\b|points|mark|divide|average|ratio|%", c, re.I)
+    toks = [t for c in cells if numeric_cell(c) for t in c.split()]
     if hint in ("miles", "km", None):
         vals = [float(t) for t in toks if MILES_DEC.fullmatch(t)]
         if vals:
