@@ -1,113 +1,402 @@
 {
   "_comment": "Where each London borough publishes 'last distance offered' (cut-off) figures. 'seeds' are landing pages the crawler starts from; 'docs' are known files, used as well as anything the crawler finds. 'basis' is how the council measures home-to-school distance. 'las' lists the GIAS LA codes whose schools can appear in that borough's documents.",
   "boroughs": [
-    {"name": "Camden", "las": [202], "basis": "straight line",
-     "seeds": ["https://www.camden.gov.uk/primary-admissions", "https://www.camden.gov.uk/secondary-school-admissions", "https://www.camden.gov.uk/school-admissions-general"]},
-    {"name": "Greenwich", "las": [203], "basis": "straight line",
-     "seeds": ["https://www.royalgreenwich.gov.uk/site/custom_scripts/repo/pages/greenwich-schools-catchment-radius/secondary.html",
-               "https://www.royalgreenwich.gov.uk/site/custom_scripts/repo/pages/greenwich-schools-catchment-radius/primary.html",
-               "https://www.royalgreenwich.gov.uk/info/200286/apply_for_a_school_place/1400/secondary_school_offers_map"]},
-    {"name": "Hackney", "las": [204], "basis": "straight line",
-     "seeds": ["https://education.hackney.gov.uk/section/admissions-and-transfers"],
-     "docs": ["https://education.hackney.gov.uk/sites/default/files/document/Applications%20and%20Offers%20at%20Hackney%20Secondary%20Schools%202018-25.pdf"]},
-    {"name": "Hammersmith & Fulham", "las": [205], "basis": "straight line",
-     "seeds": ["https://www.lbhf.gov.uk/children-and-young-people/schools-and-colleges/school-admissions/secondary-school-offers",
-               "https://www.lbhf.gov.uk/children-and-young-people/schools-and-colleges/school-admissions/starting-school-reception-2026",
-               "https://www.lbhf.gov.uk/children-and-young-people/schools-and-colleges/school-admissions"]},
-    {"name": "Islington", "las": [206], "basis": "straight line",
-     "seeds": ["https://www.islington.gov.uk/children-and-families/schools/apply-for-a-school-place/school-admissions-information/cut-off-distance-maps",
-               "https://www.islington.gov.uk/children-and-families/schools/apply-for-a-school-place/school-admissions-information"]},
-    {"name": "Westminster and Kensington & Chelsea", "las": [207, 213], "basis": "straight line",
-     "seeds": ["https://www.westminster.gov.uk/education/school-admissions/cut-distance-maps-school-admissions",
-               "https://www.rbkc.gov.uk/children-and-education/school-admissions/starting-secondary-school",
-               "https://www.rbkc.gov.uk/children-and-education/school-admissions"],
-     "docs": ["https://www.rbkc.gov.uk/media/document/how-places-were-offered-at-bi-borough-secondary-schools",
-              "https://www.westminster.gov.uk/media/document/how-places-were-offered-in-westminster-and-kensington-and-chelsea"]},
-    {"name": "Lambeth", "las": [208], "basis": "straight line",
-     "seeds": ["https://www.lambeth.gov.uk/schools-and-education/school-admissions-and-appeals/primary-school-admissions",
-               "https://www.lambeth.gov.uk/schools-and-education/school-admissions-and-appeals/secondary-school-admissions"]},
-    {"name": "Lewisham", "las": [209], "basis": "straight line",
-     "seeds": ["https://lewisham.gov.uk/myservices/education/schools/school-admission/applying-to-start-secondary-school/last-year-s-number-of-applications-and-appeals-for-secondary-school-places",
-               "https://lewisham.gov.uk/myservices/education/schools/school-admission/applying-to-start-primary-school"],
-     "docs": ["https://lewisham.gov.uk/-/media/services/education/schools/grid-for-reception-2025.pdf"]},
-    {"name": "Southwark", "las": [210], "basis": "straight line",
-     "seeds": ["https://services.southwark.gov.uk/schools-and-education/school-admissions/secondary-admissions",
-               "https://services.southwark.gov.uk/schools-and-education/school-admissions/primary-admissions",
-               "https://www.southwark.gov.uk/schools-and-education/school-admissions"]},
-    {"name": "Tower Hamlets", "las": [211], "basis": "walking route",
-     "seeds": ["https://www.towerhamlets.gov.uk/lgnl/education_and_learning/schools/school_admissions/secondary_school_admissions.aspx",
-               "https://towerhamlets.gov.uk/lgnl/education_and_learning/schools/school_admissions/primary_school_admissions.aspx"],
-     "docs": ["https://www.towerhamlets.gov.uk/Documents/Education-and-skills/Admissions-and-exclusions/Admissions/Primary-School-prospectus.pdf",
-              "https://www.towerhamlets.gov.uk/Documents/Education-and-skills/Admissions-and-exclusions/Admissions/Secondary-School-prospectus.pdf"]},
-    {"name": "Wandsworth", "las": [212], "basis": "straight line",
-     "seeds": ["https://www.wandsworth.gov.uk/schools-and-admissions/admissions/secondary-school-admissions/",
-               "https://www.wandsworth.gov.uk/schools-and-admissions/admissions/primary-school-admissions/",
-               "https://www.wandsworth.gov.uk/apply-for-a-secondary-school-place"],
-     "docs": ["https://www.wandsworth.gov.uk/media/e45hqwl2/how_school_places_were_offered_for_secondary_schools_2025.pdf"]},
-    {"name": "Barking & Dagenham", "las": [301], "basis": "straight line",
-     "seeds": ["https://www.lbbd.gov.uk/schools-and-learning/school-admissions"]},
-    {"name": "Barnet", "las": [302], "basis": "straight line",
-     "seeds": ["https://www.barnet.gov.uk/schools-and-education/school-admissions/school-admission-guides",
-               "https://www.barnet.gov.uk/schools-and-education/school-admissions/apply-secondary-school/transferring-secondary-school",
-               "https://www.barnet.gov.uk/schools-and-education/school-admissions"],
-     "docs": ["https://www.barnet.gov.uk/sites/default/files/secondary_transfer_-_how_places_were_allocated_updated_3_18.pdf"]},
-    {"name": "Bexley", "las": [303], "basis": "straight line",
-     "seeds": ["https://www.bexley.gov.uk/services/schools-and-education/secondary-schools/starting-secondary-school",
-               "https://www.bexley.gov.uk/services/schools-and-education/primary-schools/admission-primary-schools-26-27/community-and-voluntary-controlled-schools",
-               "https://www.bexley.gov.uk/services/schools-and-education/primary-schools/primary-schools-your-child-can-go"]},
-    {"name": "Brent", "las": [304], "basis": "straight line",
-     "seeds": ["https://www.brent.gov.uk/education-schools-and-learning/school-admissions/how-school-places-were-offered"]},
-    {"name": "Bromley", "las": [305], "basis": "straight line",
-     "seeds": ["https://www.bromley.gov.uk/secondary-school-admissions/secondary-school-places",
-               "https://www.bromley.gov.uk/secondary-school-admissions"],
-     "docs": ["https://www.bromley.gov.uk/downloads/file/28/primary-education-in-bromley-2026-2027"]},
-    {"name": "Croydon", "las": [306], "basis": "straight line",
-     "seeds": ["https://www.croydon.gov.uk/schools-and-education/schools/school-admissions/school-admissions-process"],
-     "docs": ["https://www.croydon.gov.uk/sites/default/files/2025-08/primary-admissions-prospectus-2026-2027.pdf",
-              "https://www.croydon.gov.uk/sites/default/files/2025-08/secondary-admissions-prospectus-2026-2027.pdf"]},
-    {"name": "Ealing", "las": [307], "basis": "straight line",
-     "seeds": ["https://www.ealing.gov.uk/downloads/download/3262/high_allocations_by_distance_and_criteria",
-               "https://www.ealing.gov.uk/downloads/download/3514/high_school_on-time_offers_2017",
-               "https://www.ealing.gov.uk/info/201113/school_admissions"]},
-    {"name": "Enfield", "las": [308], "basis": "straight line",
-     "seeds": ["https://www.enfield.gov.uk/services/children-and-education/school-admissions-and-applications/admission-to-primary-school-september-2026"],
-     "docs": ["https://www.enfield.gov.uk/__data/assets/pdf_file/0011/103043/Reception-previous-allocation-breakdown-Education.pdf",
-              "https://www.enfield.gov.uk/__data/assets/pdf_file/0040/89896/Transfer-to-secondary-2025-and-allocation-information-Education.pdf"]},
-    {"name": "Haringey", "las": [309], "basis": "straight line",
-     "seeds": ["https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made/cutoff-distance-school-last-child-offered-place"],
-     "docs": ["https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made/cutoff-distance-school-last-child-offered-place/secondary-schools-distance-school-last-child-offered-place-national-offer-day",
-              "https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made/cutoff-distance-school-last-child-offered-place/primary-schools-distance-school-last-child-offered-place-national-offer-day"]},
-    {"name": "Harrow", "las": [310], "basis": "straight line",
-     "seeds": ["https://www.harrow.gov.uk/schools-learning/apply-secondary-school-place/4"],
-     "docs": ["https://www.harrow.gov.uk/downloads/file/33045/Reception_2025___How_places_were_allocated_at_Harrow_Schools.pdf"]},
-    {"name": "Havering", "las": [311], "basis": "straight line",
-     "seeds": ["https://www.havering.gov.uk/school-admissions-1/school-admissions-arrangements-statistics"]},
-    {"name": "Hillingdon", "las": [312], "basis": "straight line",
-     "seeds": ["https://www.hillingdon.gov.uk/article/8758/", "https://www.hillingdon.gov.uk/article/8503/",
-               "https://www.hillingdon.gov.uk/downloads/download/287/primary-school-statistics"]},
-    {"name": "Hounslow", "las": [313], "basis": "straight line",
-     "seeds": ["https://www.hounslow.gov.uk/primary_schools_admissions"],
-     "docs": ["https://www.hounslow.gov.uk/downloads/file/11497/how-secondary-places-were-allocated-for-september-2025",
-              "https://www.hounslow.gov.uk/downloads/file/11494/how-primary-places-were-offered-in-september-2025"]},
-    {"name": "Kingston and Richmond", "las": [314, 318], "basis": "varies (Kingston: walking route; Richmond: straight line)",
-     "seeds": ["https://kr.afcinfo.org.uk/pages/community-information/information-and-advice/school-admissions/apply-for-a-secondary-school-place-in-september",
-               "https://www.kingston.gov.uk/schools-education/school-admissions-arrangements"],
-     "docs": ["https://www.richmond.gov.uk/media/utmdtytx/lbr_tss_furthest_distance_offers.pdf"]},
-    {"name": "Merton", "las": [315], "basis": "straight line",
-     "seeds": ["https://www.merton.gov.uk/education-and-learning/schools/admissions/how-school-places-were-allocated-in-recent-years"]},
-    {"name": "Newham", "las": [316], "basis": "walking route",
-     "seeds": ["https://www.newham.gov.uk/schools-education/offer-places", "https://www.newham.gov.uk/schools-education/primary-school-admissions"]},
-    {"name": "Redbridge", "las": [317], "basis": "straight line",
-     "seeds": ["https://www.redbridge.gov.uk/schools/secondary-school-admissions", "https://www.redbridge.gov.uk/schools/primary-school-admissions/"],
-     "docs": ["https://www.redbridge.gov.uk/static-cms/media/13279/transfer-to-sec-2025-school-allocations-and-cut-off-distances-v2.pdf",
-              "https://www.redbridge.gov.uk/media/1mtj5jon/primary-offer-day-16-april-2025-last-allocated-v2-3.pdf"]},
-    {"name": "Sutton", "las": [319], "basis": "straight line",
-     "seeds": ["https://www.sutton.gov.uk/w/primary-school-allocation-information", "https://www.sutton.gov.uk/w/junior-school-allocation-information"],
-     "docs": ["https://www.sutton.gov.uk/schools-and-learning/school-admissions/national-offer-day-secondary-schools/secondary-school-allocation-information",
-              "https://www.sutton.gov.uk/schools-and-learning/school-admissions/national-offer-day-primary-schools/primary-school-allocation-information"]},
-    {"name": "Waltham Forest", "las": [320], "basis": "straight line",
-     "seeds": ["https://www.walthamforest.gov.uk/schools-education-and-learning/apply-school-place/apply-secondary-school/national-offer-day-secondary",
-               "https://www.walthamforest.gov.uk/schools-education-and-learning/apply-school-place"],
-     "docs": ["https://www.walthamforest.gov.uk/sites/default/files/2025-04/How%20school%20places%20were%20offered%20reception%202025.pdf"]}
+    {
+      "name": "Camden",
+      "las": [
+        202
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.camden.gov.uk/primary-admissions",
+        "https://www.camden.gov.uk/secondary-school-admissions",
+        "https://www.camden.gov.uk/school-admissions-general"
+      ]
+    },
+    {
+      "name": "Greenwich",
+      "las": [
+        203
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.royalgreenwich.gov.uk/site/custom_scripts/repo/pages/greenwich-schools-catchment-radius/secondary.html",
+        "https://www.royalgreenwich.gov.uk/site/custom_scripts/repo/pages/greenwich-schools-catchment-radius/primary.html",
+        "https://www.royalgreenwich.gov.uk/info/200286/apply_for_a_school_place/1400/secondary_school_offers_map",
+        "https://www.royalgreenwich.gov.uk/info/200286/apply_for_a_school_place/1400/secondary_school_offers_interactive_map"
+      ]
+    },
+    {
+      "name": "Hackney",
+      "las": [
+        204
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://education.hackney.gov.uk/section/admissions-and-transfers"
+      ],
+      "docs": [
+        "https://education.hackney.gov.uk/sites/default/files/document/Applications%20and%20Offers%20at%20Hackney%20Secondary%20Schools%202018-25.pdf"
+      ]
+    },
+    {
+      "name": "Hammersmith & Fulham",
+      "las": [
+        205
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.lbhf.gov.uk/children-and-young-people/schools-and-colleges/school-admissions/secondary-school-offers",
+        "https://www.lbhf.gov.uk/children-and-young-people/schools-and-colleges/school-admissions/starting-school-reception-2026",
+        "https://www.lbhf.gov.uk/children-and-young-people/schools-and-colleges/school-admissions"
+      ]
+    },
+    {
+      "name": "Islington",
+      "las": [
+        206
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.islington.gov.uk/children-and-families/schools/apply-for-a-school-place/school-admissions-information/cut-off-distance-maps",
+        "https://www.islington.gov.uk/children-and-families/schools/apply-for-a-school-place/school-admissions-information"
+      ]
+    },
+    {
+      "name": "Westminster and Kensington & Chelsea",
+      "las": [
+        207,
+        213
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.westminster.gov.uk/education/school-admissions/cut-distance-maps-school-admissions",
+        "https://www.rbkc.gov.uk/children-and-education/school-admissions/starting-secondary-school",
+        "https://www.rbkc.gov.uk/children-and-education/school-admissions"
+      ],
+      "docs": [
+        "https://www.rbkc.gov.uk/media/document/how-places-were-offered-at-bi-borough-secondary-schools",
+        "https://www.westminster.gov.uk/media/document/how-places-were-offered-in-westminster-and-kensington-and-chelsea"
+      ]
+    },
+    {
+      "name": "Lambeth",
+      "las": [
+        208
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.lambeth.gov.uk/schools-and-education/school-admissions-and-appeals/primary-school-admissions",
+        "https://www.lambeth.gov.uk/schools-and-education/school-admissions-and-appeals/secondary-school-admissions"
+      ]
+    },
+    {
+      "name": "Lewisham",
+      "las": [
+        209
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://lewisham.gov.uk/myservices/education/schools/school-admission/applying-to-start-secondary-school/last-year-s-number-of-applications-and-appeals-for-secondary-school-places",
+        "https://lewisham.gov.uk/myservices/education/schools/school-admission/applying-to-start-primary-school"
+      ],
+      "docs": [
+        "https://lewisham.gov.uk/-/media/services/education/schools/grid-for-reception-2025.pdf"
+      ]
+    },
+    {
+      "name": "Southwark",
+      "las": [
+        210
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://services.southwark.gov.uk/schools-and-education/school-admissions/secondary-admissions",
+        "https://services.southwark.gov.uk/schools-and-education/school-admissions/primary-admissions",
+        "https://www.southwark.gov.uk/schools-and-education/school-admissions"
+      ]
+    },
+    {
+      "name": "Tower Hamlets",
+      "las": [
+        211
+      ],
+      "basis": "walking route",
+      "seeds": [
+        "https://www.towerhamlets.gov.uk/lgnl/education_and_learning/schools/school_admissions/secondary_school_admissions.aspx",
+        "https://towerhamlets.gov.uk/lgnl/education_and_learning/schools/school_admissions/primary_school_admissions.aspx"
+      ],
+      "docs": [
+        "https://www.towerhamlets.gov.uk/Documents/Education-and-skills/Admissions-and-exclusions/Admissions/Primary-School-prospectus.pdf",
+        "https://www.towerhamlets.gov.uk/Documents/Education-and-skills/Admissions-and-exclusions/Admissions/Secondary-School-prospectus.pdf"
+      ]
+    },
+    {
+      "name": "Wandsworth",
+      "las": [
+        212
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.wandsworth.gov.uk/schools-and-admissions/admissions/secondary-school-admissions/",
+        "https://www.wandsworth.gov.uk/schools-and-admissions/admissions/primary-school-admissions/",
+        "https://www.wandsworth.gov.uk/apply-for-a-secondary-school-place",
+        "https://www.wandsworth.gov.uk/schools-and-admissions/admissions/school-admissions-statistics/"
+      ],
+      "docs": [
+        "https://www.wandsworth.gov.uk/media/e45hqwl2/how_school_places_were_offered_for_secondary_schools_2025.pdf"
+      ]
+    },
+    {
+      "name": "Barking & Dagenham",
+      "las": [
+        301
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.lbbd.gov.uk/schools-and-learning/school-admissions"
+      ]
+    },
+    {
+      "name": "Barnet",
+      "las": [
+        302
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.barnet.gov.uk/schools-and-education/school-admissions/school-admission-guides",
+        "https://www.barnet.gov.uk/schools-and-education/school-admissions/apply-secondary-school/transferring-secondary-school",
+        "https://www.barnet.gov.uk/schools-and-education/school-admissions"
+      ],
+      "docs": [
+        "https://www.barnet.gov.uk/sites/default/files/secondary_transfer_-_how_places_were_allocated_updated_3_18.pdf"
+      ]
+    },
+    {
+      "name": "Bexley",
+      "las": [
+        303
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.bexley.gov.uk/services/schools-and-education/secondary-schools/starting-secondary-school",
+        "https://www.bexley.gov.uk/services/schools-and-education/primary-schools/admission-primary-schools-26-27/community-and-voluntary-controlled-schools",
+        "https://www.bexley.gov.uk/services/schools-and-education/primary-schools/primary-schools-your-child-can-go"
+      ]
+    },
+    {
+      "name": "Brent",
+      "las": [
+        304
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.brent.gov.uk/education-schools-and-learning/school-admissions/how-school-places-were-offered"
+      ]
+    },
+    {
+      "name": "Bromley",
+      "las": [
+        305
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.bromley.gov.uk/secondary-school-admissions/secondary-school-places",
+        "https://www.bromley.gov.uk/secondary-school-admissions",
+        "https://www.bromley.gov.uk/downloads/download/18/applying-for-a-school-place",
+        "https://www.bromley.gov.uk/downloads/download/457/school-admissions-report"
+      ],
+      "docs": []
+    },
+    {
+      "name": "Croydon",
+      "las": [
+        306
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.croydon.gov.uk/schools-and-education/schools/school-admissions/school-admissions-process"
+      ],
+      "docs": [
+        "https://www.croydon.gov.uk/sites/default/files/2025-08/primary-admissions-prospectus-2026-2027.pdf",
+        "https://www.croydon.gov.uk/sites/default/files/2025-08/secondary-admissions-prospectus-2026-2027.pdf"
+      ]
+    },
+    {
+      "name": "Ealing",
+      "las": [
+        307
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.ealing.gov.uk/downloads/download/3262/high_allocations_by_distance_and_criteria",
+        "https://www.ealing.gov.uk/downloads/download/3514/high_school_on-time_offers_2017",
+        "https://www.ealing.gov.uk/info/201113/school_admissions"
+      ]
+    },
+    {
+      "name": "Enfield",
+      "las": [
+        308
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.enfield.gov.uk/services/children-and-education/school-admissions-and-applications/admission-to-primary-school-september-2026"
+      ],
+      "docs": [
+        "https://www.enfield.gov.uk/__data/assets/pdf_file/0011/103043/Reception-previous-allocation-breakdown-Education.pdf",
+        "https://www.enfield.gov.uk/__data/assets/pdf_file/0040/89896/Transfer-to-secondary-2025-and-allocation-information-Education.pdf"
+      ]
+    },
+    {
+      "name": "Haringey",
+      "las": [
+        309
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made/cutoff-distance-school-last-child-offered-place"
+      ],
+      "docs": [
+        "https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made/cutoff-distance-school-last-child-offered-place/secondary-schools-distance-school-last-child-offered-place-national-offer-day",
+        "https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made/cutoff-distance-school-last-child-offered-place/primary-schools-distance-school-last-child-offered-place-national-offer-day"
+      ]
+    },
+    {
+      "name": "Harrow",
+      "las": [
+        310
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.harrow.gov.uk/schools-learning/apply-secondary-school-place/4"
+      ],
+      "docs": [
+        "https://www.harrow.gov.uk/downloads/file/33045/Reception_2025___How_places_were_allocated_at_Harrow_Schools.pdf"
+      ]
+    },
+    {
+      "name": "Havering",
+      "las": [
+        311
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.havering.gov.uk/school-admissions-1/school-admissions-arrangements-statistics",
+        "https://www.havering.gov.uk/school-admissions-1/school-admissions-arrangements-statistics/3"
+      ]
+    },
+    {
+      "name": "Hillingdon",
+      "las": [
+        312
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.hillingdon.gov.uk/article/8758/",
+        "https://www.hillingdon.gov.uk/article/8503/"
+      ],
+      "docs": [
+        "https://pre.hillingdon.gov.uk/downloads/file/2715/secondary-school-admissions-leaflet",
+        "https://pre.hillingdon.gov.uk/downloads/file/3087/primary-school-admissions"
+      ]
+    },
+    {
+      "name": "Hounslow",
+      "las": [
+        313
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.hounslow.gov.uk/primary_schools_admissions"
+      ],
+      "docs": [
+        "https://www.hounslow.gov.uk/downloads/file/11497/how-secondary-places-were-allocated-for-september-2025",
+        "https://www.hounslow.gov.uk/downloads/file/11494/how-primary-places-were-offered-in-september-2025"
+      ]
+    },
+    {
+      "name": "Kingston and Richmond",
+      "las": [
+        314,
+        318
+      ],
+      "basis": "varies (Kingston: walking route; Richmond: straight line)",
+      "seeds": [
+        "https://kr.afcinfo.org.uk/pages/community-information/information-and-advice/school-admissions/apply-for-a-secondary-school-place-in-september",
+        "https://www.kingston.gov.uk/schools-education/school-admissions-arrangements"
+      ],
+      "docs": [
+        "https://www.richmond.gov.uk/media/utmdtytx/lbr_tss_furthest_distance_offers.pdf"
+      ]
+    },
+    {
+      "name": "Merton",
+      "las": [
+        315
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.merton.gov.uk/education-and-learning/schools/admissions/how-school-places-were-allocated-in-recent-years"
+      ]
+    },
+    {
+      "name": "Newham",
+      "las": [
+        316
+      ],
+      "basis": "walking route",
+      "seeds": [
+        "https://www.newham.gov.uk/schools-education/offer-places",
+        "https://www.newham.gov.uk/schools-education/primary-school-admissions"
+      ],
+      "docs": [
+        "https://www.newham.gov.uk/downloads/file/11343/starting-school-in-september-2027"
+      ]
+    },
+    {
+      "name": "Redbridge",
+      "las": [
+        317
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.redbridge.gov.uk/schools/secondary-school-admissions",
+        "https://www.redbridge.gov.uk/schools/primary-school-admissions/"
+      ],
+      "docs": [
+        "https://www.redbridge.gov.uk/static-cms/media/13279/transfer-to-sec-2025-school-allocations-and-cut-off-distances-v2.pdf",
+        "https://www.redbridge.gov.uk/media/1mtj5jon/primary-offer-day-16-april-2025-last-allocated-v2-3.pdf"
+      ]
+    },
+    {
+      "name": "Sutton",
+      "las": [
+        319
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.sutton.gov.uk/w/primary-school-allocation-information",
+        "https://www.sutton.gov.uk/w/junior-school-allocation-information"
+      ],
+      "docs": [
+        "https://www.sutton.gov.uk/schools-and-learning/school-admissions/national-offer-day-secondary-schools/secondary-school-allocation-information",
+        "https://www.sutton.gov.uk/schools-and-learning/school-admissions/national-offer-day-primary-schools/primary-school-allocation-information"
+      ]
+    },
+    {
+      "name": "Waltham Forest",
+      "las": [
+        320
+      ],
+      "basis": "straight line",
+      "seeds": [
+        "https://www.walthamforest.gov.uk/schools-education-and-learning/apply-school-place/apply-secondary-school/national-offer-day-secondary",
+        "https://www.walthamforest.gov.uk/schools-education-and-learning/apply-school-place"
+      ],
+      "docs": [
+        "https://www.walthamforest.gov.uk/sites/default/files/2025-04/How%20school%20places%20were%20offered%20reception%202025.pdf"
+      ]
+    }
   ]
 }

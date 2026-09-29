@@ -40,7 +40,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_school_data import OUT, ROOT, UA, Fetcher, decode, log  # noqa: E402
 
 MAX_PAGES = 30
-MAX_DOCS = 30
+MAX_DOCS = 60
 BOROUGH_BUDGET_S = 420
 THIS_YEAR = dt.date.today().year
 
@@ -48,8 +48,14 @@ LINK_RX = re.compile(
     r"how (school )?places (were|are) (offered|allocated)|allocation|allocated|offers? (were )?made|cut.?off|"
     r"furthest|last (child|distance|place|allocated)|distance offered|on.?time offers?|school statistics|"
     r"applications and offers|offer day|grid for reception|previous years?|previous allocation|admissions data|"
-    r"places were offered|offer outcomes|catchment.?radius|offers map|distance",
+    r"places were offered|offer outcomes|catchment.?radius|offers map|distance|statistic|recent years|"
+    r"appeals data|admissions (and appeals )?data|national offer day",
     re.I)
+# Parent guides often quote last year's cut-offs; only followed when they are documents.
+GUIDE_LINK_RX = re.compile(r"guide|booklet|brochure|prospectus|education in \w+|starting (primary|secondary)? ?school|"
+                           r"transfer to secondary|choose a .* school", re.I)
+BLOCKED_RX = re.compile(r"just a moment|cf-chl|captcha|access denied|request unsuccessful|incapsula|are you a robot|"
+                        r"enable javascript and cookies", re.I)
 SKIP_RX = re.compile(
     r"arrangements|consultation|polic(y|ies)|privacy|cookie|supplementary|in.?year|nursery|appeal(s)? (form|hearing)|"
     r"transport|travel|uniform|term dates|free school meals|\.(jpg|png|gif|svg)$|mailto:|tel:|javascript:|"
@@ -324,7 +330,8 @@ LABEL_RX = re.compile(r"^\s*(band|criteri|crit\b|distance|any other|other|remain
                       r"non.?sibling|all other|general|random|priority|last|furthest|offered|places?|oversub|"
                       r"[A-E]\b|\d(\.\d)?\b|tier|inner|outer|zone|nearest|home|local)", re.I)
 SIBLING_RX = re.compile(r"sibling", re.I)
-FAITH_RX = re.compile(r"faith|catholic|baptis|church|practis|religio|sikh|jewish|muslim|hindu|christian|parish|worship", re.I)
+FAITH_RX = re.compile(r"faith|catholic|baptis|church|practis|religio|sikh|jewish|muslim|hindu|christian|parish|worship|"
+                      r"bursary|music|aptitude|sport|scholarship|nursery|feeder|staff|medical|social|looked after|ehcp|send\b", re.I)
 PREFER_RX = re.compile(r"distance|any other|other applicant|remaining|community|open|band|last|furthest|general|all other", re.I)
 
 
@@ -482,10 +489,10 @@ def choose_block(lines):
     return max(pool, key=lambda x: x[0])
 
 
-def process_doc(rows, matcher, title, url, borough):
+def process_doc(rows, matcher, title, url, borough, context=""):
     hint = doc_unit_hint(rows)
     year = doc_year(title, url, rows)
-    phase = doc_phase(title, url, rows)
+    phase = doc_phase(title, url + " " + context, rows)
     found, unmatched = [], []
     col = col_unit = None
     year_cols = {}
@@ -493,6 +500,9 @@ def process_doc(rows, matcher, title, url, borough):
     in_text = False
     have_table_hits = False
     cur = None  # (urn, heading text, [distance lines], rows since heading, all_offered)
+    title_urn = matcher.match(title, phase) if title and title not in ("seed", "known doc", "link") else None
+    if title_urn:
+        cur = (title_urn, title[:160], [], -40, False)  # one-school documents (e.g. Lambeth secondaries)
 
     def add(urn, mi, how, row, y):
         school = matcher.by_urn[urn]
@@ -528,7 +538,8 @@ def process_doc(rows, matcher, title, url, borough):
         if in_text and have_table_hits:
             break  # the page's tables already gave us the data; its text repeats them
         if cells == ["<table end>"]:
-            flush()
+            if cur and cur[2]:
+                flush()  # keep an open school heading alive: its figures are often in the next table
             col = col_unit = None
             year_cols = {}
             continue
@@ -587,7 +598,7 @@ def fetch(fx, url):
         first = e
     try:
         out = subprocess.run(
-            ["curl", "-sSL", "--compressed", "--max-time", "60", "-c", "/dev/null", "-A", UA["User-Agent"],
+            ["curl", "-sSL", "--compressed", "--max-time", "60", "-b", "", "-A", UA["User-Agent"],
              "-H", "Accept-Language: en-GB,en;q=0.9", "-H", "Accept: text/html,application/pdf,*/*", "-f", url],
             capture_output=True, timeout=90)
         if out.returncode == 0 and out.stdout:
@@ -605,7 +616,7 @@ def same_site(a, b):
 
 def crawl_borough(fx, b, matcher):
     report = {"name": b["name"], "pages": [], "docs": [], "errors": []}
-    queue = [(u, 0, "seed") for u in b.get("seeds", [])] + [(u, 0, "known doc") for u in b.get("docs", [])]
+    queue = [(u, 0, "seed", "") for u in b.get("seeds", [])] + [(u, 0, "known doc", "") for u in b.get("docs", [])]
     seen, results = set(), []
     pages = docs = 0
     started = time.time()
@@ -613,7 +624,7 @@ def crawl_borough(fx, b, matcher):
         if time.time() - started > BOROUGH_BUDGET_S:
             report["errors"].append(f"stopped after {BOROUGH_BUDGET_S}s with {len(queue)} links left")
             break
-        url, depth, why = queue.pop(0)
+        url, depth, why, parent = queue.pop(0)
         url = url.split("#")[0]
         if url in seen:
             continue
@@ -633,8 +644,22 @@ def crawl_borough(fx, b, matcher):
             if kind == "html":
                 pages += 1
                 text = decode(raw)
+                if len(text) < 60000 and BLOCKED_RX.search(text[:20000]):
+                    report["errors"].append(f"{url}: blocked by the site's bot protection")
+                    continue
                 title = page_title(text) or why
                 rows, links, page_text = rows_from_html(text)
+                # Interactive maps (e.g. Greenwich) keep their figures in a script or JSON file beside the page.
+                if re.search(r"catchment|radius|offers.?map|distance", url + " " + title, re.I):
+                    for src in re.findall(r'<script[^>]+src=["\']([^"\']+)', text, re.I)[:8]:
+                        su = urllib.parse.urljoin(url, html.unescape(src))
+                        if same_site(su, url) and not re.search(r"jquery|analytics|gtag|bootstrap|leaflet|cookie", su, re.I):
+                            try:
+                                js = decode(fetch(fx, su))
+                                rows.append(["<table end>"])
+                                rows.extend([[x.strip()] for x in re.split(r"[\n;{}\[\]]", js) if x.strip()][:20000])
+                            except Exception as e:
+                                report["errors"].append(f"{su}: script: {type(e).__name__}")
             else:
                 docs += 1
                 rows = {"pdf": rows_from_pdf, "xlsx": rows_from_xlsx, "xls": rows_from_xls, "docx": rows_from_docx}[kind](raw)
@@ -642,7 +667,7 @@ def crawl_borough(fx, b, matcher):
         except Exception as e:
             report["errors"].append(f"{url}: parse {kind}: {type(e).__name__}: {str(e)[:120]}")
             continue
-        found, unmatched, meta = process_doc(rows, matcher, title, url, b)
+        found, unmatched, meta = process_doc(rows, matcher, title, url, b, context=urllib.parse.unquote(parent))
         with_dist = [f for f in found if f["mi"] is not None]
         entry = {"url": url, "kind": kind, "title": title[:150], "rows": len(rows), "matched": len(found),
                  "with_distance": len(with_dist), **meta}
@@ -658,8 +683,8 @@ def crawl_borough(fx, b, matcher):
                 m = re.search(r"miles?\b|metres|cut.?off|furthest", page_text, re.I)
                 if m:
                     entry["snippet"] = page_text[max(0, m.start() - 300):m.start() + 500]
-            else:
-                entry["head"] = [" | ".join(r)[:160] for r in rows[:30]]
+            if kind != "html" or found:
+                entry["head"] = [" | ".join(r)[:160] for r in rows[:40]]
         (report["pages"] if kind == "html" else report["docs"]).append(entry)
         results.extend(found)
         # Follow links
@@ -668,13 +693,14 @@ def crawl_borough(fx, b, matcher):
             absu = urllib.parse.urljoin(url, href)
             if not absu.startswith("http") or absu in seen:
                 continue
-            label = f"{text} {urllib.parse.unquote(absu)}"
-            if SKIP_RX.search(label) or not LINK_RX.search(label):
+            label = re.sub(r"[-_+]|%20", " ", f"{text} {urllib.parse.unquote(absu)}")
+            is_doc = bool(DOC_URL_RX.search(absu))
+            if SKIP_RX.search(label) or not (LINK_RX.search(label) or (is_doc and GUIDE_LINK_RX.search(label))):
                 continue
-            if DOC_URL_RX.search(absu):
-                queue.append((absu, depth + 1, text or "link"))
+            if is_doc:
+                queue.append((absu, depth + 1, text or "link", url))
             elif depth < 2 and same_site(absu, url):
-                queue.append((absu, depth + 1, text or "link"))
+                queue.append((absu, depth + 1, text or "link", url))
         time.sleep(0.3)
     report["fetched_pages"], report["fetched_docs"] = pages, docs
     return results, report
