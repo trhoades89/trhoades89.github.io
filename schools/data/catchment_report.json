@@ -1,0 +1,2350 @@
+[
+ {
+  "name": "Barking & Dagenham",
+  "pages": [],
+  "docs": [],
+  "errors": [
+   "https://www.lbbd.gov.uk/schools-and-learning/school-admissions: HTTPError: HTTP Error 403: Forbidden"
+  ],
+  "fetched_pages": 0,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 65,
+  "years": {},
+  "seconds": 1
+ },
+ {
+  "name": "Barnet",
+  "pages": [
+   {
+    "url": "https://www.barnet.gov.uk/schools-and-education/school-admissions/school-admission-guides",
+    "kind": "html",
+    "title": "Pardon Our Interruption",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://www.barnet.gov.uk/schools-and-education/school-admissions/apply-secondary-school/transferring-secondary-school",
+    "kind": "html",
+    "title": "Pardon Our Interruption",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.barnet.gov.uk/schools-and-education/school-admissions",
+    "kind": "html",
+    "title": "Pardon Our Interruption",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://www.barnet.gov.uk/sites/default/files/secondary_transfer_-_how_places_were_allocated_updated_3_18.pdf",
+    "kind": "html",
+    "title": "Pardon Our Interruption",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   }
+  ],
+  "docs": [],
+  "errors": [],
+  "fetched_pages": 4,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 137,
+  "years": {},
+  "seconds": 2
+ },
+ {
+  "name": "Bexley",
+  "pages": [
+   {
+    "url": "https://www.bexley.gov.uk/services/schools-and-education/secondary-schools/starting-secondary-school",
+    "kind": "html",
+    "title": "Starting secondary school | London Borough of Bexley",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.bexley.gov.uk/services/schools-and-education/primary-schools/primary-schools-your-child-can-go",
+    "kind": "html",
+    "title": "Primary schools your child can go to | London Borough of Bexley",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   }
+  ],
+  "docs": [],
+  "errors": [
+   "https://www.bexley.gov.uk/services/schools-and-education/primary-schools/admission-primary-schools-26-27/community-and-voluntary-controlled-schools: HTTPError: HTTP Error 403: Forbidden"
+  ],
+  "fetched_pages": 2,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 86,
+  "years": {},
+  "seconds": 4
+ },
+ {
+  "name": "Brent",
+  "pages": [
+   {
+    "url": "https://www.brent.gov.uk/education-schools-and-learning/school-admissions/how-school-places-were-offered",
+    "kind": "html",
+    "title": "How school places were allocated | Brent Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [
+   {
+    "url": "https://www.brent.gov.uk/-/media/files/resident-documents/education-documents/how-secondary-school-places-were-allocated---2026---publish-v2.pdf?rev=2c3495c977dc44b48f8e593ad962ac63&hash=C64A0D111467E8F3DDBDAB3740C09C2B",
+    "kind": "pdf",
+    "title": "Place allocation for Secondary schools 2026",
+    "rows": 19,
+    "matched": 16,
+    "with_distance": 1,
+    "unit": "miles",
+    "year": 2026,
+    "phase": "S",
+    "sample": [
+     "Alperton Community School -> None (None) :: Alperton Community School (324) | EHCP Looked After Children/ Previously Looked After Sibling Feeder School Distance Tot",
+     "Ark Academy -> None (None) :: Ark Academy (180) | EHCP Looked After Children/ Previously Looked After Reserved for children in Year 6 Sibling Distance",
+     "Ark Elvin Academy -> None (None) :: Ark Elvin Academy (210) | EHCP Looked After Children/ Previously Looked After Sibling Distance Total | 5 1 61 143 210 | ",
+     "Claremont High School -> None (None) :: Claremont High School (270) | EHCP Looked After Children/ Previously Looked After Sibling Children Of Staff Feeder Schoo",
+     "E-ACT Crest Academy -> None (all offered) :: E-ACT Crest Academy (330) | Sibling Feeder School Distance Nearest school with a vacancy Total | 13 25 24 44 106 | 2127.",
+     "Harris Lowe Academy Willesden -> None (all offered) :: Harris Lowe Academy Willesden (180) | Sibling Distance Nearest school with a vacancy Total | 49 65 44 158 | 12536 63004.",
+     "JFS -> None (all offered) :: JFS (300) | EHCP Sibling With C R P Feeder Sinai Feeder Nwljds All Other Crp Priority Applicants Total | 12 188 26 8 116",
+     "Kingsbury High School -> None (None) :: Kingsbury High School (336) | EHCP Sibling Children Of Staff Feeder School Distance Nearest school with a vacancy Total "
+    ]
+   },
+   {
+    "url": "https://www.brent.gov.uk/-/media/files/resident-documents/education-documents/how-places-were-offered---secondary-2025.pdf?rev=861b61bd405d4ba3842aaf2e6861c4e3&hash=BCFC16DB37039C7EBDCA965992D29D78",
+    "kind": "pdf",
+    "title": "Place allocation for Secondary schools 2025",
+    "rows": 19,
+    "matched": 16,
+    "with_distance": 1,
+    "unit": "miles",
+    "year": 2025,
+    "phase": "S",
+    "sample": [
+     "Alperton Community School -> None (None) :: Alperton Community School (324) | EHCP Looked After Children/ Previously Looked After Sibling Feeder School Distance Tot",
+     "Ark Academy -> None (None) :: Ark Academy (180) | EHCP Looked After Children/ Previously Looked After Reserved for children in Year 6 Sibling Distance",
+     "Ark Elvin Academy -> None (None) :: Ark Elvin Academy (210) | Sibling Distance Total | 62 148 210 | 5164.57 3826.36 | Oversubscribed",
+     "Claremont High School -> None (None) :: Claremont High School (270) | EHCP Looked After Children/ Previously Looked After Sibling Children Of Staff Feeder Schoo",
+     "E-ACT Crest Academy -> None (all offered) :: E-ACT Crest Academy (330) | Social/ Medical Sibling Feeder School Distance Nearest school with a vacancy Total | 1 40 15",
+     "Harris Lowe Academy Willesden -> None (None) :: Harris Lowe Academy Willesden (210) | EHCP Sibling Distance Nearest school with a vacancy Total | 2 63 89 26 180 | 6591.",
+     "JFS -> None (all offered) :: JFS (300) | EHCP Sibling With C R P Feeder Sinai Feeder Nwljds All Other Crp Priority Applicants Total | 10 168 26 8 138",
+     "Kingsbury High School -> None (None) :: Kingsbury High School (336) | EHCP Looked After Children/ Previously Looked After Sibling Children Of Staff Feeder Schoo"
+    ]
+   },
+   {
+    "url": "https://www.brent.gov.uk/-/media/files/resident-documents/education-documents/how-places-were-offered-reception-2026.pdf?rev=730768d1ad084ee6beaed8f1d484b2a7&hash=A9D804374A45256AABC636D15C1E2979",
+    "kind": "pdf",
+    "title": "Place allocation for Primary Schools 2026",
+    "rows": 63,
+    "matched": 54,
+    "with_distance": 1,
+    "unit": "metres",
+    "year": 2026,
+    "phase": "P",
+    "sample": [
+     "Anson Primary School -> None (all offered) :: Anson Primary School (52) Staff Child Sibling Any Other Applicant | 168 | 55* 1 22 32 | 3446.01 5179.52 | Undersubscribe",
+     "Ark Academy -> None (None) :: Ark Academy (60) EHCP Staff Child Sibling Distance | 314 | 60 2 2 32 24 | 5212.34 490.03 | Oversubscribed",
+     "Ark Franklin Primary Academy -> None (None) :: Ark Franklin Primary Academy (90) Children At Af Nursery Eligible For The Eypp, Pp Or Sp Sibling Distance | 349 | 90 5 3",
+     "Avigdor Hirsch Torah Temimah Primary School -> None (None) :: Avigdor Hirsch Torah Temimah Primary School (25) Orthodox Jew And Sibling Orthodox Jew | 35 | 25 12 13 | 9166.13 13469.4",
+     "Barham Primary School -> None (all offered) :: Barham Primary School (120) Looked After Children/ Previously Looked After Sibling Any Other Applicant Nearest school wi",
+     "Braintcroft E-ACT Primary Academy -> None (all offered) :: Braintcroft E-Act Primary Academy (90) Sibling Any Other Applicants Nearest school with a vacancy | 100 | 63 27 34 2 | 1",
+     "Brentfield Primary School -> None (all offered) :: Brentfield Primary School (90) EHCP Staff Child Sibling Any Other Applicant | 87 | 31 1 2 17 11 | 1918.61 2685.89 | Unde",
+     "Carlton Vale Infant School -> None (all offered) :: Carlton Vale Infant School (60) EHCP Sibling Any Other Applicant | 23 | 8 1 1 6 | 236.03 5084.76 | Undersubscribed"
+    ]
+   },
+   {
+    "url": "https://www.brent.gov.uk/-/media/files/resident-documents/education-documents/how-places-were-offered-reception-2025.pdf?rev=3bed458d91924ab6b8bcd3d03c0e4137&hash=6555BCF398B58933679C25B8600B368E",
+    "kind": "pdf",
+    "title": "Place allocation for Primary Schools 2025",
+    "rows": 59,
+    "matched": 53,
+    "with_distance": 0,
+    "unit": "metres",
+    "year": 2025,
+    "phase": "P",
+    "sample": [
+     "Anson Primary School -> None (None) :: Anson Primary School (52) Sibling Any Other Applicant | 52 26 26 | 1815.86 1017.79 | Oversubscribed",
+     "Ark Academy -> None (None) :: Ark Academy (60) Looked After Children/ Previously Looked After Sibling Distance | 60 2 22 36 | 5325.46 666.51 | Oversub",
+     "Ark Franklin Primary Academy -> None (None) :: Ark Franklin Primary Academy (90) Children At Af Nursery Eligible For The Eypp, Pp Or Sp Sibling Distance | 90 3 34 53 |",
+     "Avigdor Hirsch Torah Temimah Primary School -> None (None) :: Avigdor Hirsch Torah Temimah Primary School (25) Orthodox Jew And Sibling Orthodox Jew | 25 14 11 | 9082.08 13540.03 | O",
+     "Barham Primary School -> None (None) :: Barham Primary School (120) Sibling Any Other Applicant | 120 48 72 | 3079.48 1245.12 | Oversubscribed",
+     "Braintcroft E-ACT Primary Academy -> None (all offered) :: Braintcroft E-Act Primary Academy (90) Sibling Any Other Applicants Nearest school with a vacancy | 74 26 39 9 | 4126.29",
+     "Brentfield Primary School -> None (all offered) :: Brentfield Primary School (90) Sibling Any Other Applicant Nearest school with a vacancy | 41 24 16 1 | 2002.66 2669.45 ",
+     "Carlton Vale Infant School -> None (all offered) :: Carlton Vale Infant School (60) Sibling Any Other Applicant Nearest school with a vacancy | 9 1 7 1 | 326.26 4326.2 146."
+    ]
+   },
+   {
+    "url": "https://www.brent.gov.uk/-/media/files/resident-documents/education-documents/how-places-were-offered---junior-2026.pdf?rev=1d128c6872654016a95784894a7b0699&hash=FE969A5DA8638DCAB34925B53BC75226",
+    "kind": "pdf",
+    "title": "Place allocation for Junior Schools 2026",
+    "rows": 9,
+    "matched": 6,
+    "with_distance": 0,
+    "unit": "metres",
+    "year": 2026,
+    "phase": "P",
+    "sample": [
+     "Mount Stewart Junior School -> None (all offered) :: Mount Stewart Junior School (90) EHCP Linked Infant School Any Other Applicant Nearest school with a vacancy | 91 | 81 3",
+     "Our Lady of Grace Catholic Junior School -> None (all offered) :: Our Lady of Grace RC Junior School (60) Baptised Catholics Attending Ologi Baptised Catholics Resident In Other Parish C",
+     "Roe Green Junior School -> None (all offered) :: Roe Green Junior School (120) Linked Infant School Any Other Applicant | 128 | 116 112 4 | 6776.98 4133.81 | Undersubscr",
+     "St Joseph's Catholic Junior School -> None (None) :: St Joseph's RC Junior School (70) EHCP 2i Cath, Ccp, In Parish, Yr 2 Infants 2ii Cath, Ccp, In Parish, Sibling Inf/jnr 2",
+     "St Mary Magdalen's Catholic Junior School -> None (all offered) :: St Mary Magdalen's RC Junior School (90) Baptised Catholic, Attending Cjm Infant School - Ccp With Sibling Baptised Cath",
+     "The Kilburn Park School Foundation -> None (all offered) :: The Kilburn Park School Foundation (60) Feeder School Distance | 15 | 6 4 2 | 7943.04 4965.78 | Undersubscribed(cid:3)"
+    ]
+   },
+   {
+    "url": "https://www.brent.gov.uk/-/media/files/resident-documents/education-documents/how-places-were-offered---junior-2025.pdf?rev=5ea13a6d5d8548fcb512927c2c7acbb2&hash=B7D15EA7DD57A8E10F26805E9819356A",
+    "kind": "pdf",
+    "title": "Place allocation for Junior Schools 2025",
+    "rows": 10,
+    "matched": 7,
+    "with_distance": 0,
+    "unit": "metres",
+    "year": 2025,
+    "phase": "P",
+    "sample": [
+     "Malorees Primary School -> None (all offered) :: Malorees Junior School EHCP Looked After Children/ Previously Looked After Feeder / Sibling Feeder School Any Other Appl",
+     "Mount Stewart Junior School -> None (all offered) :: Mount Stewart Junior School EHCP L A C And Previously L A C Linked Infant School Sibling Any Other Applicant | 87 5 1 76",
+     "Our Lady of Grace Catholic Junior School -> None (None) :: Our Lady of Grace RC Junior School EHCP Baptised Catholics Attending Ologi Baptised Catholics Resident In Other Parish C",
+     "Roe Green Junior School -> None (all offered) :: Roe Green Junior School Sibling Linked Infant School Any Other Applicant | 105 2 101 2 | 6076.91 1300.03 6076.91 1676.98",
+     "St Joseph's Catholic Junior School -> None (all offered) :: St Joseph's RC Junior School EHCP 2 Cath, Ccp, Yr 2 Infants 9 Catechumen, East Christian 11 Other Faith, Religious Leade",
+     "St Mary Magdalen's Catholic Junior School -> None (all offered) :: St Mary Magdalen's RC Junior School EHCP Baptised Catholic, Attending Cjm Infant School - Ccp With Sibling Baptised Cath",
+     "The Kilburn Park School Foundation -> None (all offered) :: The Kilburn Park School Foundation EHCP Sibling Feeder School Distance | 7 1 2 3 1 | 2762.14 228.47 2762.14 767.32 | Und"
+    ]
+   }
+  ],
+  "errors": [],
+  "fetched_pages": 1,
+  "fetched_docs": 6,
+  "schools_with_cutoff": 2,
+  "schools_total": 93,
+  "years": {
+   "2026": 2
+  },
+  "seconds": 22
+ },
+ {
+  "name": "Bromley",
+  "pages": [
+   {
+    "url": "https://www.bromley.gov.uk/secondary-school-admissions/secondary-school-places",
+    "kind": "html",
+    "title": "Applying for a school place - Secondary school places",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.bromley.gov.uk/secondary-school-admissions",
+    "kind": "html",
+    "title": "Secondary school admissions – London Borough of Bromley",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   }
+  ],
+  "docs": [],
+  "errors": [
+   "https://www.bromley.gov.uk/downloads/file/28/primary-education-in-bromley-2026-2027: HTTPError: HTTP Error 404: Not Found"
+  ],
+  "fetched_pages": 2,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 106,
+  "years": {},
+  "seconds": 5
+ },
+ {
+  "name": "Camden",
+  "pages": [
+   {
+    "url": "https://www.camden.gov.uk/primary-admissions",
+    "kind": "html",
+    "title": "Primary admissions - Camden Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.camden.gov.uk/secondary-school-admissions",
+    "kind": "html",
+    "title": "Secondary admissions - Camden Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.camden.gov.uk/school-admissions-general",
+    "kind": "html",
+    "title": "School admissions general information - Camden Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [],
+  "errors": [],
+  "fetched_pages": 3,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 59,
+  "years": {},
+  "seconds": 3
+ },
+ {
+  "name": "Croydon",
+  "pages": [
+   {
+    "url": "https://www.croydon.gov.uk/schools-and-education/schools/school-admissions/school-admissions-process",
+    "kind": "html",
+    "title": "School admissions process | Croydon Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://www.croydon.gov.uk/schools-and-education/schools/school-admissions/school-admissions-process/distance-between-your-home-and-schools",
+    "kind": "html",
+    "title": "Distance between your home and schools | Croydon Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [
+   {
+    "url": "https://www.croydon.gov.uk/sites/default/files/2025-08/primary-admissions-prospectus-2026-2027.pdf",
+    "kind": "pdf",
+    "title": "primary-admissions-prospectus-2026-2027.pdf",
+    "rows": 3524,
+    "matched": 207,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2025,
+    "phase": "P",
+    "sample": [
+     "Beaumont Primary School -> None (None) :: Beaumont Primary, Old Lodge Lane, Purley, CR8 4DN",
+     "Downsview Primary and Nursery School -> None (None) :: Downsview Primary & Nursery, Biggin Way, Upper Norwood, London, SE19 3XE",
+     "Elmwood Infant School -> None (None) :: Elmwood Infant School, Lodge Road, Croydon, CR0 2PL",
+     "Elmwood Junior School -> None (None) :: Elmwood Junior School, Lodge Road, Croydon, CR0 2PL",
+     "Forestdale Primary School -> None (None) :: Forestdale Primary, Pixton Way, Croydon, CR0 9JE",
+     "Greenvale Primary School -> None (None) :: Greenvale Primary, Sandpiper Road, South Croydon, CR2 8PR",
+     "Gresham Primary School -> None (None) :: Gresham Primary, Limpsfield Road, Sanderstead, South Croydon, CR2 9EA",
+     "Heavers Farm Primary School -> None (None) :: Heavers Farm Primary, 58 Dinsdale Gardens, London, SE25 6LT"
+    ]
+   },
+   {
+    "url": "https://www.croydon.gov.uk/sites/default/files/2025-08/secondary-admissions-prospectus-2026-2027.pdf",
+    "kind": "pdf",
+    "title": "secondary-admissions-prospectus-2026-2027.pdf",
+    "rows": 1621,
+    "matched": 58,
+    "with_distance": 0,
+    "unit": "miles",
+    "year": 2025,
+    "phase": "S",
+    "unmatched_with_distance": [
+     "9",
+     "11",
+     "12",
+     "17",
+     "26",
+     "22",
+     "2",
+     "29",
+     "2025",
+     "3",
+     "32",
+     "33"
+    ],
+    "sample": [
+     "Ark Blake Academy -> None (None) :: Ark Blake Academy, (boys and girls 11-18)",
+     "Coloma Convent Girls' School -> None (None) :: Coloma Convent Girls’ School (girls 11-18)",
+     "Coombe Wood School -> None (None) :: Coombe Wood School (boys and girls 11-18) 30",
+     "Harris Academy Beulah Hill -> None (None) :: Harris Academy Beulah Hill",
+     "Harris Academy Purley -> None (None) :: Harris Academy Purley (boys and girls 11-18) Kendra",
+     "Harris Academy South Norwood -> None (None) :: Harris Academy South Norwood (boys and girls",
+     "Harris City Academy Crystal Palace -> None (None) :: Harris City Academy Crystal Palace (boys and girls",
+     "Harris Invictus Academy Croydon -> None (None) :: Harris Invictus Academy Croydon, (boys and girls"
+    ]
+   }
+  ],
+  "errors": [],
+  "fetched_pages": 2,
+  "fetched_docs": 2,
+  "schools_with_cutoff": 0,
+  "schools_total": 135,
+  "years": {},
+  "seconds": 87
+ },
+ {
+  "name": "Ealing",
+  "pages": [
+   {
+    "url": "https://www.ealing.gov.uk/downloads/download/3514/high_school_on-time_offers_2017",
+    "kind": "html",
+    "title": "High school on-time offers 2026 | Ealing Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2026,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.ealing.gov.uk/info/201113/school_admissions",
+    "kind": "html",
+    "title": "School admissions | Ealing Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2011,
+    "phase": null
+   }
+  ],
+  "docs": [
+   {
+    "url": "https://www.ealing.gov.uk/download/downloads/id/21309/high_school_on_time_offers_2026.pdf",
+    "kind": "pdf",
+    "title": "High School on time offers 2026",
+    "rows": 117,
+    "matched": 10,
+    "with_distance": 0,
+    "unit": "miles",
+    "year": 2026,
+    "phase": "S",
+    "sample": [
+     "Ada Lovelace Church of England High School -> None (None) :: Ada Lovelace CE High School: |  |  |  |  | ",
+     "Ark Soane Academy -> None (None) :: Ark Soane Academy: |  |  |  |  | ",
+     "Drayton Manor High School -> None (None) :: Drayton Manor High School: |  |  |  |  | ",
+     "Ealing Fields Church of England High School -> None (None) :: Ealing Fields High School: |  |  |  |  | ",
+     "Elthorne Park High School -> None (None) :: Elthorne Park High School: |  |  |  |  | ",
+     "Featherstone High School -> None (None) :: Featherstone High School: |  |  |  |  | ",
+     "Greenford High School -> None (None) :: Greenford High School: |  |  |  |  | ",
+     "The Cardinal Wiseman Catholic School -> None (None) :: The Cardinal Wiseman Catholic High School: |  |  |  |  | "
+    ]
+   },
+   {
+    "url": "https://www.ealing.gov.uk/download/downloads/id/18711/high_school_on_time_offers_2025.pdf",
+    "kind": "pdf",
+    "title": "High School on time offers 2025",
+    "rows": 116,
+    "matched": 11,
+    "with_distance": 0,
+    "unit": "miles",
+    "year": 2025,
+    "phase": "S",
+    "sample": [
+     "Ada Lovelace Church of England High School -> None (None) :: Ada Lovelace CE High School: |  |  |  |  | ",
+     "Ark Soane Academy -> None (all offered) :: Ark Soane Academy: All applicants offered |  |  |  |  | ",
+     "Dormers Wells High School -> None (None) :: Dormers Wells High School: |  |  |  |  | ",
+     "Drayton Manor High School -> None (None) :: Drayton Manor High School: |  |  |  |  | ",
+     "Ealing Fields Church of England High School -> None (None) :: Ealing Fields High School: |  |  |  |  | ",
+     "Elthorne Park High School -> None (None) :: Elthorne Park High School: |  |  |  |  | ",
+     "Featherstone High School -> None (None) :: Featherstone High School: |  |  |  |  | ",
+     "Greenford High School -> None (None) :: Greenford High School: |  |  |  |  | "
+    ]
+   }
+  ],
+  "errors": [
+   "https://www.ealing.gov.uk/downloads/download/3262/high_allocations_by_distance_and_criteria: HTTPError: HTTP Error 404: Not Found"
+  ],
+  "fetched_pages": 2,
+  "fetched_docs": 2,
+  "schools_with_cutoff": 0,
+  "schools_total": 99,
+  "years": {},
+  "seconds": 13
+ },
+ {
+  "name": "Enfield",
+  "pages": [],
+  "docs": [],
+  "errors": [
+   "https://www.enfield.gov.uk/services/children-and-education/school-admissions-and-applications/admission-to-primary-school-september-2026: HTTPError: HTTP Error 403: Forbidden",
+   "https://www.enfield.gov.uk/__data/assets/pdf_file/0011/103043/Reception-previous-allocation-breakdown-Education.pdf: HTTPError: HTTP Error 403: Forbidden",
+   "https://www.enfield.gov.uk/__data/assets/pdf_file/0040/89896/Transfer-to-secondary-2025-and-allocation-information-Education.pdf: HTTPError: HTTP Error 403: Forbidden"
+  ],
+  "fetched_pages": 0,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 98,
+  "years": {},
+  "seconds": 1
+ },
+ {
+  "name": "Greenwich",
+  "pages": [
+   {
+    "url": "https://www.royalgreenwich.gov.uk/site/custom_scripts/repo/pages/greenwich-schools-catchment-radius/secondary.html",
+    "kind": "html",
+    "title": "seed",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.royalgreenwich.gov.uk/site/custom_scripts/repo/pages/greenwich-schools-catchment-radius/primary.html",
+    "kind": "html",
+    "title": "seed",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.royalgreenwich.gov.uk/info/200286/apply_for_a_school_place/1400/secondary_school_offers_map",
+    "kind": "html",
+    "title": "Secondary school offers map | Royal Borough of Greenwich",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   }
+  ],
+  "docs": [],
+  "errors": [],
+  "fetched_pages": 3,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 93,
+  "years": {},
+  "seconds": 3
+ },
+ {
+  "name": "Hackney",
+  "pages": [
+   {
+    "url": "https://education.hackney.gov.uk/section/admissions-and-transfers",
+    "kind": "html",
+    "title": "Admissions and transfers | Hackney Education",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://education.hackney.gov.uk/content/common-priority-criteria-admissions",
+    "kind": "html",
+    "title": "Common priority criteria for admissions | Hackney Education",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [
+   {
+    "url": "https://education.hackney.gov.uk/sites/default/files/document/Applications%20and%20Offers%20at%20Hackney%20Secondary%20Schools%202018-25.pdf",
+    "kind": "pdf",
+    "title": "Applications and Offers at Hackney Secondary Schools 2018-25.pdf",
+    "rows": 971,
+    "matched": 14,
+    "with_distance": 0,
+    "unit": "miles",
+    "year": 2018,
+    "phase": "S",
+    "sample": [
+     "Yesodey Hatorah Senior Girls School -> None (None) :: Offers at The Excelsior Academy (PAN: 180 Applications: 322) Offers at The Urswick CE School (PAN: 150 Applications: 260",
+     "Yesodey Hatorah Senior Girls School -> None (None) :: Offers at The Petchey Academy (PAN: 180 Applications: 407) Offers at The Urswick CE School (PAN: 150 Applications: 302) ",
+     "Yesodey Hatorah Senior Girls School -> None (None) :: Offers at The Petchey Academy (PAN: 180 Applications: 441) Offers at The Urswick CE School (PAN: 150 Applications: 329) ",
+     "Yesodey Hatorah Senior Girls School -> None (None) :: A pplica\u0000ons and Offers at Hackney Secondary Schools for Year 7, 2018 - 2020 Note This data reflects the posi\u0000on as at n",
+     "Cardinal Pole Catholic School -> None (all offered) :: Cardinal Pole Catholic School Admission to Year 7 in September 2020 Total on-\u0000me applica\u0000ons: 416 Admission Number: 180 ",
+     "City of London Academy, Shoreditch Park -> None (None) :: City of London Academy, Shoreditch Park Admission to Year 7 in September 2020 Admission to Year 7 in September 2019 Tota",
+     "Clapton Girls' Academy -> None (None) :: Clapton Girls’ Academy Admission to Year 7 in September 2020 Admission to Year 7 in September 2019 Total on-\u0000me applica\u0000",
+     "Haggerston School -> None (all offered) :: Haggerston School Please note: to ensure there are sufficient secondary school places for Hackney residents the school o"
+    ]
+   },
+   {
+    "url": "https://education.hackney.gov.uk/sites/default/files/document/Applications%20and%20Offers%20at%20Hackney%20Primary%20Schools%202018-26.pdf",
+    "kind": "pdf",
+    "title": "How places were offered at Hackney Primary Schools 2018 - 2026",
+    "rows": 762,
+    "matched": 380,
+    "with_distance": 132,
+    "unit": "miles",
+    "year": 2026,
+    "phase": "P",
+    "unmatched_with_distance": [
+     "Oldhill Community School ** | 30 | 22 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0",
+     "Sir Thomas Abney School | 30 | 35 | 8 | 0 | 0 | 0 | 0 | 4 | 0 | 4 | 2.757 | 0",
+     "Oldhill Community School ** | 30 | 64 | 27 | 0 | 0 | 0 | 0 | 12 | 0 | 15 | 1.149 | 0",
+     "Sir Thomas Abney School | 30 | 59 | 27 | 0 | 0 | 0 | 0 | 6 | 0 | 16 | 2.207 | 5",
+     "Baden Powell School | 30 | 58 | 13 | 0 | 0 | 0 | 0 | 4 | 0 | 9 | 7.723 | 0",
+     "Colvestone Primary School | 30 | 43 | 12 | 0 | 0 | 1 | 0 | 3 | 0 | 8 | 1.802 | 0",
+     "De Beauvoir Primary School | 30 | 66 | 10 | 1 | 0 | 0 | 0 | 3 | 0 | 6 | 1.362 | 0",
+     "Oldhill Community School | 60 | 48 | 14 | 2 | 0 | 0 | 0 | 5 | 0 | 7 | 1.385 | 0",
+     "Randal Cremer Primary School | 45 | 40 | 16 | 0 | 0 | 0 | 0 | 8 | 0 | 8 | 0.878 | 0",
+     "Sir Thomas Abney School | 30 | 69 | 18 | 1 | 0 | 0 | 0 | 8 | 0 | 9 | 1.08 | 0",
+     "Baden Powell School | 30 | 66 | 20 |  |  |  |  | 7 |  | 11 | 2",
+     "Colvestone Primary School | 30 | 64 | 20 |  |  |  |  | 8 |  | 10 | 2"
+    ],
+    "sample": [
+     "Benthal Primary School -> 0.833 (column) :: Benthal Primary School | 60 | 59 | 14 | 0 | 0 | 0 | 0 | 7 | 0 | 7 | 0.833 | 0",
+     "Berger Primary School -> 9.719 (column) :: Berger Primary School | 60 | 67 | 37 | 3 | 0 | 0 | 0 | 16 | 1 | 16 | 9.719 | 1",
+     "Betty Layward Primary School -> 0.245 (column) :: Betty Layward Primary School | 60 | 250 | 60 | 2 | 1 | 0 | 0 | 29 | 1 | 27 | 0.245 | 0",
+     "Daubeney Primary School -> 5.829 (column) :: Daubeney Primary School | 60 | 114 | 45 | 2 | 0 | 0 | 0 | 18 | 0 | 23 | 5.829 | 2",
+     "Gainsborough Primary School -> 3.31 (column) :: Gainsborough Primary School | 30 | 68 | 30 | 0 | 3 | 1 | 0 | 7 | 1 | 18 | 3.31 | 0",
+     "Gayhurst Community School -> 0.344 (column) :: Gayhurst Community School | 60 | 247 | 60 | 1 | 0 | 0 | 0 | 17 | 1 | 41 | 0.344 | 0",
+     "Grasmere Primary School -> 0.197 (column) :: Grasmere Primary School | 30 | 183 | 30 | 1 | 0 | 0 | 1 | 17 | 0 | 11 | 0.197 | 0",
+     "Grazebrook Primary School -> 0.51 (column) :: Grazebrook Primary School | 60 | 227 | 60 | 0 | 0 | 0 | 0 | 17 | 0 | 43 | 0.51 | 0"
+    ]
+   },
+   {
+    "url": "https://education.hackney.gov.uk/sites/default/files/document/Applications%20and%20Offers%20at%20Hackney%20Secondary%20Schools%202018-26.pdf",
+    "kind": "pdf",
+    "title": "How places were offered at Hackney Secondary Schools 2018 - 2026",
+    "rows": 1037,
+    "matched": 15,
+    "with_distance": 0,
+    "unit": "miles",
+    "year": 2026,
+    "phase": "S",
+    "sample": [
+     "Yesodey Hatorah Senior Girls School -> None (None) :: Offers at The Excelsior Academy (PAN: 180 Applications: 267) Offers at The Urswick CE School (PAN: 150 Applications: 275",
+     "Yesodey Hatorah Senior Girls School -> None (None) :: Offers at The Excelsior Academy (PAN: 180 Applications: 322) Offers at The Urswick CE School (PAN: 150 Applications: 260",
+     "Yesodey Hatorah Senior Girls School -> None (None) :: Offers at The Petchey Academy (PAN: 180 Applications: 407) Offers at The Urswick CE School (PAN: 150 Applications: 302) ",
+     "Yesodey Hatorah Senior Girls School -> None (None) :: Offers at The Petchey Academy (PAN: 180 Applications: 441) Offers at The Urswick CE School (PAN: 150 Applications: 329) ",
+     "Yesodey Hatorah Senior Girls School -> None (None) :: A pplica\u0000ons and Offers at Hackney Secondary Schools for Year 7, 2018 - 2020 Note This data reflects the posi\u0000on as at n",
+     "Cardinal Pole Catholic School -> None (all offered) :: Cardinal Pole Catholic School Admission to Year 7 in September 2020 Total on-\u0000me applica\u0000ons: 416 Admission Number: 180 ",
+     "City of London Academy, Shoreditch Park -> None (None) :: City of London Academy, Shoreditch Park Admission to Year 7 in September 2020 Admission to Year 7 in September 2019 Tota",
+     "Clapton Girls' Academy -> None (None) :: Clapton Girls’ Academy Admission to Year 7 in September 2020 Admission to Year 7 in September 2019 Total on-\u0000me applica\u0000"
+    ]
+   }
+  ],
+  "errors": [],
+  "fetched_pages": 2,
+  "fetched_docs": 3,
+  "schools_with_cutoff": 32,
+  "schools_total": 75,
+  "years": {
+   "2026": 32
+  },
+  "seconds": 72
+ },
+ {
+  "name": "Hammersmith & Fulham",
+  "pages": [
+   {
+    "url": "https://www.lbhf.gov.uk/children-and-young-people/schools-and-colleges/school-admissions/secondary-school-offers",
+    "kind": "html",
+    "title": "seed",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.lbhf.gov.uk/children-and-young-people/schools-and-colleges/school-admissions/starting-school-reception-2026",
+    "kind": "html",
+    "title": "seed",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2026,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.lbhf.gov.uk/children-and-young-people/schools-and-colleges/school-admissions",
+    "kind": "html",
+    "title": "seed",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [],
+  "errors": [],
+  "fetched_pages": 3,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 60,
+  "years": {},
+  "seconds": 1
+ },
+ {
+  "name": "Haringey",
+  "pages": [
+   {
+    "url": "https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made/cutoff-distance-school-last-child-offered-place",
+    "kind": "html",
+    "title": "Cutoff distance from school of last child offered place | Haringey Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made/cutoff-distance-school-last-child-offered-place/secondary-schools-distance-school-last-child-offered-place-national-offer-day",
+    "kind": "html",
+    "title": "Secondary schools – distance from school of last child offered place on national offer day | Haringey Council",
+    "rows": 14,
+    "matched": 12,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2026,
+    "phase": "S",
+    "sample": [
+     "Alexandra Park School -> None (None) :: Alexandra Park School | 0.477 | 0.4991 | 0.5267 | 0.5150 | 0.4580",
+     "Duke's Aldridge -> None (None) :: Duke's Aldridge Academy | N/A | N/A | N/A | N/A | N/A",
+     "Fortismere School -> None (None) :: Fortismere School | 1.226 | 1.1404 | 1.1532 | 0.6337 | 0.4810",
+     "Gladesmore Community School -> None (None) :: Gladesmore Community School | N/A | 5.2496 | 1.2563 | 0.8479 | 0.9048",
+     "Greig City Academy -> None (None) :: Greig City Academy | 1.961 | 2.5562 | 2.9270 | N/A | N/A",
+     "Harris Academy Tottenham -> None (None) :: Harris Academy Tottenham | Banded | Banded | Banded | Banded | Banded",
+     "Heartlands High School -> None (None) :: Heartlands High School | 1.190 | 1.0298 | 1.5060 | 0.9823 | 1.0529",
+     "Highgate Wood Secondary School -> None (None) :: Highgate Wood Secondary School | 1.167 | 1.0224 | 0.9631 | 0.7557 | 0.7686"
+    ]
+   },
+   {
+    "url": "https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made/cutoff-distance-school-last-child-offered-place/primary-schools-distance-school-last-child-offered-place-national-offer-day",
+    "kind": "html",
+    "title": "Primary schools – distance from school of last child offered place on national offer day | Haringey Council",
+    "rows": 32,
+    "matched": 30,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2026,
+    "phase": "P",
+    "sample": [
+     "Belmont Infant School -> None (None) :: Belmont Infant School | 0.216 | 0.1808 | 0.2228 | 0.3008 | 0.3202",
+     "Bounds Green Infant School -> None (None) :: Bounds Green Infant School | 0.612 | 0.5317 | 0.6788 | 0.4201 | 0.473",
+     "Bruce Grove Primary School -> None (None) :: Bruce Grove Primary School | N/A | N/A | 0.372 | N/A | N/A",
+     "Campsbourne Infant School -> None (None) :: Campsbourne Infant School | 0.539 | 0.7065 | N/A | 0.4589 | 0.5192",
+     "Chestnuts Primary School -> None (None) :: Chestnuts Primary School | 0.416 | 0.2729 | 0.3591 | 0.4826 | 0.4291",
+     "Coldfall Primary School -> None (None) :: Coldfall Primary School | 1.593 | 0.8358 | 0.8008 | 1.2882 | 0.5054",
+     "Coleridge Primary School -> None (None) :: Coleridge Primary School | 0.472 | 0.4913 | 0.6896 | 0.5051 | 0.3986",
+     "Crowland Primary School -> None (None) :: Crowland Primary School | N/A | N/A | N/A | 1.3614 | N/A"
+    ]
+   },
+   {
+    "url": "https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made",
+    "kind": "html",
+    "title": "How school place offers were made | Haringey Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made/cutoff-distance-school-last-child-offered-place/distance-school-last-child-offered-place-1-september",
+    "kind": "html",
+    "title": "Distance from school of last child offered place on 1 September | Haringey Council",
+    "rows": 8,
+    "matched": 6,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2025,
+    "phase": null,
+    "sample": [
+     "Alexandra Park School -> None (None) :: Alexandra Park | 0.5211 | 0.5483 | 0.5550 | 0.4969",
+     "Fortismere School -> None (None) :: Fortismere | 1.8826 | 2.2433 | 1.1359 | 0.5762",
+     "Gladesmore Community School -> None (None) :: Gladesmore | 5.2496 | 1.4017 | 0.8479 | 0.9048",
+     "Greig City Academy -> None (None) :: Greig City Academy | 8.7922 | n/a | n/a | n/a",
+     "Heartlands High School -> None (None) :: Heartlands High | 1.0936 | 1.7258 | 0.9823 | 1.7725",
+     "Highgate Wood Secondary School -> None (None) :: Highgate Wood | 1.6167 | 1.5217 | 0.9150 | 1.3580"
+    ]
+   },
+   {
+    "url": "https://haringey.gov.uk/schools-learning/schools/school-admissions/find-schools-near-you",
+    "kind": "html",
+    "title": "Find schools near you | Haringey Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made/how-offers-school-places-were-made-national-offer-day",
+    "kind": "html",
+    "title": "How offers of school places were made on national offer day | Haringey Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://haringey.gov.uk/schools-learning/schools/school-admissions/find-schools-near-you/distance-calculator-schools-near-you",
+    "kind": "html",
+    "title": "Distance calculator for schools near you | Haringey Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [
+   {
+    "url": "https://haringey.gov.uk/sites/default/files/2026-03/secondary_transfer_2026_maps_of_cut-off_distances.pdf",
+    "kind": "pdf",
+    "title": "Maps of cutoff distances for secondary transfer 2026 (pdf, 6 page(s), 3.47 MB)",
+    "rows": 19,
+    "matched": 12,
+    "with_distance": 6,
+    "unit": "miles",
+    "year": 2026,
+    "phase": "S",
+    "sample": [
+     "Alexandra Park School -> 0.477 (unit in row) :: Alexandra Park Furthest Distance Offered 2026—0.477 miles",
+     "Alexandra Park School -> None (None) :: for admission to year 7 in September 2026 at Alexandra Park School.",
+     "Fortismere School -> 1.226 (column+unit) :: Fortismere Cut-Off Distance 2026—1.226 miles",
+     "Fortismere School -> None (None) :: for admission to year 7 in September 2026 at Fortismere School.",
+     "Greig City Academy -> 1.961 (column+unit) :: Greig City Academy Cut-Off Distance 2026—1.961 miles",
+     "Greig City Academy -> None (None) :: for admission to year 7 in September 2026 at Greig City Academy.",
+     "Heartlands High School -> 1.19 (column+unit) :: Heartlands High Furthest Distance Offered 2026—1.190 miles",
+     "Heartlands High School -> None (None) :: for admission to year 7 in September 2026 at Heartlands High School."
+    ]
+   },
+   {
+    "url": "https://haringey.gov.uk/sites/default/files/2025-03/secondary_transfer_2025_maps_of_cut-off_distances.pdf",
+    "kind": "pdf",
+    "title": "Maps of cutoff distances for secondary transfer 2025 (pdf, 5 page(s), 2.92 MB)",
+    "rows": 15,
+    "matched": 10,
+    "with_distance": 5,
+    "unit": "miles",
+    "year": 2025,
+    "phase": "S",
+    "sample": [
+     "Alexandra Park School -> 0.499 (unit in row) :: Alexandra Park Furthest Distance Offered 2025—0.4991 miles",
+     "Alexandra Park School -> None (None) :: for admission to year 7 in September 2025 at Alexandra Park School.",
+     "Fortismere School -> 1.14 (column+unit) :: Fortismere Cut-Off Distance 2025—1.1404 miles",
+     "Fortismere School -> None (None) :: for admission to year 7 in September 2025 at Fortismere School.",
+     "Greig City Academy -> 2.556 (column+unit) :: Greig City Academy Cut-Off Distance 2025—2.5562 miles",
+     "Greig City Academy -> None (None) :: for admission to year 7 in September 2025 at Greig City Academy.",
+     "Heartlands High School -> 1.03 (column+unit) :: Heartlands High Furthest Distance Offered 2025—1.0298 miles",
+     "Heartlands High School -> None (None) :: for admission to year 7 in September 2025 at Heartlands High School."
+    ]
+   },
+   {
+    "url": "https://haringey.gov.uk/sites/default/files/2024-06/secondary_transfer_2024_-_maps_of_cut-off_distances.pdf",
+    "kind": "pdf",
+    "title": "Maps of cutoff distances for secondary transfer 2024 (pdf, 6 page(s), 3.74 MB)",
+    "rows": 18,
+    "matched": 12,
+    "with_distance": 6,
+    "unit": "miles",
+    "year": 2024,
+    "phase": "S",
+    "sample": [
+     "Alexandra Park School -> 0.527 (unit in row) :: Alexandra Park Furthest Distance Offered 2024—0.5267 miles",
+     "Alexandra Park School -> None (None) :: for admission to year 7 in September 2024 at Alexandra Park School.",
+     "Fortismere School -> 1.153 (column+unit) :: Fortismere Cut-Off Distance 2024—1.1532 miles",
+     "Fortismere School -> None (None) :: for admission to year 7 in September 2024 at Fortismere School.",
+     "Gladesmore Community School -> 1.256 (column+unit) :: Gladesmore Cut-Off Distance 2024—1.2563 miles",
+     "Gladesmore Community School -> None (None) :: for admission to year 7 in September 2024 at Gladesmore Community School.",
+     "Greig City Academy -> 2.927 (column+unit) :: Greig City Academy Cut-Off Distance 2024—2.9270 miles",
+     "Greig City Academy -> None (None) :: for admission to year 7 in September 2024 at Greig City Academy."
+    ]
+   }
+  ],
+  "errors": [
+   "https://eforms.secure.haringey.gov.uk/ufs/HCFB.eb?gn=Schools%20and%20Education&id=3225&path=%2Fschools-learning%2Fschools%2Fschool-admissions%2Fhow-school-place-offers-were-made%2Fcutoff-distance-school-last-child-offered-place: URLError: <urlopen error timed out>",
+   "https://eforms.secure.haringey.gov.uk/ufs/HCFB.eb?gn=Schools%20and%20Education&id=3226&path=%2Fschools-learning%2Fschools%2Fschool-admissions%2Fhow-school-place-offers-were-made%2Fcutoff-distance-school-last-child-offered-place%2Fsecondary-schools-distance-school-last-child-offered-place-national-offer-day: URLError: <urlopen error timed out>",
+   "https://eforms.secure.haringey.gov.uk/ufs/HCFB.eb?gn=Schools%20and%20Education&id=3227&path=%2Fschools-learning%2Fschools%2Fschool-admissions%2Fhow-school-place-offers-were-made%2Fcutoff-distance-school-last-child-offered-place%2Fprimary-schools-distance-school-last-child-offered-place-national-offer-day: URLError: <urlopen error timed out>",
+   "https://eforms.secure.haringey.gov.uk/ufs/HCFB.eb?gn=Schools%20and%20Education&id=3228&path=%2Fschools-learning%2Fschools%2Fschool-admissions%2Fhow-school-place-offers-were-made%2Fcutoff-distance-school-last-child-offered-place%2Fdistance-school-last-child-offered-place-1-september: URLError: <urlopen error timed out>"
+  ],
+  "fetched_pages": 8,
+  "fetched_docs": 3,
+  "schools_with_cutoff": 7,
+  "schools_total": 84,
+  "years": {
+   "2026": 6,
+   "2024": 1
+  },
+  "seconds": 411
+ },
+ {
+  "name": "Harrow",
+  "pages": [
+   {
+    "url": "https://www.harrow.gov.uk/schools-learning/apply-secondary-school-place/4",
+    "kind": "html",
+    "title": "Secondary school place offers – Apply for a secondary school place – London Borough of Harrow",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   }
+  ],
+  "docs": [
+   {
+    "url": "https://www.harrow.gov.uk/downloads/file/33045/Reception_2025___How_places_were_allocated_at_Harrow_Schools.pdf",
+    "kind": "pdf",
+    "title": "Reception_2025___How_places_were_allocated_at_Harrow_Schools.pdf",
+    "rows": 42,
+    "matched": 38,
+    "with_distance": 14,
+    "unit": "miles",
+    "year": 2025,
+    "phase": "P",
+    "unmatched_with_distance": [
+     "Avanti House Primary School | 60 | 320 | 0 | 0 | N/A | N/A | 21 | 13 | 15 | 0 | 11 | 1.803 | N/A | 60"
+    ],
+    "sample": [
+     "Aylward Primary School -> 2.737 (column) :: Aylward Primary School | 90 | 195 | 3 | 0 | 0 | 0 | 27 | N/A | N/A | 0 | 60 | 2.737 | 0 | 90",
+     "Belmont School -> None (None) :: Belmont Primary School | 90 | 179 | 3 | 0 | 0 | 0 | 27 | N/A | N/A | 0 | 39 | N/A | 1 | 70",
+     "Camrose Primary With Nursery -> None (None) :: Camrose Primary School and Nursery | 60 | 121 | 2* | 0 | 0 | 0 | 22 | N/A | N/A | 0 | 30 | N/A | 2 | 56",
+     "Cannon Lane Primary School -> 1.071 (column) :: Cannon Lane Primary School | 90 | 315 | 0 | 0 | 0 | 0 | 53 | N/A | N/A | 0 | 37 | 1.071 | N/A | 90",
+     "Cedars Manor School -> None (None) :: Cedars Manor School | 60 | 71 | 0 | 0 | 0 | 0 | 13 | N/A | N/A | 0 | 12 | N/A | 0 | 25",
+     "Earlsmead Primary School -> None (None) :: Earlsmead Primary School | 60 | 93 | 0 | 0 | 0 | 0 | 16 | N/A | N/A | 1 | 14 | N/A | 2 | 33",
+     "Elmgrove Primary School & Nursery -> None (None) :: Elmgrove Primary and Nursery School | 120 | 217 | 3 | 1 | 0 | 0 | 36 | N/A | N/A | 0 | 60 | N/A | 10 | 110",
+     "Glebe Primary School -> None (None) :: Glebe Primary School | 90 | 124 | 1* | 0 | 0 | 0 | 23 | N/A | N/A | 0 | 24 | N/A | 3 | 51"
+    ]
+   },
+   {
+    "url": "https://www.harrow.gov.uk/downloads/file/33603/how-places-were-allocated-in-2026-27",
+    "kind": "pdf",
+    "title": "Secondary school place allocations 2026 to 27",
+    "rows": 15,
+    "matched": 12,
+    "with_distance": 4,
+    "unit": "miles",
+    "year": 2026,
+    "phase": "S",
+    "sample": [
+     "Bentley Wood High School -> 1.806 (column) :: Bentley Wood | 635 | 240 | 5 | 0 | 0 | 0 | 49 | 0 | 7 | 119 | N/A |  | 60 | 1.806",
+     "Canons High School -> None (None) :: Canons High | 303 | 210 | 4 | 0 | 0 | 0 | 48 | 0 | N/A | N/A | N/A |  | 76 | N/A",
+     "Harrow High School -> None (None) :: Harrow High | 417 | 180 | 2 | 0 | 0 | 0 | 32 | 0 | N/A | N/A | N/A |  | 100 | N/A",
+     "Hatch End High School -> None (None) :: Hatch End High | 533 | 210 | 6 | 1 | 0 | 0 | 54 | 0 | N/A | N/A | N/A |  | 146 | N/A",
+     "Nower Hill High School -> 0.886 (column) :: Nower Hill | 1425 | 324 | 14 | 1 | 0 | 0 | 114 | 4 | N/A | N/A | N/A |  | 191 | 0.886",
+     "Park High School -> None (None) :: Park High | 497 | 270 | 9 | 1 | 0 | 0 | 93 | 0 | N/A | N/A | N/A |  | 152 | N/A",
+     "Pinner High School -> 0.548 (column) :: Pinner High | 1247 | 180 | 11 | 4 | 0 | 0 | 71 | 2 | N/A | N/A | N/A |  | 92 | 0.548",
+     "Rooks Heath School -> None (None) :: Rooks Heath | 295 | 210 | 5 | 0 | 0 | 1 | 60 | 0 | N/A | N/A | N/A |  | 92 | N/A"
+    ]
+   },
+   {
+    "url": "https://www.harrow.gov.uk/downloads/file/32972/How_places_were_allocated_25_26.pdf",
+    "kind": "pdf",
+    "title": "Secondary school place allocations 2025 to 26",
+    "rows": 15,
+    "matched": 12,
+    "with_distance": 4,
+    "unit": "miles",
+    "year": 2025,
+    "phase": "S",
+    "unmatched_with_distance": [
+     "Avanti House | 879 | 180 | 11 | 0 | N/A | N/A | 58 | 2 | 75 | N/A | 15 | 15 | 4 | 0.196"
+    ],
+    "sample": [
+     "Bentley Wood High School -> 1.681 (column) :: Bentley Wood | 661 | 240 | 4 | 1 | 0 | 0 | 58 | 2 | 5 | 110 | N/A |  | 60 | 1.681",
+     "Canons High School -> None (None) :: Canons High | 332 | 210 | 5 | 0 | 0 | 0 | 42 | 0 | N/A | N/A | N/A |  | 92 | N/A",
+     "Harrow High School -> None (None) :: Harrow High | 455 | 180 | 1 | 0 | 0 | 0 | 38 | 0 | N/A | N/A | N/A |  | 101 | N/A",
+     "Hatch End High School -> None (None) :: Hatch End High | 515 | 210 | 10 | 1 | 0 | 0 | 47 | 0 | N/A | N/A | N/A |  | 139 | N/A",
+     "Nower Hill High School -> 0.834 (column) :: Nower Hill | 1448 | 324 | 13 | 0 | 1 | 0 | 102 | 7 | N/A | N/A | N/A |  | 201 | 0.834",
+     "Park High School -> None (None) :: Park High | 450 | 270 | 7 | 0 | 0 | 0 | 75 | 0 | N/A | N/A | N/A |  | 120 | N/A",
+     "Pinner High School -> 0.639 (column) :: Pinner High | 1202 | 180 | 13 | 2 | 0 | 0 | 58 | 0 | N/A | N/A | N/A |  | 107 | 0.639",
+     "Rooks Heath School -> None (None) :: Rooks Heath | 319 | 210 | 3 | 0 | 0 | 0 | 42 | 0 | N/A | N/A | N/A |  | 114 | N/A"
+    ]
+   },
+   {
+    "url": "https://www.harrow.gov.uk/downloads/file/32426/How_places_were_allocated_2024_25_secondary.pdf",
+    "kind": "pdf",
+    "title": "Secondary school place allocations 2024 to 25",
+    "rows": 15,
+    "matched": 12,
+    "with_distance": 5,
+    "unit": "miles",
+    "year": 2024,
+    "phase": "S",
+    "unmatched_with_distance": [
+     "Avanti House | 762 | 180 | 9 | 0 | 0 | 0 | 70 | 0 | 64 | N/A | 15 | 15 | 7 | 0.325"
+    ],
+    "sample": [
+     "Bentley Wood High School -> 1.638 (column) :: Bentley Wood | 674 | 240 | 7 | 0 | 0 | 1 | 58 | 2 | 19 | 93 | N/A |  | 60 | 1.638",
+     "Canons High School -> None (None) :: Canons High | 357 | 210 | 2 | 1 | 0 | 0 | 49 | 0 | N/A | N/A | N/A |  | 104 | N/A",
+     "Harrow High School -> None (None) :: Harrow High | 477 | 180 | 3 | 0 | 0 | 0 | 39 | 0 | N/A | N/A | N/A |  | 108 | N/A",
+     "Hatch End High School -> None (None) :: Hatch End High | 554 | 210 | 4 | 1 | 0 | 0 | 46 | 2 | N/A | N/A | N/A |  | 150 | N/A",
+     "Nower Hill High School -> 0.814 (column) :: Nower Hill | 1528 | 324 | 22 | 2 | 0 | 1 | 119 | 0 | N/A | N/A | N/A |  | 180 | 0.814",
+     "Park High School -> None (None) :: Park High | 510 | 270 | 2 | 0 | 0 | 1 | 78 | 0 | N/A | N/A | N/A |  | 162 | N/A",
+     "Pinner High School -> 0.597 (column) :: Pinner High | 1244 | 180 | 4 | 1 | 1 | 1 | 73 | 4 | N/A | N/A | N/A |  | 96 | 0.597",
+     "Rooks Heath School -> None (None) :: Rooks Heath | 345 | 210 | 2 | 0 | 0 | 2 | 48 | 0 | N/A | N/A | N/A |  | 116 | N/A"
+    ]
+   },
+   {
+    "url": "https://www.harrow.gov.uk/downloads/file/31344/How_places_were_allocated_22_23__website_ns.pdf",
+    "kind": "pdf",
+    "title": "Secondary school place allocations 2023 to 24",
+    "rows": 15,
+    "matched": 12,
+    "with_distance": 6,
+    "unit": "miles",
+    "year": 2023,
+    "phase": "S",
+    "unmatched_with_distance": [
+     "Avanti House | 766 | 180 | 5 | 1 | 0 | 0 | 69 | 0 | 69 | N/A | 12 | 15 | 9 | 0.295"
+    ],
+    "sample": [
+     "Bentley Wood High School -> 1.792 (column) :: Bentley Wood | 631 | 240 | 0 | 0 | 0 | 0 | 61 | 1 | 13 | 105 | N/A |  | 60 | 1.792",
+     "Canons High School -> None (None) :: Canons High | 413 | 210 | 6 | 0 | 0 | 0 | 59 | 0 | N/A | N/A | N/A |  | 85 | N/A",
+     "Harrow High School -> None (None) :: Harrow High | 481 | 180 | 2 | 0 | 0 | 0 | 36 | 2 | N/A | N/A | N/A |  | 115 | N/A",
+     "Hatch End High School -> None (None) :: Hatch End High | 514 | 210 | 6 | 0 | 0 | 0 | 48 | 0 | N/A | N/A | N/A |  | 136 | N/A",
+     "Nower Hill High School -> 0.856 (column) :: Nower Hill | 1488 | 324 | 12 | 5 | 0 | 0 | 114 | 1 | N/A | N/A | N/A |  | 192 | 0.856",
+     "Park High School -> 1.128 (column) :: Park High | 651 | 270 | 9 | 2 | 0 | 0 | 100 | 1 | N/A | N/A | N/A |  | 158 | 1.128",
+     "Pinner High School -> 0.676 (column) :: Pinner High | 1141 | 180 | 11 | 2 | 1 | 0 | 55 | 1 | N/A | N/A | N/A |  | 110 | 0.676",
+     "Rooks Heath School -> None (None) :: Rooks Heath | 390 | 210 | 6 | 0 | 1 | 0 | 59 | 0 | N/A | N/A | N/A |  | 93 | N/A"
+    ]
+   }
+  ],
+  "errors": [],
+  "fetched_pages": 1,
+  "fetched_docs": 5,
+  "schools_with_cutoff": 20,
+  "schools_total": 62,
+  "years": {
+   "2025": 14,
+   "2026": 4,
+   "2024": 1,
+   "2023": 1
+  },
+  "seconds": 17
+ },
+ {
+  "name": "Havering",
+  "pages": [
+   {
+    "url": "https://www.havering.gov.uk/school-admissions-1/school-admissions-arrangements-statistics",
+    "kind": "html",
+    "title": "Determined arrangements | School admission arrangements, polices and statistical information | London Borough of Havering",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [],
+  "errors": [],
+  "fetched_pages": 1,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 84,
+  "years": {},
+  "seconds": 2
+ },
+ {
+  "name": "Hillingdon",
+  "pages": [
+   {
+    "url": "https://www.hillingdon.gov.uk/article/8758/",
+    "kind": "html",
+    "title": "September 2027 admissions | Starting secondary school | Hillingdon Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.hillingdon.gov.uk/article/8503/",
+    "kind": "html",
+    "title": "September 2027 admissions | Starting primary school | Hillingdon Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   }
+  ],
+  "docs": [],
+  "errors": [
+   "https://www.hillingdon.gov.uk/downloads/download/287/primary-school-statistics: HTTPError: HTTP Error 404: 404",
+   "https://www.hillingdon.gov.uk/schooladmissions/starting-secondary-school/2: HTTPError: HTTP Error 404: 404",
+   "https://www.hillingdon.gov.uk/schooladmissions/starting-primary-school/2: HTTPError: HTTP Error 404: 404"
+  ],
+  "fetched_pages": 2,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 98,
+  "years": {},
+  "seconds": 7
+ },
+ {
+  "name": "Hounslow",
+  "pages": [
+   {
+    "url": "https://www.hounslow.gov.uk/primary_schools_admissions",
+    "kind": "html",
+    "title": "New reception primary school place | London Borough of Hounslow",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.hounslow.gov.uk/housing-register-allocations",
+    "kind": "html",
+    "title": "Housing register and allocations | London Borough of Hounslow",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://www.hounslow.gov.uk/primary-school-admissions/allocation-reception-primary-school-places",
+    "kind": "html",
+    "title": "Allocation of reception primary school places | London Borough of Hounslow",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.hounslow.gov.uk/housing-register-allocations/apply-council-housing",
+    "kind": "html",
+    "title": "Apply to join the Housing Register | London Borough of Hounslow",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://www.hounslow.gov.uk/housing-register-allocations/housing-application-report-change-circumstances",
+    "kind": "html",
+    "title": "Housing application: Report a change in circumstances | London Borough of Hounslow",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://www.hounslow.gov.uk/housing-register-allocations/assess-housing-application-allocate-housing",
+    "kind": "html",
+    "title": "How we assess your housing application and allocate housing | London Borough of Hounslow",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [
+   {
+    "url": "https://www.hounslow.gov.uk/downloads/file/11497/how-secondary-places-were-allocated-for-september-2025",
+    "kind": "pdf",
+    "title": "how-secondary-places-were-allocated-for-september-2025",
+    "rows": 149,
+    "matched": 1,
+    "with_distance": 0,
+    "unit": "miles",
+    "year": 2025,
+    "phase": "S",
+    "unmatched_with_distance": [
+     "Within 5 mile catchment and Pupil Premium | 16",
+     "Other children within 5 mile catchment 66 Any other children 0 | ",
+     "Baptised Catholics without CCP | 0",
+     "Other Looked after children | 0",
+     "Christian (with support from religious leader) Other applicants | 0",
+     " | 0"
+    ],
+    "sample": [
+     "Reach Academy Feltham -> None (None) :: Reach Academy Feltham | Places available Applications received SEN allocations"
+    ]
+   },
+   {
+    "url": "https://www.hounslow.gov.uk/downloads/file/11494/how-primary-places-were-offered-in-september-2025",
+    "kind": "pdf",
+    "title": "how-primary-places-were-offered-in-september-2025",
+    "rows": 199,
+    "matched": 29,
+    "with_distance": 10,
+    "unit": "miles",
+    "year": 2025,
+    "phase": "P",
+    "unmatched_with_distance": [
+     "Faith - other | 0",
+     "Staff | 2",
+     "Looked after children | 0",
+     "Sibling | 33",
+     "Other Baptised Catholics | 0",
+     "Other Looked after children | 0",
+     "Catechumens and Eastern Christian Church members | 0",
+     "Christians with letter from minister | 0",
+     "Other Faiths with letter from minister | 0",
+     "Any other children | 0"
+    ],
+    "sample": [
+     "Alexandra Primary School -> None (all offered) :: Alexandra Primary |  |  | 25 |  | 57 - All offered | 90 | 239",
+     "Beavers Community Primary School -> 1.088 (column+unit) :: Beavers Primary |  |  | 31 |  | 29 - last distance - 1.088 miles | 60 | 177",
+     "Bedfont Primary School -> 0.817 (column+unit) :: Bedfont Primary |  |  | 22 | 1 | 37- last distance - 0.817 miles | 60 | 140",
+     "Belmont Primary School -> 0.376 (column+unit) :: Belmont Primary |  | 1 | 25 |  | 34 - last distance - 0.376 miles | 60 | 360",
+     "Cardinal Primary School -> None (all offered) :: Cardinal Rd I&N |  |  | 18 |  | 54 - All offered | 90 | 211",
+     "Cavendish Primary School -> None (all offered) :: Cavendish Primary |  |  | 11 |  | 18 - all offered | 30 | 89",
+     "Chatsworth Primary School -> None (all offered) :: Chatsworth Primary |  |  | 32 |  | 39 - all offered | 90 | 145",
+     "Crane Park Primary School -> None (all offered) :: Crane Park Primary |  |  | 22 |  | 22 - all offered | 60 | 98"
+    ]
+   },
+   {
+    "url": "https://www.hounslow.gov.uk/downloads/file/14355/allocation-of-primary-school-reception-places-september-2026",
+    "kind": "pdf",
+    "title": "Allocation of primary school reception places - September 2026 (PDF)",
+    "rows": 197,
+    "matched": 29,
+    "with_distance": 9,
+    "unit": "miles",
+    "year": 2026,
+    "phase": "P",
+    "unmatched_with_distance": [
+     "Faith - other | 0",
+     "Staff | 0",
+     "Looked after children | 0",
+     "Sibling | 12",
+     "Baptised Catholics with CCP not in Parish | 0",
+     "Other Looked after children | 0",
+     "Catechumens and Eastern Christian Church members | 0",
+     "Other Christians with letter from minister | 0",
+     "Other Faiths with letter from minister | 0",
+     "Any other children | 0"
+    ],
+    "sample": [
+     "Alexandra Primary School -> None (all offered) :: Alexandra Primary |  |  | 30 |  | 52 - All offered |  | 90 | 233",
+     "Beavers Community Primary School -> None (all offered) :: Beavers Primary |  |  | 36 | 1 | 35 - All offered |  | 90 | 150",
+     "Bedfont Primary School -> 0.779 (column+unit) :: Bedfont Primary |  |  | 30 |  | 30 - 0.779 miles last distance |  | 60 | 149",
+     "Belmont Primary School -> 0.496 (column+unit) :: Belmont Primary |  | 1 | 14 |  | 45 - 0.496 miles last distance |  | 60 | 325",
+     "Cardinal Primary School -> None (all offered) :: Cardinal Primary |  |  | 13 |  | 35 - All offered |  | 60 | 198",
+     "Cavendish Primary School -> None (all offered) :: Cavendish Primary |  |  | 9 |  | 15 - All offered |  | 30 | 79",
+     "Chatsworth Primary School -> None (all offered) :: Chatsworth Primary |  |  | 21 |  | 38 - All offered |  | 90 | 131",
+     "Crane Park Primary School -> None (all offered) :: Crane Park Primary | 1 |  | 22 |  | 30 - All offered |  | 60 | 85"
+    ]
+   }
+  ],
+  "errors": [],
+  "fetched_pages": 6,
+  "fetched_docs": 3,
+  "schools_with_cutoff": 11,
+  "schools_total": 77,
+  "years": {
+   "2025": 2,
+   "2026": 9
+  },
+  "seconds": 39
+ },
+ {
+  "name": "Islington",
+  "pages": [
+   {
+    "url": "https://www.islington.gov.uk/children-and-families/schools/apply-for-a-school-place/school-admissions-information/cut-off-distance-maps",
+    "kind": "html",
+    "title": "Cut-off distance for schools | Islington Council",
+    "rows": 64,
+    "matched": 53,
+    "with_distance": 29,
+    "unit": "miles",
+    "year": 2026,
+    "phase": null,
+    "unmatched_with_distance": [
+     "Ambler Primary School | Mixed Community | 0.338 | 0.271 | 0.290",
+     "City of London Primary Academy Islington | Mixed Academy | 0.608 | Not applicable | 3.025",
+     "Hugh Myddlelton Primary School | Mixed Community | 0.331 | 0.329 | 0.382",
+     "City of London Academy Islington Band 1 | Mixed Academy | Not applicable | 2.016 | 2.946",
+     "City of London Academy Islington Band 2 | Mixed Academy | Not applicable | 1.798 | 1.111",
+     "City of London Academy Islington Band 3 | Mixed Academy | Not applicable | 3.287 | 2.016",
+     "City of London Academy Islington Band 4 | Mixed Academy | 1.496 | 0.77 | 1.541"
+    ],
+    "sample": [
+     "Ashmount Primary School -> 0.856 (decimal (miles doc)) :: Ashmount Primary School | Mixed Community | Not applicable | 1.284 | 0.856",
+     "Canonbury Primary School -> 0.403 (column) :: Canonbury Primary School | Mixed Community | 0.403 | 0.560 | 0.655",
+     "Christ The King Catholic Primary School -> None (None) :: Christ the King Primary School | Mixed Voluntary-aided Catholic | Not applicable | Not applicable | Not applicable",
+     "Drayton Park Primary School -> 0.361 (column) :: Drayton Park Primary School | Mixed Community | 0.361 | 0.345 | Not applicable",
+     "Duncombe Primary School -> None (None) :: Duncombe Primary School | Mixed Community | Not applicable | Not applicable | Not applicable",
+     "Gillespie Primary School -> 0.19 (column) :: Gillespie Primary School | Mixed Community | 0.19 | 0.142 | 0.148",
+     "Grafton Primary School -> 0.912 (decimal (miles doc)) :: Grafton Primary School | Mixed Community | Not applicable | 0.522 | 0.912",
+     "Hanover Primary School -> 0.423 (column) :: Hanover Primary School | Mixed Community | 0.423 | Not applicable | Not applicable"
+    ]
+   },
+   {
+    "url": "https://www.islington.gov.uk/children-and-families/schools/apply-for-a-school-place/school-admissions-information",
+    "kind": "html",
+    "title": "School admissions information | Islington Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [],
+  "errors": [],
+  "fetched_pages": 2,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 24,
+  "schools_total": 63,
+  "years": {
+   "2026": 24
+  },
+  "seconds": 2
+ },
+ {
+  "name": "Kingston and Richmond",
+  "pages": [],
+  "docs": [
+   {
+    "url": "https://www.richmond.gov.uk/media/utmdtytx/lbr_tss_furthest_distance_offers.pdf",
+    "kind": "pdf",
+    "title": "lbr_tss_furthest_distance_offers.pdf",
+    "rows": 23,
+    "matched": 10,
+    "with_distance": 10,
+    "unit": null,
+    "year": 2023,
+    "phase": null,
+    "unmatched_with_distance": [
+     "Christ's Foundation | Crit 10 - 4.547 kms | Crit 10 - 12.056kms | Crit 5 - 2.756kms | Crit 8 - 9.673 kms | Crit 5 - 6.515 kms | Crit 8 - 5.519 kms",
+     "Christ's Open | 1.829 kms | 3.010 kms | 1.525 kms | 2.848 kms | 1.425 kms | 3.552 kms",
+     "Richmond Park Academy | 4.800 kms | All preferences met | 13.453 kms | 6091 kms | 1.632 kms | All preferences met",
+     " |  |  |  | Band 4 - 3.840 kms |  | "
+    ],
+    "sample": [
+     "Grey Court School -> 1.987 (column+unit) :: Grey Court | 2.992 kms | 3.197 kms | 2.727 kms | 2.977 kms | 2.379 kms | 2.892 kms",
+     "Hampton High -> 1.358 (column+unit) :: Hampton High | 2.177 kms | 2.186 kms | 1.574 kms | 1.759 kms | 1.793 kms | 1.884 kms",
+     "Orleans Park School -> 0.702 (column+unit) :: Orleans Park | 0.946 kms | 1.130 kms | 1.131 kms | 1.370 kms | 1.282 kms | 1.510 kms",
+     "St Richard Reynolds Catholic Primary School -> 2.746 (unit in row) :: St Richard Reynolds | Band 8 - 4.420 kms | Random alloc within Bands 2&3 | Random alloc within Bands 2&3 |  | Random all",
+     "Teddington School -> 11.061 (column+unit) :: Teddington School | 5.907 kms | 17.801 kms | 6.432 kms | All preferences met | 4.120 kms | All preferences met",
+     "The Richmond upon Thames School -> 2.51 (column+unit) :: The Richmond upon Thames School | 1.862 kms | 4.040 kms | 1.725 kms | All preferences met | 1.581 kms | 3.720 kms",
+     "Turing House School -> 0.434 (column+unit) :: Turing House 20% | 0.636 kms | 0.698 kms | 0.849 kms | 1.233 kms | 1.019 kms | 1.019 kms",
+     "Turing House School -> 1.534 (column+unit) :: Turing House 80% | 2.285 kms | 2.469 kms | 2.633 kms | 3.829 kms | 2.245 kms | 3.088 kms"
+    ]
+   }
+  ],
+  "errors": [
+   "https://kr.afcinfo.org.uk/pages/community-information/information-and-advice/school-admissions/apply-for-a-secondary-school-place-in-september: HTTPError: HTTP Error 403: Forbidden",
+   "https://www.kingston.gov.uk/schools-education/school-admissions-arrangements: HTTPError: HTTP Error 404: Not Found"
+  ],
+  "fetched_pages": 0,
+  "fetched_docs": 1,
+  "schools_with_cutoff": 8,
+  "schools_total": 114,
+  "years": {
+   "2023": 8
+  },
+  "seconds": 6
+ },
+ {
+  "name": "Lambeth",
+  "pages": [
+   {
+    "url": "https://www.lambeth.gov.uk/schools-and-education/school-admissions-and-appeals/primary-school-admissions",
+    "kind": "html",
+    "title": "Primary school admissions for next academic year | Lambeth Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/schools-and-education/school-admissions-and-appeals/secondary-school-admissions",
+    "kind": "html",
+    "title": "Secondary school admissions for next academic year | Lambeth Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/schools-and-education/school-admissions-and-appeals/primary-school-admissions/how-offers-were-made-lambeth-primary-schools-national-offer-day-16-april-2025",
+    "kind": "html",
+    "title": "How offers were made for Lambeth primary schools on National Offer Day (16 April 2025) | Lambeth Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2025,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/schools-and-education/school-admissions-and-appeals/primary-school-admissions/how-offers-were-made-lambeth-primary-schools-national-offer-day-16-april-2026",
+    "kind": "html",
+    "title": "How offers were made for Lambeth primary schools on National Offer Day (16 April 2026) | Lambeth Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2026,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/schools-and-education/school-admissions-and-appeals/secondary-school-admissions/how-offers-were-made-lambeth-secondary-schools-national-offer-day-2-march-2026",
+    "kind": "html",
+    "title": "How offers were made for Lambeth secondary schools on National Offer Day (2 March 2026) | Lambeth Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2026,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/schools-and-education/school-admissions-and-appeals/secondary-school-admissions/how-offers-were-made-lambeth-secondary-schools-national-offer-day-3-march-2025",
+    "kind": "html",
+    "title": "How offers were made for Lambeth secondary schools on National Offer Day (3 March 2025) | Lambeth Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2025,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/schools-and-education/school-admissions-and-appeals/secondary-school-admissions/how-offers-were-made-lambeth-secondary-schools-national-offer-day-1-march-2024",
+    "kind": "html",
+    "title": "How offers were made for Lambeth secondary schools on National Offer Day (1 March 2024) | Lambeth Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2024,
+    "phase": "S"
+   }
+  ],
+  "docs": [
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2026-05/Dunraven%20National%20Offer%20Day%20Information%20Year_2026.pdf",
+    "kind": "pdf",
+    "title": "Dunraven School",
+    "rows": 19,
+    "matched": 1,
+    "with_distance": 0,
+    "unit": "metres",
+    "year": 2026,
+    "phase": null,
+    "unmatched_with_distance": [
+     " | 1.1 |  | 0 |  |  | 7 | 0 |  |  | 0 | 24 | 1128.19 |  |  | 31",
+     " | 1.2 |  | 0 |  |  | 13 | 0 |  |  | 0 | 17 | 1385.41 |  |  | 30",
+     " | 2.1 |  | 0 |  |  | 10 | 0 |  |  | 1 | 20 | 1449.44 |  |  | 31",
+     " | 2.2 |  | 0 |  |  | 12 | 0 |  |  | 0 | 18 | 1166.24 |  |  | 30",
+     " | 3 |  | 1 |  |  | 11 | 0 |  |  | 0 | 18 | 1328.49 |  |  | 30"
+    ],
+    "sample": [
+     "Dunraven School -> None (None) :: Dunraven Primary phase Year 6 children | 60"
+    ]
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2024-03/Ark%20evelyn%20grace%20academy%20national%20offer%20day%202024.pdf",
+    "kind": "pdf",
+    "title": "Ark Evelyn Grace Academy",
+    "rows": 5,
+    "matched": 1,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2024,
+    "phase": null,
+    "sample": [
+     "Ark Evelyn Grace Academy -> None (None) :: Ark Evelyn Grace Academy"
+    ]
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2024-03/City%20heights%20academy%20national%20offer%20day%202024.pdf",
+    "kind": "pdf",
+    "title": "City Heights E-ACT Academy",
+    "rows": 5,
+    "matched": 1,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2024,
+    "phase": null,
+    "sample": [
+     "City Heights E-ACT Academy -> None (None) :: City Heights E-ACT Academy"
+    ]
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2024-03/The%20Elms%20Academy%20National%20Offer%20Day%202024.pdf",
+    "kind": "pdf",
+    "title": "The Elms Academy",
+    "rows": 11,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": "metres",
+    "year": 2024,
+    "phase": null
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2024-03/Harris%20academy%20clapham%20national%20offer%20day%202024.pdf",
+    "kind": "pdf",
+    "title": "Harris Academy Clapham",
+    "rows": 10,
+    "matched": 1,
+    "with_distance": 0,
+    "unit": "metres",
+    "year": 2024,
+    "phase": null,
+    "sample": [
+     "Glenbrook Primary School -> None (None) :: Attends Glenbrook Primary School | 6"
+    ]
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2024-03/la%20retraite%20national%20offer%20day%202024.pdf",
+    "kind": "pdf",
+    "title": "La Retraite Roman Catholic Girls' School",
+    "rows": 6,
+    "matched": 1,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2024,
+    "phase": null,
+    "sample": [
+     "La Retraite Roman Catholic Girls' School -> None (None) :: La Retraite Roman Catholic Girls’ School"
+    ]
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2024-03/lns%20national%20offer%20day%202024.pdf",
+    "kind": "pdf",
+    "title": "The London Nautical School",
+    "rows": 5,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2024,
+    "phase": null
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2024-03/Norwood%20National%20Offer%20Day%202024.pdf",
+    "kind": "pdf",
+    "title": "The Norwood School",
+    "rows": 20,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": "metres",
+    "year": 2024,
+    "phase": null,
+    "unmatched_with_distance": [
+     "Bursary | 18 | n/a | 18 | 0 | 0 | 0 | 0 | 18 | 4290.87 | 0",
+     "1 | 33 | 116 - 140 | 32 | 0 | 5 | 1 | 0 | 25 | 1698.16 | 1",
+     "2 | 33 | 109 - 115 | 32 | 0 | 12 | 0 | 0 | 20 | 1233.12 | 1",
+     "3 | 32 | 100 – 108 | 31 | 1 | 7 | 0 | 0 | 23 | 1242.08 | 1",
+     "4 | 32 | 91 - 99 | 31 | 1 | 10 | 1 | 0 | 19 | 1224.56 | 1",
+     "5 | 32 | 59 - 98 | 31 | 3 | 8 | 0 | 0 | 20 | 1056.75 | 1"
+    ]
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2024-03/Oasis%20south%20bank%20national%20offer%20day%202024.pdf",
+    "kind": "pdf",
+    "title": "Oasis Academy South Bank",
+    "rows": 13,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2024,
+    "phase": null
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2024-03/Platanos%20college%20national%20offer%20day%202024.pdf",
+    "kind": "pdf",
+    "title": "Platanos College",
+    "rows": 6,
+    "matched": 1,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2024,
+    "phase": null,
+    "sample": [
+     "Platanos College -> None (None) :: Platanos College"
+    ]
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2024-03/SGC%20national%20offer%20day%202024.pdf",
+    "kind": "pdf",
+    "title": "Saint Gabriel's College",
+    "rows": 5,
+    "matched": 1,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2024,
+    "phase": null,
+    "sample": [
+     "Saint Gabriel's College -> None (None) :: Saint Gabriel's College"
+    ]
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2024-03/Trinity%20academy%20national%20offer%20day%202024.pdf",
+    "kind": "pdf",
+    "title": "Trinity Academy",
+    "rows": 8,
+    "matched": 3,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2024,
+    "phase": null,
+    "sample": [
+     "Trinity Academy -> None (None) :: Trinity Academy",
+     "Trinity Academy -> None (None) :: Chief Executive Officer of Trinity London Academy Trust: Mr B Thompson BSc, MEd, PGCE, NPQH",
+     "Trinity Academy -> None (None) :: Trinity London Academy Trust is a company limited by guarantee, registered in England and Wales"
+    ]
+   },
+   {
+    "url": "https://www.lambeth.gov.uk/sites/default/files/2024-03/Woodmansterne%20school%20year%207%20national%20offer%20day%202024.pdf",
+    "kind": "pdf",
+    "title": "Woodmansterne School",
+    "rows": 12,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": "metres",
+    "year": 2024,
+    "phase": "S"
+   }
+  ],
+  "errors": [],
+  "fetched_pages": 7,
+  "fetched_docs": 13,
+  "schools_with_cutoff": 0,
+  "schools_total": 92,
+  "years": {},
+  "seconds": 15
+ },
+ {
+  "name": "Lewisham",
+  "pages": [
+   {
+    "url": "https://lewisham.gov.uk/myservices/education/schools/school-admission/applying-to-start-secondary-school/last-year-s-number-of-applications-and-appeals-for-secondary-school-places",
+    "kind": "html",
+    "title": "Lewisham Council - Last year's number of applications and appeals for secondary school places",
+    "rows": 30,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": "metres",
+    "year": 2026,
+    "phase": "S"
+   },
+   {
+    "url": "https://lewisham.gov.uk/myservices/education/schools/school-admission/applying-to-start-primary-school",
+    "kind": "html",
+    "title": "Lewisham Council - Applying to start primary school in September 2027",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://lewisham.gov.uk/myservices/education/schools/school-admission/applying-to-start-secondary-school/school-admission-distance-map",
+    "kind": "html",
+    "title": "Lewisham Council - Map of secondary school admissions by distance",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://lewisham.gov.uk/myservices/education/schools/school-admission/applying-to-start-secondary-school/national-offer-day",
+    "kind": "html",
+    "title": "Lewisham Council - Transfer to secondary school 2027 – national offer day",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://lewisham.gov.uk/myservices/education/schools/school-admission/applying-to-start-primary-school/offer-day-for-primary-schools",
+    "kind": "html",
+    "title": "Lewisham Council - Offer day for primary schools",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://lewisham.gov.uk/myservices/education/schools/school-admission/applying-to-start-primary-school/primary-school-admission-distance-map",
+    "kind": "html",
+    "title": "Lewisham Council - Map of primary school admissions by distance",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   }
+  ],
+  "docs": [
+   {
+    "url": "https://lewisham.gov.uk/-/media/services/education/schools/admissions/grid-for-reception-2026.pdf",
+    "kind": "pdf",
+    "title": "GRID for reception 2026",
+    "rows": 43,
+    "matched": 38,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2026,
+    "phase": "P",
+    "sample": [
+     "Adamsrill Primary School -> None (all offered) :: Adamsrill | 60 | 161 | 0 | 0 | 13 | 0 | All places offered | 0 | 0 | 0",
+     "Ashmead Primary School -> None (None) :: Ashmead | 60 | 221 | 2 | 0 | 29 | 1 | 660.79 | 0 | 1 | 0",
+     "Athelney Primary School -> None (all offered) :: Athelney | 30 | 58 | 1 | 0 | 14 | 0 | All places offered | 0 | 0 | 0",
+     "Baring Primary School -> None (all offered) :: Baring | 30 | 77 | 0 | 0 | 6 | 0 | All places offered | 0 | 0 | 0",
+     "Beecroft Garden Primary -> None (None) :: Beecroft Garden | 60 | 279 | 0 | 0 | 25 | 1 | 914.70 | 1 | 0 | 0",
+     "Brindishe Green School -> None (None) :: Brindishe Green | 90 | 302 | 0 | 0 | 36 | 0 | 1573.15 | 0 | 0 | 0",
+     "Brindishe Lee School -> None (None) :: Brindishe Lee | 30 | 207 | 0 | 0 | 11 | 0 | 795.66 | 0 | 0 | 0",
+     "Brindishe Manor School -> None (None) :: Brindishe Manor | 60 | 293 | 1 | 0 | 26 | 0 | 691.51 | 0 | 1 | 0"
+    ]
+   }
+  ],
+  "errors": [
+   "https://lewisham.gov.uk/-/media/services/education/schools/grid-for-reception-2025.pdf: HTTPError: HTTP Error 404: 404 File Not Found"
+  ],
+  "fetched_pages": 6,
+  "fetched_docs": 1,
+  "schools_with_cutoff": 0,
+  "schools_total": 88,
+  "years": {},
+  "seconds": 18
+ },
+ {
+  "name": "Merton",
+  "pages": [
+   {
+    "url": "https://www.merton.gov.uk/education-and-learning/schools/admissions/how-school-places-were-allocated-in-recent-years",
+    "kind": "html",
+    "title": "Admissions and appeals data for recent years | Merton Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [],
+  "errors": [],
+  "fetched_pages": 1,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 58,
+  "years": {},
+  "seconds": 4
+ },
+ {
+  "name": "Newham",
+  "pages": [
+   {
+    "url": "https://www.newham.gov.uk/schools-education/offer-places",
+    "kind": "html",
+    "title": "How we offer places – Newham Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://www.newham.gov.uk/schools-education/primary-school-admissions",
+    "kind": "html",
+    "title": "Starting in Reception - September 2027 – Primary school admissions – Newham Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.newham.gov.uk/schools-education/school-finder",
+    "kind": "html",
+    "title": "School Finder - Find your local school and calculate home to school distances to all schools in Newham – Newham Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [],
+  "errors": [],
+  "fetched_pages": 3,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 103,
+  "years": {},
+  "seconds": 5
+ },
+ {
+  "name": "Redbridge",
+  "pages": [
+   {
+    "url": "https://www.redbridge.gov.uk/schools/secondary-school-admissions",
+    "kind": "html",
+    "title": "Apply to start secondary school",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.redbridge.gov.uk/schools/primary-school-admissions/",
+    "kind": "html",
+    "title": "Apply to start primary school",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.redbridge.gov.uk/schools/school-admissions/offer-day/",
+    "kind": "html",
+    "title": "School offer day",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [
+   {
+    "url": "https://www.redbridge.gov.uk/static-cms/media/13279/transfer-to-sec-2025-school-allocations-and-cut-off-distances-v2.pdf",
+    "kind": "pdf",
+    "title": "transfer-to-sec-2025-school-allocations-and-cut-off-distances-v2.pdf",
+    "rows": 5,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2025,
+    "phase": null
+   },
+   {
+    "url": "https://www.redbridge.gov.uk/media/1mtj5jon/primary-offer-day-16-april-2025-last-allocated-v2-3.pdf",
+    "kind": "pdf",
+    "title": "primary-offer-day-16-april-2025-last-allocated-v2-3.pdf",
+    "rows": 268,
+    "matched": 51,
+    "with_distance": 0,
+    "unit": "miles",
+    "year": 2025,
+    "phase": "P",
+    "unmatched_with_distance": [
+     "Sibling: All on time sibling applications offered 3.136 miles",
+     "Sibling: All on time sibling applications offered 2.115 miles",
+     "Faith sibling: All on-time faith siblings offered 5.702 miles",
+     "Sibling: All on-time non-faith siblings offered 6.971 miles",
+     "Sibling: All on time sibling applications offered 1.258 miles",
+     "Sibling: All on time sibling applications offered 1.227 miles",
+     "Sibling: All on time sibling applications offered 3.637 miles",
+     "Sibling: All on time sibling applications offered 4.837 miles",
+     "Sibling: All on time sibling applications offered 1.005 miles",
+     "Sibling: All on time sibling applications offered 5.114 miles",
+     "Sibling: All on time sibling applications offered 1.725 miles",
+     "Sibling: All on time sibling applications offered 3.020 miles"
+    ],
+    "sample": [
+     "Redbridge Primary School -> None (None) :: Please see below for allocations to Redbridge community primary schools, academies and",
+     "Aldborough Primary School -> None (None) :: Aldborough Primary School",
+     "Aldersbrook Primary School -> None (None) :: Aldersbrook Primary School",
+     "Atam Academy -> None (None) :: Atam Academy",
+     "Avanti Court Primary School -> None (None) :: Avanti Court Primary School",
+     "Barley Lane Primary School -> None (None) :: Barley Lane Primary School",
+     "Chadwell Primary School -> None (None) :: Chadwell Primary School",
+     "Christchurch Primary School -> None (None) :: Christchurch Primary School"
+    ]
+   },
+   {
+    "url": "https://www.redbridge.gov.uk/media/wqnlilt2/transfer-to-sec-2026-school-allocations-and-cut-off-distances-3.pdf",
+    "kind": "pdf",
+    "title": "school places were offered for September 2026",
+    "rows": 84,
+    "matched": 34,
+    "with_distance": 0,
+    "unit": "miles",
+    "year": 2026,
+    "phase": null,
+    "unmatched_with_distance": [
+     "siblings and catchment applicants have been offered up to 0.563 miles.",
+     "catchment sibling applicants offered up to 0.976 miles. On national offer day, this school exceeded"
+    ],
+    "sample": [
+     "Redbridge Primary School -> None (None) :: was offered a place at the 19 Redbridge secondary schools according to the schools’ admission",
+     "Redbridge Primary School -> None (None) :: Redbridge. So, in order for your child to be considered on any school’s waiting list after that date",
+     "Redbridge Primary School -> None (None) :: you must re-apply, online, confirming those schools in your preferred order to Redbridge or other",
+     "Redbridge Primary School -> None (None) :: boroughs – in some cases direct to certain schools themselves. For Redbridge schools please use the",
+     "Chadwell Heath Academy -> None (None) :: Redbridge, Chadwell Heath Academy and The Palmer Catholic Academy, will expect you to apply",
+     "Redbridge Primary School -> None (None) :: • Admissions information and policies: Redbridge - Apply to start secondary school",
+     "Redbridge Primary School -> None (None) :: • Appeal form and guidance notes: Redbridge - School appeals",
+     "Redbridge Primary School -> None (None) :: Redbridge website and enter your child’s Application Reference Number and date of birth:"
+    ]
+   },
+   {
+    "url": "https://www.redbridge.gov.uk/media/ldbowne5/primary-offer-day-16-april-2026-last-allocated.pdf",
+    "kind": "pdf",
+    "title": "how school places were offered for September 2026",
+    "rows": 184,
+    "matched": 56,
+    "with_distance": 1,
+    "unit": "miles",
+    "year": 2026,
+    "phase": "P",
+    "unmatched_with_distance": [
+     "Sikh Faith - Sibling 4.178 miles",
+     "Non Sikh - Sibling 2.053 miles",
+     "Band 1 Sibling 5.432 miles",
+     "Sibling: All on time sibling applications offered 0.669 miles",
+     "Sibling: All on time sibling applications offered 0.763 miles",
+     "Sibling: All on time sibling applications offered 0.872 miles",
+     "Sibling: All on time sibling applications offered 0.755 miles",
+     "Sibling: All on time sibling applications offered 0.930 miles",
+     "Sibling: All on time sibling applications offered 0.750 miles",
+     "Sibling: All on time sibling applications offered 0.873 miles",
+     "Sibling: All on time sibling applications offered 0.710 miles",
+     "Sibling: All on time sibling applications offered 2.885 miles"
+    ],
+    "sample": [
+     "Redbridge Primary School -> None (None) :: Please see below for allocations to Redbridge community primary schools, academies and",
+     "Aldborough Primary School -> None (None) :: Aldborough Primary School",
+     "Aldersbrook Primary School -> None (None) :: Aldersbrook Primary School",
+     "Atam Academy -> None (None) :: Atam Academy",
+     "Avanti Court Primary School -> None (None) :: Avanti Court Primary School",
+     "Barley Lane Primary School -> None (None) :: Barley Lane Primary School",
+     "Chadwell Primary School -> None (None) :: Chadwell Primary School",
+     "Christchurch Primary School -> None (None) :: Christchurch Primary School"
+    ]
+   }
+  ],
+  "errors": [],
+  "fetched_pages": 3,
+  "fetched_docs": 4,
+  "schools_with_cutoff": 1,
+  "schools_total": 82,
+  "years": {
+   "2026": 1
+  },
+  "seconds": 24
+ },
+ {
+  "name": "Southwark",
+  "pages": [
+   {
+    "url": "https://services.southwark.gov.uk/schools-and-education/school-admissions/secondary-admissions",
+    "kind": "html",
+    "title": "seed",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://services.southwark.gov.uk/schools-and-education/school-admissions/primary-admissions",
+    "kind": "html",
+    "title": "seed",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.southwark.gov.uk/schools-and-education/school-admissions",
+    "kind": "html",
+    "title": "seed",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   }
+  ],
+  "docs": [],
+  "errors": [],
+  "fetched_pages": 3,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 106,
+  "years": {},
+  "seconds": 2
+ },
+ {
+  "name": "Sutton",
+  "pages": [
+   {
+    "url": "https://www.sutton.gov.uk/w/primary-school-allocation-information",
+    "kind": "html",
+    "title": "seed",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.sutton.gov.uk/w/junior-school-allocation-information",
+    "kind": "html",
+    "title": "seed",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.sutton.gov.uk/schools-and-learning/school-admissions/national-offer-day-secondary-schools/secondary-school-allocation-information",
+    "kind": "html",
+    "title": "known doc",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.sutton.gov.uk/schools-and-learning/school-admissions/national-offer-day-primary-schools/primary-school-allocation-information",
+    "kind": "html",
+    "title": "known doc",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   }
+  ],
+  "docs": [],
+  "errors": [],
+  "fetched_pages": 4,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 68,
+  "years": {},
+  "seconds": 3
+ },
+ {
+  "name": "Tower Hamlets",
+  "pages": [
+   {
+    "url": "https://towerhamlets.gov.uk/lgnl/education_and_learning/schools/school_admissions/primary_school_admissions.aspx",
+    "kind": "html",
+    "title": "Starting primary school from September 2027",
+    "rows": 50,
+    "matched": 45,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P",
+    "sample": [
+     "Arnhem Wharf Primary School -> None (None) :: Arnhem Wharf | Arnhem Place, E14 3RP | Isle of Dogs | NO",
+     "Ben Jonson Primary School -> None (None) :: Ben Jonson | Harford Street, E1 4PZ | Stepney | NO",
+     "Cayley Primary School -> None (None) :: Cayley | Aston Street, E14 7NG | Stepney | NO",
+     "Chisenhale Primary School -> None (None) :: Chisenhale | Chisenhale Road, E3 5QY | Bow | NO",
+     "Columbia Primary School -> None (None) :: Columbia | Columbia Road, E2 7RG | Bethnal Green | NO",
+     "Cubitt Town Primary School -> None (None) :: Cubitt Town | Manchester Road, E14 3NE | Isle of Dogs | NO",
+     "Cyril Jackson Primary School -> None (None) :: Cyril Jackson | Three Colt Street, E14 8HH (North) Limehouse Causeway, E14 8BN (South) | Poplar | NO",
+     "Elizabeth Selby Infants' School -> None (None) :: Elizabeth Selby | Old Bethnal Green Road, E2 6PP | Bethnal Green | NO"
+    ]
+   }
+  ],
+  "docs": [
+   {
+    "url": "https://www.towerhamlets.gov.uk/Documents/Education-and-skills/Admissions-and-exclusions/Admissions/Primary-School-prospectus.pdf",
+    "kind": "pdf",
+    "title": "Primary-School-prospectus.pdf",
+    "rows": 718,
+    "matched": 117,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2025,
+    "phase": "P",
+    "sample": [
+     "Bangabandhu Primary School -> None (None) :: 2 Bangabandhu",
+     "Ben Jonson Primary School -> None (None) :: 3 Ben Jonson",
+     "Bonner Primary School -> None (None) :: 6 Bonner (Bethnal Green)",
+     "Cayley Primary School -> None (None) :: 11 Cayley",
+     "Globe Primary School -> None (None) :: 20 Globe",
+     "Halley Primary School -> None (None) :: 22 Halley",
+     "John Scurr Primary School -> None (None) :: 26 John Scurr",
+     "Marion Richardson Primary School -> None (None) :: 31 Marion Richardson"
+    ]
+   }
+  ],
+  "errors": [
+   "https://www.towerhamlets.gov.uk/lgnl/education_and_learning/schools/school_admissions/secondary_school_admissions.aspx: HTTPError: HTTP Error 404: Not Found",
+   "https://www.towerhamlets.gov.uk/Documents/Education-and-skills/Admissions-and-exclusions/Admissions/Secondary-School-prospectus.pdf: HTTPError: HTTP Error 404: Not Found"
+  ],
+  "fetched_pages": 1,
+  "fetched_docs": 1,
+  "schools_with_cutoff": 0,
+  "schools_total": 95,
+  "years": {},
+  "seconds": 20
+ },
+ {
+  "name": "Waltham Forest",
+  "pages": [
+   {
+    "url": "https://www.walthamforest.gov.uk/schools-education-and-learning/apply-school-place/apply-secondary-school/national-offer-day-secondary",
+    "kind": "html",
+    "title": "seed",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.walthamforest.gov.uk/schools-education-and-learning/apply-school-place",
+    "kind": "html",
+    "title": "seed",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": null
+   },
+   {
+    "url": "https://www.walthamforest.gov.uk/sites/default/files/2025-04/How%20school%20places%20were%20offered%20reception%202025.pdf",
+    "kind": "html",
+    "title": "known doc",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": 2025,
+    "phase": "P"
+   }
+  ],
+  "docs": [],
+  "errors": [],
+  "fetched_pages": 3,
+  "fetched_docs": 0,
+  "schools_with_cutoff": 0,
+  "schools_total": 79,
+  "years": {},
+  "seconds": 2
+ },
+ {
+  "name": "Wandsworth",
+  "pages": [
+   {
+    "url": "https://www.wandsworth.gov.uk/schools-and-admissions/admissions/secondary-school-admissions/",
+    "kind": "html",
+    "title": "Secondary school admissions - Wandsworth Borough Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   },
+   {
+    "url": "https://www.wandsworth.gov.uk/schools-and-admissions/admissions/primary-school-admissions/",
+    "kind": "html",
+    "title": "Primary school admissions - Wandsworth Borough Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "P"
+   },
+   {
+    "url": "https://www.wandsworth.gov.uk/apply-for-a-secondary-school-place",
+    "kind": "html",
+    "title": "Apply for a secondary school place - Wandsworth Borough Council",
+    "rows": 0,
+    "matched": 0,
+    "with_distance": 0,
+    "unit": null,
+    "year": null,
+    "phase": "S"
+   }
+  ],
+  "docs": [
+   {
+    "url": "https://www.wandsworth.gov.uk/media/e45hqwl2/how_school_places_were_offered_for_secondary_schools_2025.pdf",
+    "kind": "pdf",
+    "title": "how_school_places_were_offered_for_secondary_schools_2025.pdf",
+    "rows": 54,
+    "matched": 6,
+    "with_distance": 0,
+    "unit": "metres",
+    "year": 2025,
+    "phase": "S",
+    "unmatched_with_distance": [
+     "A | 0 | 7 | 0 | 36 (2509m)",
+     "B | 0 | 12 | 0 | 31 (1805m)",
+     "C | 0 | 26 | 0 | 17 (1820m)",
+     "D | 0 | 16 | 0 | 26 (1486m)",
+     "E | <5 | 25 | 0 | 16 (1303m)",
+     "Honeywell | 22 (720m)",
+     "A | 0 | 0 | 11 | 0 | 19 (1283m)",
+     "B | 0 | 0 | 16 | 0 | 13 (1085m)",
+     "C | 0 | 0 | 12 | 0 | 17 (1158m)",
+     "D | <5 | <5 | 20 | 0 | 7 (614m)",
+     "E | <5 | 0 | 14 | 0 | 13 (1216m)"
+    ],
+    "sample": [
+     "Ernest Bevin Academy -> None (None) :: ERNEST BEVIN ACADEMY (DFE no 212 4297)",
+     "Graveney School -> None (None) :: GRAVENEY SCHOOL (DFE no 212 5400)",
+     "Harris Academy Battersea -> None (None) :: HARRIS ACADEMY BATTERSEA (DFE no 212 4001)",
+     "Saint Cecilia's Church of England School -> None (None) :: SAINT CECILIA’S CHURCH OF ENGLAND SCHOOL (DFE no 212 4734)",
+     "Saint John Bosco College -> None (None) :: ST JOHN BOSCO COLLEGE (DFE no 212 4008)",
+     "Southfields Academy -> None (None) :: SOUTHFIELDS ACADEMY (DFE no 212 5405)"
+    ]
+   }
+  ],
+  "errors": [],
+  "fetched_pages": 3,
+  "fetched_docs": 1,
+  "schools_with_cutoff": 0,
+  "schools_total": 86,
+  "years": {},
+  "seconds": 6
+ },
+ {
+  "name": "Westminster and Kensington & Chelsea",
+  "pages": [],
+  "docs": [
+   {
+    "url": "https://www.westminster.gov.uk/media/document/how-places-were-offered-in-westminster-and-kensington-and-chelsea",
+    "kind": "pdf",
+    "title": "how-places-were-offered-in-westminster-and-kensington-and-chelsea",
+    "rows": 117,
+    "matched": 2,
+    "with_distance": 0,
+    "unit": "miles",
+    "year": null,
+    "phase": null,
+    "unmatched_with_distance": [
+     "Community places | 80 offers (all Feeder School applicants offered and others offered up to 0.880 mile)",
+     "Band A | 54 offers - 0 LACs, 11 siblings, 43 remaining places offered up to 1.091 miles straight-line | ",
+     "Band C | 54 offers - 0 LACs, 9 siblings, 45 remaining places offered up to 1.384 miles straight-line | ",
+     "Open Places | 6 offers (siblings offered up to 3.975 miles only) | 10 offers (all siblings offered and up to 0.096 miles distance) | 3 offers (siblings offered up to 0.262 of a mile only)"
+    ],
+    "sample": [
+     "Westminster Academy -> None (None) :: (Kensington and Chelsea, and Westminster)",
+     "Wilberforce Primary -> None (None) :: Attending Wilberforce (feeder school) | 12 offers"
+    ]
+   }
+  ],
+  "errors": [
+   "https://www.westminster.gov.uk/education/school-admissions/cut-distance-maps-school-admissions: HTTPError: HTTP Error 301: The HTTP server returned a redirect error that would lead to an infinite loop.\nThe last 30x error messag",
+   "https://www.rbkc.gov.uk/children-and-education/school-admissions/starting-secondary-school: HTTPError: HTTP Error 403: Forbidden",
+   "https://www.rbkc.gov.uk/children-and-education/school-admissions: HTTPError: HTTP Error 403: Forbidden",
+   "https://www.rbkc.gov.uk/media/document/how-places-were-offered-at-bi-borough-secondary-schools: HTTPError: HTTP Error 403: Forbidden"
+  ],
+  "fetched_pages": 0,
+  "fetched_docs": 1,
+  "schools_with_cutoff": 0,
+  "schools_total": 97,
+  "years": {},
+  "seconds": 11
+ }
+]
