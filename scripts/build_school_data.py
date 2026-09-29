@@ -284,7 +284,8 @@ OEIF_SUBS = [
 ]
 
 
-def latest_ofsted_attachment(fx):
+def ofsted_attachment(fx, on_or_before=None):
+    """Newest 'latest inspections' CSV, optionally no later than a given date."""
     j = json.loads(fx.get("https://www.gov.uk/api/content/" + OFSTED_PAGE))
     best = None
     for a in j["details"]["attachments"]:
@@ -298,6 +299,8 @@ def latest_ofsted_attachment(fx):
             d = dt.datetime.strptime(f"{m.group(1)} {m.group(2)[:3]} {m.group(3)}", "%d %b %Y").date()
         except ValueError:
             continue
+        if on_or_before and d > on_or_before:
+            continue
         if best is None or d > best[0]:
             best = (d, a)
     if not best:
@@ -305,8 +308,31 @@ def latest_ofsted_attachment(fx):
     return best
 
 
+def load_historic_grades(fx):
+    """Latest overall effectiveness per URN from before single-word grades were dropped (Sept 2024).
+
+    The current MI file only carries graded judgements made under the 2019 framework, so schools last
+    graded earlier (and since only visited for ungraded inspections) would otherwise show no grade.
+    """
+    d, att = ofsted_attachment(fx, on_or_before=dt.date(2024, 8, 31))
+    rows, hdr = read_csv(fx.get(att["url"]), header_contains="URN")
+    c_oe = col(hdr, r"^Overall effectiveness$", required=True)
+    c_date = col(hdr, r"^Inspection start date$", required=True)
+    out = {}
+    for r in rows:
+        try:
+            urn = int(r["URN"])
+        except (KeyError, ValueError):
+            continue
+        oe = (r.get(c_oe) or "").strip()
+        if oe in OEIF_GRADE:
+            out[urn] = (oe, iso(r.get(c_date)))
+    log(f"  historic grades from MI as at {d}: {len(out)} schools")
+    return out
+
+
 def load_ofsted(fx):
-    d, att = latest_ofsted_attachment(fx)
+    d, att = ofsted_attachment(fx)
     rows, hdr = read_csv(fx.get(att["url"]), header_contains="URN")
     log(f"Ofsted MI as at {d}: {len(rows)} schools, {len(hdr)} columns")
 
@@ -326,6 +352,12 @@ def load_ofsted(fx):
     missing = [n for n, c in [("report card start", c_start), ("OEIF overall", c_oe), ("ungraded outcome", c_ung_out)] if not c]
     if missing:
         log("  WARNING Ofsted columns not found:", missing)
+
+    try:
+        historic = load_historic_grades(fx)
+    except Exception as e:
+        log(f"  WARNING historic Ofsted grades unavailable: {type(e).__name__}: {e}")
+        historic = {}
 
     out = {}
     counts = collections.Counter()
@@ -377,6 +409,12 @@ def load_ofsted(fx):
                 rec["note"] = " ".join(notes)
             if headline == 0:
                 headline = int(oe_raw) if oe_raw in OEIF_GRADE else 5
+        # Graded before the 2019 framework: fall back to the last grade in the pre-September-2024 file.
+        if "date" not in rec and urn in historic and historic[urn][1]:
+            oe_raw, oe_date = historic[urn]
+            rec.update({"date": oe_date, "oe": OEIF_GRADE[oe_raw], "oeDate": oe_date, "sub": []})
+            if headline == 0:
+                headline = int(oe_raw)
         # Latest ungraded inspection
         if c_ung_date and iso(r.get(c_ung_date)):
             rec["ung"] = {"date": iso(r.get(c_ung_date)), "outcome": clean(r.get(c_ung_out)) if c_ung_out else None}
@@ -416,7 +454,7 @@ KS5_MEASURES = [
     ("A level: average grade", "TALLPPEGRD_ALEV_1618", "grade", None),
     ("AAB+ incl. 2 facilitating subjects", "PTAAB_2FAC", "%", 100),
     ("Applied general: average grade", "TALLPPEGRD_AGEN", "grade", None),
-    ("A level students", "TALLPUP_ALEV_1618", "", None),
+    ("A level students", "TALLPUP_ALEV_1618", "count", None),
 ]
 KS_CONFIG = {
     "ks2": ("KS2", KS2_MEASURES, ("TELIG",), "PTRWM_EXP"),
@@ -445,8 +483,9 @@ def load_performance(fx, key):
         nat_rows = [r for r in rows if not (r.get("URN") or "").strip().isdigit()]
         nat = {}
         for r in nat_rows:
-            lab = " ".join((r.get(c) or "") for c in ("RECTYPE", "LEA", "SCHNAME", "ALPHAIND"))
-            log(f"    reference row: {lab.strip()[:90]!r} {headline}={r.get(headline)}")
+            if (r.get("RECTYPE") or "").strip() != "4":  # 4 = local authority rows; too many to log
+                lab = " ".join((r.get(c) or "") for c in ("RECTYPE", "LEA", "SCHNAME", "ALPHAIND"))
+                log(f"    reference row: {lab.strip()[:90]!r} {headline}={r.get(headline)}")
         pick = None
         for r in nat_rows:
             if (r.get("RECTYPE") or "").strip() == "7":
@@ -457,7 +496,7 @@ def load_performance(fx, key):
                     pick = r
         if pick is not None:
             for label, c, unit, mx in present:
-                if unit != "grade":
+                if unit not in ("grade", "count"):
                     nat[c] = rnd(num(pick.get(c)), 1)
         out = {}
         for r in rows:
