@@ -192,7 +192,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 86,
   "years": {},
-  "seconds": 5
+  "seconds": 6
  },
  {
   "name": "Brent",
@@ -291,6 +291,7 @@
     "unmatched_with_distance": [
      "Ark Franklin Primary Academy (90) Children At Af Nursery Eligible For The Eypp, Pp Or Sp Sibling Distance | 349 | 90 5 38 47 | 1656.2 671.53 | Oversubscribed",
      "Sibling 6 2940.17",
+     "Any Other Applicant 18 2807.87",
      "Our Lady of Grace RC Infant and Nursery School (60) Baptised Catholic Children In The Parish Sibling Baptised Catholic Children In The Parish Baptised Catholic Children Resident In Other Parishes Sibl",
      "Sinai Jewish Primary School (90) EHCP Children Attending Sinai's Nursery Rec Pp With A Compl And Valid Crp 2 Siblings Of Pupils Attending With A Completed And Valid Crp 2 Children Attending Sinai's Nu",
      "St Joseph's RC Infant School (70) 2i Cath, Ccp, In Parish, Sibling 2e Cath, Ccp, St Erconwald's 10% 2 Cath, Ccp, In Parish 3i Cath,ccp, Out Of Parish,sibling 3 Cath, Out Of Parish, 4 Other Cath, In Pa",
@@ -323,6 +324,10 @@
      "Ark Franklin Primary Academy (90) Children At Af Nursery Eligible For The Eypp, Pp Or Sp Sibling Distance | 90 3 34 53 | 5507.94 864.16 | Oversubscribed",
      "Our Lady of Grace RC Infant and Nursery School (60) Baptised Catholic Children In The Parish Baptised Catholic Children In The Parish Sibling Baptised Catholic Children Resident In Other Parishes Bapt",
      "Sibling 29 5493.61",
+     "Open Place - Reside In Deanery Of Brent 20 1644.57",
+     "Church Place - Other Church, Reside In Deanery Of Brent 1 793.55",
+     "Any Other Applicants 2 4022.75",
+     "Nearest school with a vacancy 1 283.3",
      "St Joseph's RC Infant School (70) 2 Cath, Ccp, In Parish, Sibling 3 Cath,ccp, Out Of Parish,sibling 4 Cath,ccp,in Parish 4i Cath,ccp,st Erconwald's 5 Cath,ccp,out Of Parish | 70 22 1 44 2 1 | 2202.04 ",
      "Uxendon Manor Primary School (90) Staff Child Sibling Any Other Applicant | 90 2 36 52 | 2661.5 872.56 | Oversubscribed"
     ],
@@ -410,7 +415,7 @@
    "2026": 20,
    "2025": 8
   },
-  "seconds": 18
+  "seconds": 24
  },
  {
   "name": "Bromley",
@@ -494,7 +499,7 @@
     "title": "Primary education in Bromley 2027/2028 PDF 7.6MB Download",
     "rows": 2378,
     "matched": 228,
-    "with_distance": 1,
+    "with_distance": 38,
     "unit": "miles",
     "year": 2023,
     "phase": "P",
@@ -506,7 +511,11 @@
      "31",
      "32",
      "34",
-     "44"
+     "44",
+     "Darrick Wood Infant and Nursery School Information not available N/A 1.849 N/A |  |  |  |  |  |  |  | ",
+     "47",
+     "Harris Primary Academy Beckenham Green 1 0 0.329 0.417 0.378 |  |  |  |  |  |  |  | ",
+     "Pickhurst Infant Academy Information not available N/A 3.009 N/A |  |  |  |  |  |  |  | "
     ],
     "sample": [
      "Alexandra Infant School -> None (None) :: Alexandra Infant School Alexandra JuniorSchool",
@@ -527,7 +536,7 @@
     "title": "Secondary education in Bromley 2027/2028 PDF 7.94MB Download",
     "rows": 1618,
     "matched": 70,
-    "with_distance": 2,
+    "with_distance": 8,
     "unit": "miles",
     "year": 2026,
     "phase": "S",
@@ -542,8 +551,8 @@
      "30",
      "31",
      "42",
-     "Band 1 7.105 3.063 5.776 | ",
-     "Band 2 3.401 2.966 3.230 | "
+     "Bullers Wood School for Boys 2 0 1.861 1.531 1.597 |  |  |  |  |  |  |  | ",
+     "Langley Park School for Boys Information not available 1.011 0.926 1.049 |  |  |  |  |  |  |  | "
     ],
     "sample": [
      "St Olave's and St Saviour's Grammar School -> None (None) :: 18 September 2026 St Olave’s Grammar School Stage 1 entrance test",
@@ -562,12 +571,12 @@
   "errors": [],
   "fetched_pages": 4,
   "fetched_docs": 2,
-  "schools_with_cutoff": 3,
+  "schools_with_cutoff": 46,
   "schools_total": 106,
   "years": {
-   "2026": 3
+   "2026": 46
   },
-  "seconds": 126
+  "seconds": 171
  },
  {
   "name": "Camden",
@@ -678,7 +687,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 59,
   "years": {},
-  "seconds": 3
+  "seconds": 2
  },
  {
   "name": "Croydon",
@@ -786,7 +795,7 @@
    "2026": 1,
    "2025": 9
   },
-  "seconds": 146
+  "seconds": 201
  },
  {
   "name": "Ealing",
@@ -875,8 +884,7 @@
      "4 | Distance | 172 | 154 | 18 | 0.911 of a mile (town hall) 1.764 miles (school)",
      "3 | Distance | 183 | 169 | 14 | 1.604 miles",
      "3 | Distance | 328 | 83 | 245 | 0.500 of a mile",
-     "4 | Distance | 263 | 208 | 55 | 0.731 of a mile",
-     "20 points with a sibling | 13 | 10 | 3 | 1.741 miles"
+     "4 | Distance | 263 | 208 | 55 | 0.731 of a mile"
     ],
     "sample": [
      "Ada Lovelace Church of England High School -> 0.637 (block: decimal (miles)) :: Ada Lovelace CE High School: |  |  |  |  |  … 3 | Distance | 409 | 100 | 309 | 0.637 of a mile",
@@ -902,7 +910,7 @@
   "years": {
    "2026": 7
   },
-  "seconds": 15
+  "seconds": 20
  },
  {
   "name": "Enfield",
@@ -918,7 +926,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 98,
   "years": {},
-  "seconds": 3
+  "seconds": 4
  },
  {
   "name": "Greenwich",
@@ -935,14 +943,17 @@
     "phase": "S",
     "unmatched_with_distance": [
      "// References given with OSRef are accurate to 1m.",
-     "var UTM_F0   = 0.9996",
-     "- 3.0 * eSquared * eSquared / 64.0",
-     "+ (21.0 * e1 * e1 / 16.0 - 55.0 * Math.pow(e1, 4.0) / 32.0)",
-     "/ 24.0",
-     "var UTM_F0   = 0.9996",
-     "if (latitude >= 56.0",
-     "&& latitude < 64.0",
-     "if (latitude >= 72.0 && latitude < 84.0)"
+     "- (((3 * n) + (3 * n * n) + ((21.0 / 8.0) * n * n * n))",
+     "- (((35.0 / 24.0) * n * n * n)",
+     "(Math.tan(phiPrime) / (24.0 * rho * Math.pow(v, 3.0)))",
+     "(Math.tan(phiPrime) / (720.0 * rho * Math.pow(v, 5.0)))",
+     "* (61.0",
+     "+ (90.0 * tanSquared(phiPrime))",
+     "+ (45.0 * tanSquared(phiPrime) * tanSquared(phiPrime)))",
+     "(sec(phiPrime) / (120.0 * Math.pow(v, 5.0)))",
+     "+ (28.0 * tanSquared(phiPrime))",
+     "+ (24.0 * tanSquared(phiPrime) * tanSquared(phiPrime)))",
+     "(sec(phiPrime) / (5040.0 * Math.pow(v, 7.0)))"
     ],
     "links": []
    },
@@ -958,14 +969,17 @@
     "phase": "P",
     "unmatched_with_distance": [
      "// References given with OSRef are accurate to 1m.",
-     "var UTM_F0   = 0.9996",
-     "- 3.0 * eSquared * eSquared / 64.0",
-     "+ (21.0 * e1 * e1 / 16.0 - 55.0 * Math.pow(e1, 4.0) / 32.0)",
-     "/ 24.0",
-     "var UTM_F0   = 0.9996",
-     "if (latitude >= 56.0",
-     "&& latitude < 64.0",
-     "if (latitude >= 72.0 && latitude < 84.0)"
+     "- (((3 * n) + (3 * n * n) + ((21.0 / 8.0) * n * n * n))",
+     "- (((35.0 / 24.0) * n * n * n)",
+     "(Math.tan(phiPrime) / (24.0 * rho * Math.pow(v, 3.0)))",
+     "(Math.tan(phiPrime) / (720.0 * rho * Math.pow(v, 5.0)))",
+     "* (61.0",
+     "+ (90.0 * tanSquared(phiPrime))",
+     "+ (45.0 * tanSquared(phiPrime) * tanSquared(phiPrime)))",
+     "(sec(phiPrime) / (120.0 * Math.pow(v, 5.0)))",
+     "+ (28.0 * tanSquared(phiPrime))",
+     "+ (24.0 * tanSquared(phiPrime) * tanSquared(phiPrime)))",
+     "(sec(phiPrime) / (5040.0 * Math.pow(v, 7.0)))"
     ],
     "links": []
    },
@@ -1114,7 +1128,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 93,
   "years": {},
-  "seconds": 7
+  "seconds": 5
  },
  {
   "name": "Hackney",
@@ -1225,16 +1239,16 @@
     "unmatched_with_distance": [
      "Maximum Distance (miles) |  | 0.293 | 2.616 | 1.386 | ",
      "Distance Maximum Distance (miles) | 29 0.995 | 30 0.766 | 26 0.747 | 27 0.865 | 24 0.954 | 136",
+     "Medical/Social 2 2 Maximum Distance (miles) 0.995 0.766 0.747 0.865 0.954",
      "Distance Maximum Distance (miles) Non Preference Offers | 12 1.94 | 15 6.606 | 16 1.979 | 13 1.739 | 22 2.973 | 78 5",
      "Distance Maximum Distance (miles) | 48 1.766 | 40 1.085 | 43 0.897 | 40 1.385 | 171",
      "Distance Maximum Distance (miles) Non Preference Offers | 10 350.77 | 18 2.696 | 27 2.135 | 25 1.51 | 22 2.257 | 102 9",
      "Distance Maximum Distance (miles) | 29 1.122 | 29 0.754 | 24 0.792 | 18 0.482 | 100",
+     "Offers at The Excelsior Academy (PAN: 180 Applications: 322) Offers at The Urswick CE School (PAN: 150 Applications: 260) Admission Criteria Band A Band B Band C Band D Total Foundation Community Admi",
      "Maximum Distance (miles) | 1.547 | 2.934 | 3.972 | 1.618 | ",
      "Maximum Distance (miles) | 3.643 | 2.99 | 1.886 | 1.27 |  | 1.63 | 1.653 | 351.708 | ",
      "Maximum Distance (miles) | 1.287 | 1.343 | 2.549 | 1.014 | ",
-     "Distance Maximum Distance (miles) | 33 0.985 | 30 0.878 | 25 0.607 | 28 0.898 | 28 0.875 | 144",
-     "Distance Maximum Distance (miles) | 40 1.54 | 35 1.366 | 34 1.152 | 26 0.801 | 135",
-     "Distance Maximum Distance (miles) | 22 1.759 | 22 2.319 | 29 4.791 | 26 2.702 | 19 0.663 | 118"
+     "Other Faith 1 1 1 3 Maximum Distance (miles) 1.339 2.819 0.959 2.458"
     ],
     "sample": [
      "Haggerston School -> 1.987 (block: decimal (miles)) :: Offers at Haggerston School (PAN: 180 Applications: 689) Offers at Lubavitch Senior Girls School (PAN: 30 Applications: 15) … Distance Maxim",
@@ -1255,7 +1269,7 @@
     "title": "How places were offered at Hackney Primary Schools 2018 - 2026",
     "rows": 825,
     "matched": 370,
-    "with_distance": 137,
+    "with_distance": 219,
     "unit": "miles",
     "year": 2026,
     "phase": "P",
@@ -1301,14 +1315,14 @@
      "Education, Health and Care Plan Catholic L A C Baptised Catholic - C C P Baptised Catholic Other L A C Catechumens Other Christian Other Faith Non Faith Sibling Distance Maximum Distance (miles) Non P",
      "Education, Health and Care Plan Looked After Child Child Protection Plan Sibling Medical/Social Children of Staff Distance Maximum Distance (miles) | 0 0 0 5 0 1 39 1.657 | 0 0 0 12 0 0 33 0.619 | 3 1",
      "Education, Health and Care Plan Looked After Child Sibling Former Sibling Staff Distance Maximum Distance (miles) | 2 0 11 0 0 23 0.614 | 1 0 7 0 1 27 0.746 | 0 1 13 0 0 22 0.747 | 2 1 12 0 0 21 0.885",
+     "Distance 39 33 25 22 119 Maximum Distance (miles) 0.614 0.746 0.747 0.885 0.758",
+     "Maximum Distance (miles) 1.657 0.619 0.358 0.448 Total 36 36 36 36 36 180",
      "Education, Health and Care Plan Looked After Child Child Protection Plan Sibling Children of staff Distance Maximum Distance (miles) Non Preference Offers | 0 0 0 7 0 25 350.7 | 1 0 0 12 0 26 5.552 | ",
      "Education, Health and Care Plan Looked After Child Child Protection Plan (nearest) Children of staff Sibling Attends Mossbourne Riverside Distance Maximum Distance (miles) | 1 0 0 1 19 11 10 0.326 | 1",
      "Education, Health and Care Plan Looked After Child Sibling Medical/Social Children of Staff Distance Maximum Distance (miles) Non Preference Offers | 0 0 7 0 0 10 1.7 | 1 0 10 0 0 8 1.59 | 1 0 6 0 0 1",
      "Education, Health and Care Plan Looked After Child Child Protection Plan Medical/Social Sibling Children of staff Distance Maximum Distance (miles) | 1 0 0 0 15 1 46 7.21 | 2 1 1 0 20 1 41 0.877 | 1 0",
      "Education, Health and Care Plan Looked After Child Child Protection Plan Sibling Children of Staff Distance Maximum Distance (miles) | 0 0 0 3 0 22 2.379 | 2 0 0 8 0 18 2.91 | 0 0 0 7 0 30 3.584 | 0 1",
-     "Education, Health and Care Plan Looked After Child Child Protection Plan Sibling City of London Residents Children of Staff Distance Maximum Distance (miles) | 0 0 0 14 0 1 30 0.799 | 1 0 0 10 0 2 32 ",
-     "Education, Health and Care Plan Looked After Child Sibling Distance Maximum Distance (miles) Non Preference Offers | 0 0 8 18 1.597 | 0 0 5 30 1.824 | 3 0 11 25 1.654 | 6 0 6 23 1.654 | 9 0 30 96 21",
-     "Education, Health and Care Plan Looked After Child Child Protection Plan Education Supervision Order Social/Medical Sibling Other Faith Distance Maximum Distance (miles) Non Preference Offers | 0 0 0 "
+     "Education, Health and Care Plan Looked After Child Child Protection Plan Sibling City of London Residents Children of Staff Distance Maximum Distance (miles) | 0 0 0 14 0 1 30 0.799 | 1 0 0 10 0 2 32 "
     ],
     "sample": [
      "Haggerston School -> None (all offered) :: Offers at Haggerston School (PAN: 180 Applications: 617) Offers at Lubavitch Senior Girls School (PAN: 30 Applications: 14)",
@@ -1333,7 +1347,7 @@
    "2026": 37,
    "2024": 2
   },
-  "seconds": 78
+  "seconds": 131
  },
  {
   "name": "Hammersmith & Fulham",
@@ -1537,9 +1551,16 @@
     "phase": null,
     "unmatched_with_distance": [
      "2026",
+     "Primary reception transfer offers 2026 (pdf, 3 page(s), 95.25 KB)",
+     "Secondary transfer offers 2026 (pdf, 3 page(s), 69.81 KB)",
      "2025",
+     "Secondary transfer offers 2025 (pdf, 3 page(s), 65.57 KB)",
      "2024",
-     "2023"
+     "Primary reception transfer offers 2024 (pdf, 3 page(s), 85.73 KB)",
+     "Secondary transfer offers 2024 (pdf, 4 page(s), 86.06 KB)",
+     "2023",
+     "Primary reception transfer offers 2023 (pdf, 3 page(s), 90.02 KB)",
+     "Secondary transfer offers 2023 (pdf, 3 page(s), 87.68 KB)"
     ],
     "links": [
      "How school place offers were made -> https://haringey.gov.uk/schools-learning/schools/school-admissions/how-school-place-offers-were-made",
@@ -1618,7 +1639,9 @@
      "Rokesly Inf | 269 | 60 | - | - | - | 33 | - | 27 | 0.318",
      "South Harringay Inf | 177 | 60 | - | 2 | - | 26 | - | 32 | 0.287",
      " |  |  |  |  |  |  |  | Distance | 6 | 1.128",
-     "St Michael's CE (N6) | 214 | 60 | - | 1 | - | 32 | - | - | - | 5 | 6 | 1 | 3 | 12 | 0.775"
+     "St Michael's CE (N6) | 214 | 60 | - | 1 | - | 32 | - | - | - | 5 | 6 | 1 | 3 | 12 | 0.775",
+     "1886 | 86.0% | 151 | 6.9% | 62 | 2.8% | 22 | 1.0% | 17 | 0.8% | 4 | 0.2% | 51 | 2.3%",
+     "2099 | 95.7% | 2142 | 97.7%"
     ],
     "sample": [
      "Chestnuts Primary School -> None (rejected 33.00 mi) :: Chestnuts | 246 | 60 | - | - | 1 | 26 | - | 33 | 0.416",
@@ -1652,7 +1675,9 @@
      "Band 4 |  |  |  |  | 5 | 7 |  | 14 | 1.070",
      "Band 5 |  |  |  |  | 3 | 6 |  | 23 | 1.932",
      "Band 8 |  |  |  |  | 4 | 2 |  | 6 | 1.109",
-     "Total |  |  |  |  | 35 | 28 |  | 89 | "
+     "Total |  |  |  |  | 35 | 28 |  | 89 | ",
+     "1754 | 76.8% | 314 | 13.7% | 88 | 3.9% | 37 | 1.6% | 14 | 0.6% | 8 | 0.4% | 70 | 3.1%",
+     "2156 | 94.4% | 2215 | 96.9%"
     ],
     "sample": [
      "Fortismere School -> None (rejected 187.00 mi) :: Fortismere | 1174 | 270 | 13 | - | - | 68 | 2 | 187 | 1.226",
@@ -1711,7 +1736,9 @@
      "Rokesly Inf | 224 | 60 |  |  |  | 28 |  |  | 32 | 0.4557",
      "South Harringay Inf | 181 | 60 |  | 1 |  | 23 |  |  | 36 | 0.1884",
      "St Michael's CE (N6) | 199 | 60 |  |  | Last child offered under '7 Points' criterion. For full admissions details contact the school directly. |  |  |  |  | 0.8316",
-     "Trinity | 212 | 60 |  |  |  | 18 |  | 17 | 25 | 0.4733"
+     "Trinity | 212 | 60 |  |  |  | 18 |  | 17 | 25 | 0.4733",
+     "1994 | 84.9% | 188 | 8.0% | 58 | 2.5% | 19 | 0.8% | 9 | 0.4% | 5 | 0.2% | 75 | 3.2%",
+     "2240 | 95.4% | 2273 | 96.8%"
     ],
     "sample": [
      "Chestnuts Primary School -> None (rejected 28.00 mi) :: Chestnuts | 240 | 60 | 1 |  |  | 31 |  |  | 28 | 0.2729",
@@ -1744,7 +1771,9 @@
      "Band 4 |  |  |  |  | 7 | 1 |  | 15 | 0.6809",
      "Band 5 |  |  |  |  | 5 | 7 |  | 19 | 1.7431",
      "Did Not Attend Banding Test |  |  |  |  | 0 | 0 |  | 0 | None offered",
-     "Total |  |  |  |  | 30 | 20 |  | 88 | "
+     "Total |  |  |  |  | 30 | 20 |  | 88 | ",
+     "1765 | 78.7% | 264 | 11.8% | 86 | 3.8% | 38 | 1.7% | 16 | 0.7% | 4 | 0.2% | 69 | 3.1%",
+     "2115 | 94.3% | 2173 | 96.9%"
     ],
     "sample": [
      "Fortismere School -> None (rejected 182.00 mi) :: Fortismere | 1200 | 270 | 7 | 0 | 1 | 79 | 1 | 182 | 1.1404",
@@ -1799,7 +1828,9 @@
      "Noel Park | 216 | 90 |  |  |  | 33 | 2 |  | 55 | 0.6446",
      "South Harringay Inf | 192 | 60 |  |  |  | 16 | 1 |  | 43 | 0.2482",
      "St Michael's CE (N6) | 158 | 60 |  |  | Last child offered under '4 Points' criterion. For full admissions details contact the school directly. |  |  |  |  | 0.4026",
-     "Trinity | 190 | 60 |  |  |  | 23 |  | 16 | 21 | 0.4796"
+     "Trinity | 190 | 60 |  |  |  | 23 |  | 16 | 21 | 0.4796",
+     "2079 | 88.3% | 161 | 6.8% | 47 | 2.0% | 17 | 0.7% | 4 | 0.2% | 3 | 0.1% | 42 | 1.8%",
+     "2287 | 97.1% | 2311 | 98.1%"
     ],
     "sample": [
      "Chestnuts Primary School -> None (rejected 38.00 mi) :: Chestnuts | 263 | 60 |  | 2 |  | 20 |  |  | 38 | 0.3591",
@@ -1834,7 +1865,9 @@
      "Band 5 |  |  |  |  | 2 | 6 |  | 22 | 1.3401",
      "Band 9 |  |  |  |  | 0 | 2 |  | 4 | 1.0307",
      "Did Not Attend Banding Test |  |  |  |  | 0 | 0 |  | 0 | None offered",
-     "Total |  |  |  |  | 31 | 33 |  | 82 | "
+     "Total |  |  |  |  | 31 | 33 |  | 82 | ",
+     "1757 | 74.6% | 323 | 13.7% | 112 | 4.8% | 49 | 2.1% | 13 | 0.6% | 10 | 0.4% | 92 | 3.9%",
+     "2192 | 93.0% | 2264 | 96.1%"
     ],
     "sample": [
      "Fortismere School -> None (rejected 190.00 mi) :: Fortismere | 1169 | 270 | 9 | 1 | 0 | 70 | 0 | 190 | 1.1532",
@@ -1880,7 +1913,7 @@
     "title": "Primary reception transfer offers 2023 (pdf, 3 page(s), 90.02 KB)",
     "rows": 124,
     "matched": 57,
-    "with_distance": 2,
+    "with_distance": 3,
     "unit": "miles",
     "year": 2024,
     "phase": "P",
@@ -1892,7 +1925,8 @@
      "Noel Park | 207 | 90 | 2 |  |  | 25 | 1 |  | 62 | 0.9440",
      "South Harringay Inf | 176 | 60 | 1 | 1 |  | 18 | 1 |  | 39 | 0.3089",
      "St Michael's CE (N6) | 124 | 60 |  |  | Last child offered under '3 Points' criterion. For full admissions details contact the school directly. |  |  |  |  | 1.6315",
-     "Trinity | 198 | 60 | 1 |  |  | 24 |  | 15 | 20 | 0.4367"
+     "Trinity | 198 | 60 | 1 |  |  | 24 |  | 15 | 20 | 0.4367",
+     "2357 97.8% 2385 99.0%"
     ],
     "sample": [
      "Chestnuts Primary School -> None (rejected 32.00 mi) :: Chestnuts | 245 | 60 |  |  |  | 28 |  |  | 32 | 0.4826",
@@ -1926,7 +1960,9 @@
      "Band 4 |  |  |  |  | 9 | 8 |  | 8 | 0.5630",
      "Band 6 |  |  |  |  | 7 | 6 |  | 15 | 0.7005",
      "Did Not Attend Banding Test |  |  |  |  | 0 | 0 |  | 0 | None offered",
-     "Total |  |  |  |  | 40 | 29 |  | 72 | "
+     "Total |  |  |  |  | 40 | 29 |  | 72 | ",
+     "1763 | 71.8% | 327 | 13.3% | 135 | 5.5% | 50 | 2.0% | 29 | 1.2% | 12 | 0.5% | 141 | 5.7%",
+     "1898 | 90.6% | 2316 | 94.3%"
     ],
     "sample": [
      "Fortismere School -> None (rejected 153.00 mi) :: Fortismere | 1282 | 270 | 13 | 4 | 3 | 95 | 2 | 153 | 0.6337",
@@ -1953,7 +1989,7 @@
    "2023": 1,
    "2024": 2
   },
-  "seconds": 90
+  "seconds": 100
  },
  {
   "name": "Harrow",
@@ -2661,7 +2697,10 @@
      "The RJ Mitchell Primary | 60 | 179 | 60 | 0 | 0 | 6 | 17 | 37 | 0 | - | - | 55 | 3 | 1 | 1 | 2.727",
      "Towers Infants | 90 | 221 | 90 | 0 | 0 | 0 | 34 | 56 | 0 | - | - | 68 | 10 | 6 | 6 | 2.264",
      "Upminster Infants | 90 | 333 | 90 | 0 | 2 | 0 | 35 | 52 | 0 | 1 | - | 87 | 3 | 0 | 0 | 1.063",
-     "Whybridge Infants | 60 | 160 | 60 | 0 | 0 | 0 | 24 | 36 | 0 | - | - | 58 | 1 | 1 | 0 | 1.152"
+     "Whybridge Infants | 60 | 160 | 60 | 0 | 0 | 0 | 24 | 36 | 0 | - | - | 58 | 1 | 1 | 0 | 1.152",
+     "1st Preference Offers | 86.76% | 89.10%",
+     "1st - 3rd Preference Offers | 95.63% | 97.57%",
+     "1st - 6th Preference Offers | 96.67% | 98.33%"
     ],
     "sample": [
      "Benhurst Primary School -> None (None) :: Benhurst Primary | 60 | 147 | 57 | 0 | 0 | 0 | 25 | 32 | 0 | - | - | 55 | 1 | 1 | 0 | -",
@@ -2773,7 +2812,7 @@
     "title": "Secondary school statistics 2026 PDF 410kB downloadPDF 410kBDownload",
     "rows": 28,
     "matched": 19,
-    "with_distance": 6,
+    "with_distance": 7,
     "unit": null,
     "year": 2026,
     "phase": "S",
@@ -2785,7 +2824,7 @@
      "Bower Park Academy -> None (None) :: Bower Park | 210 | 376 | 204 | 10 | 0 | - | 48 | 113 | 33 | - | - | - | 0 | - | 129 | 32 | 7 | 3 | N/A",
      "The Brittons Academy -> None (None) :: The Brittons Academy | 180 | 269 | 122 | 3 | 0 | - | 32 | 71 | 16 | - | - | - | 0 | - | 96 | 8 | 2 | 0 | N/A",
      "The Campion School -> None (None) :: The Campion School | 150 | 462 | 154 | 7 | 1 | - | 36 | 110 | 0 | - | - | - | 0 | - | 128 | 21 | 2 | 3 | N/A*",
-     "The Coopers' Company and Coborn School -> None (None) :: The Coopers' Co & Coborn School | 210 | 1211 | 210 | 5 | 5 | - | 100 | 48 | 0 | - | 21 | 18 | 3 | 10 | 202 | 3 | 3 | 2 | 0.866**",
+     "The Coopers' Company and Coborn School -> 0.866 (decimal (assumed miles)) :: The Coopers' Co & Coborn School | 210 | 1211 | 210 | 5 | 5 | - | 100 | 48 | 0 | - | 21 | 18 | 3 | 10 | 202 | 3 | 3 | 2 | 0.866**",
      "Drapers' Academy -> None (None) :: Drapers' Academy | 210 | 280 | 210 | 0 | 1 | - | 29 | 66 | 46 | 68 | - | - | 0 | - | 119 | 33 | 9 | 3 | N/A",
      "Emerson Park Academy -> None (None) :: Emerson Park Academy | 210 | 675 | 210 | 0 | 0 | - | 53 | 151 | 6 | - | 0 | - | 0 | - | 104 | 60 | 23 | 17 | N/A",
      "The Frances Bardsley Academy for Girls -> 3.472 (decimal (assumed miles)) :: The Frances Bardsley Academy for Girls | 240 | 664 | 246 | 6 | 1 | - | 44 | 185 | 0 | 8 | 1 | - | 1 | - | 194 | 34 | 9 | 9 | 3.472",
@@ -2799,7 +2838,7 @@
     "title": "Secondary school statistics 2025 PDF 430kB downloadPDF 430kBDownload",
     "rows": 26,
     "matched": 19,
-    "with_distance": 7,
+    "with_distance": 8,
     "unit": null,
     "year": 2025,
     "phase": "S",
@@ -2811,7 +2850,7 @@
      "Bower Park Academy -> None (None) :: Bower Park | 210 | 351 | 191 | 6 | 3 | - | 39 | - | 105 | 38 | - | - | - | - | - | 112 | 29 | 7 | 5 | N/A",
      "The Brittons Academy -> None (None) :: The Brittons Academy | 180 | 300 | 174 | 7 | 3 | - | 40 | - | 99 | 25 | - | - | - | - | - | 130 | 17 | 2 | 0 | N/A",
      "The Campion School -> None (None) :: The Campion School | 150 | 397 | 153 | 3 | 1 | - | 22 | - | 127 | 0 | - | - | - | - | - | 131 | 14 | 6 | 2 | N/A*",
-     "The Coopers' Company and Coborn School -> None (None) :: The Coopers' Co & Coborn School | 210 | 1123 | 210 | 5 | 7 | - | 93 | 2 | 47 | 0 | - | 21 | 21 | 4 | 10 | 204 | 2 | 1 | 3 | 1.153**",
+     "The Coopers' Company and Coborn School -> 1.153 (decimal (assumed miles)) :: The Coopers' Co & Coborn School | 210 | 1123 | 210 | 5 | 7 | - | 93 | 2 | 47 | 0 | - | 21 | 21 | 4 | 10 | 204 | 2 | 1 | 3 | 1.153**",
      "Drapers' Academy -> None (None) :: Drapers' Academy | 210 | 314 | 210 | 4 | 1 | - | 80 | - | 75 | 24 | 26 | - | - | - | - | 151 | 28 | 3 | 4 | N/A",
      "Emerson Park Academy -> None (None) :: Emerson Park Academy | 210 | 627 | 197 | 3 | 0 | - | 49 | - | 134 | 11 | - | 0 | - | - | - | 112 | 40 | 21 | 13 | N/A",
      "The Frances Bardsley Academy for Girls -> 3.412 (decimal (assumed miles)) :: The Frances Bardsley Academy for Girls | 240 | 591 | 240 | 4 | 1 | - | 38 | - | 188 | 0 | 3 | 2 | - | 4 | - | 194 | 32 | 9 | 5 | 3.412",
@@ -2877,7 +2916,7 @@
     "title": "Secondary school statistics 2022 PDF 431kB downloadPDF 431kBDownload",
     "rows": 28,
     "matched": 20,
-    "with_distance": 9,
+    "with_distance": 11,
     "unit": null,
     "year": 2022,
     "phase": "S",
@@ -2888,8 +2927,8 @@
      "Abbs Cross Academy and Arts College -> 2.666 (decimal (assumed miles)) :: Abbs Cross Academy | 180 | 671 | 180 | 4 | 3 | - | 45 | - | 124 | - | - | 4 | - | - | - | 169 | 9 | 2 | 0 | 2.666",
      "Bower Park Academy -> 2.267 (decimal (assumed miles)) :: Bower Park | 210 | 483 | 210 | 5 | 2 | - | 61 | - | 142 | - | - | - | - | - | - | 198 | 10 | 1 | 1 | 2.267",
      "The Brittons Academy -> None (None) :: The Brittons Academy | 230 | 205 | 99 | 2 | 2 | - | 29 | - | 48 | 18 | - | - | - | - | - | 74 | 6 | 0 | 1 | N/A",
-     "The Campion School -> None (None) :: The Campion School | 150 | 353 | 151 | 1 | 2 | - | 37 | - | 84 | - | - | - | 27 | - | - | 117 | 17 | 11 | 6 | 9.754*",
-     "The Coopers' Company and Coborn School -> None (None) :: The Coopers' Co & Coborn School | 210 | 1037 | 210 | 3 | 6 | 1 | 92 | 4 | 46 | - | - | 21 | 18 | 9 | 10 | 202 | 6 | 1 | 1 | 0.945**",
+     "The Campion School -> 9.754 (decimal (assumed miles)) :: The Campion School | 150 | 353 | 151 | 1 | 2 | - | 37 | - | 84 | - | - | - | 27 | - | - | 117 | 17 | 11 | 6 | 9.754*",
+     "The Coopers' Company and Coborn School -> 0.945 (decimal (assumed miles)) :: The Coopers' Co & Coborn School | 210 | 1037 | 210 | 3 | 6 | 1 | 92 | 4 | 46 | - | - | 21 | 18 | 9 | 10 | 202 | 6 | 1 | 1 | 0.945**",
      "Drapers' Academy -> None (None) :: Drapers' Academy | 210 | 331 | 210 | 4 | 2 | - | 75 | 40 | 24 | 22 | 43 | - | - | - | - | 152 | 21 | 13 | 2 | N/A",
      "Emerson Park Academy -> None (None) :: Emerson Park Academy | 210 | 772 | 210 | 7 | 1 | - | 55 | - | 136 | 10 | - | 0 | - | 1 | - | 143 | 45 | 8 | 4 | N/A",
      "The Frances Bardsley Academy for Girls -> 4.443 (decimal (assumed miles)) :: The Frances Bardsley Academy for Girls | 240 | 552 | 240 | 1 | 4 | - | 47 | - | 184 | - | 4 | 0 | - | 0 | - | 205 | 25 | 4 | 6 | 4.443",
@@ -2903,7 +2942,7 @@
     "title": "Secondary school statistics 2021 PDF 436kB downloadPDF 436kBDownload",
     "rows": 27,
     "matched": 19,
-    "with_distance": 8,
+    "with_distance": 10,
     "unit": null,
     "year": 2021,
     "phase": "S",
@@ -2914,8 +2953,8 @@
      "Abbs Cross Academy and Arts College -> 2.477 (decimal (assumed miles)) :: Abbs Cross Academy | 180 | 676 | 180 | 1 | 4 | - | 26 | - | 144 | - | - | 5 | - | - | - | 162 | 12 | 3 | 3 | 2.477",
      "Bower Park Academy -> 3.902 (decimal (assumed miles)) :: Bower Park | 210 | 482 | 210 | 6 | 3 | - | 58 | - | 143 | - | - | - | - | - | - | 184 | 16 | 7 | 3 | 3.902",
      "The Brittons Academy -> None (None) :: The Brittons Academy | 230 | 239 | 108 | 7 | 1 | - | 35 | - | 65 | 0 | - | - | - | - | - | 99 | 8 | 1 | 0 | N/A",
-     "The Campion School -> None (None) :: The Campion School | 150 | 538 | 150 | 4 | 0 | - | 46 | - | 54 | - | - | - | 46 | - | - | 125 | 13 | 6 | 6 | 4.580*",
-     "The Coopers' Company and Coborn School -> None (None) :: The Coopers' Co & Coborn School | 210 | 1758 | 210 | 4 | 6 | 3 | 84 |  | 55 |  |  | 21 | 25 | 2 | 10 | 200 | 5 | 2 | 3 | 1.369**",
+     "The Campion School -> 4.58 (decimal (assumed miles)) :: The Campion School | 150 | 538 | 150 | 4 | 0 | - | 46 | - | 54 | - | - | - | 46 | - | - | 125 | 13 | 6 | 6 | 4.580*",
+     "The Coopers' Company and Coborn School -> 1.369 (decimal (assumed miles)) :: The Coopers' Co & Coborn School | 210 | 1758 | 210 | 4 | 6 | 3 | 84 |  | 55 |  |  | 21 | 25 | 2 | 10 | 200 | 5 | 2 | 3 | 1.369**",
      "Drapers' Academy -> None (None) :: Drapers' Academy | 210 | 297 | 210 | 7 | 1 | - | 77 | 43 | 14 | 35 | 33 | - | - | - | - | 153 | 14 | 5 | 3 | N/A",
      "Emerson Park Academy -> None (None) :: Emerson Park Academy | 210 | 794 | 210 | 0 | 0 | - | 62 | - | 140 | 8 | - | 0 | - | 0 | - | 150 | 35 | 11 | 6 | N/A",
      "The Frances Bardsley Academy for Girls -> 3.994 (decimal (assumed miles)) :: The Frances Bardsley Academy for Girls | 240 | 597 | 240 | 3 | 2 | - | 54 | - | 173 | - | 7 | - | - | 1 | - | 207 | 23 | 7 | 3 | 3.994",
@@ -2929,7 +2968,7 @@
     "title": "Secondary school statistics 2020 PDF 430kB downloadPDF 430kBDownload",
     "rows": 27,
     "matched": 20,
-    "with_distance": 8,
+    "with_distance": 10,
     "unit": null,
     "year": 2020,
     "phase": "S",
@@ -2940,8 +2979,8 @@
      "Abbs Cross Academy and Arts College -> 3.129 (decimal (assumed miles)) :: Abbs Cross Academy | 180 | 689 | 180 | 2 | 2 | - | 33 | - | 133 | - | - | 10 | - | - | - | 157 | 12 | 7 | 3 | 3.129",
      "Bower Park Academy -> 2.599 (decimal (assumed miles)) :: Bower Park | 210 | 461 | 210 | 6 | 3 | - | 22 | - | 179 | - | - | - | - | - | - | 190 | 13 | 3 | 0 | 2.599",
      "The Brittons Academy -> None (None) :: Brittons Academy | 230 | 247 | 141 | 3 | 0 | - | 43 | - | 72 | 23 | - | - | - | - | - | 101 | 13 | 4 | 0 | N/A",
-     "The Campion School -> None (None) :: Campion | 150 | 514 | 150 | 0 | 3 | 3 | 26 | - | 118 | - | - | - | - | - | - | 132 | 6 | 9 | 1 | 6.057*",
-     "The Coopers' Company and Coborn School -> None (None) :: Coopers' Co & Coborn | 210 | 1377 | 210 | 5 | 3 | 2 | 92 | - | 55 | - | - | 21 | 18 | 4 | 10 | 206 | 2 | 1 | 1 | 1.022**",
+     "The Campion School -> 6.057 (decimal (assumed miles)) :: Campion | 150 | 514 | 150 | 0 | 3 | 3 | 26 | - | 118 | - | - | - | - | - | - | 132 | 6 | 9 | 1 | 6.057*",
+     "The Coopers' Company and Coborn School -> 1.022 (decimal (assumed miles)) :: Coopers' Co & Coborn | 210 | 1377 | 210 | 5 | 3 | 2 | 92 | - | 55 | - | - | 21 | 18 | 4 | 10 | 206 | 2 | 1 | 1 | 1.022**",
      "Drapers' Academy -> None (None) :: Drapers' Academy | 210 | 323 | 210 | 5 | 0 | - | 90 | 52 | 16 | 5 | 42 | - | - | - | - | 174 | 20 | 8 | 2 | N/A",
      "Emerson Park Academy -> 3.625 (decimal (assumed miles)) :: Emerson Park Academy | 210 | 993 | 210 | 3 | 0 | - | 56 | - | 146 | - | - | 4 | - | 1 | - | 170 | 28 | 7 | 3 | 3.625",
      "The Frances Bardsley Academy for Girls -> 2.951 (decimal (assumed miles)) :: Frances Bardsley Academy for Girls | 240 | 648 | 240 | 5 | 6 | - | 49 | - | 163 | - | 8 | 9 | - | 0 | - | 207 | 16 | 7 | 7 | 2.951",
@@ -2955,7 +2994,7 @@
     "title": "Secondary school statistics 2019 PDF 59kB downloadPDF 59kBDownload",
     "rows": 26,
     "matched": 18,
-    "with_distance": 8,
+    "with_distance": 10,
     "unit": null,
     "year": 2019,
     "phase": "S",
@@ -2966,8 +3005,8 @@
      "Abbs Cross Academy and Arts College -> 4.256 (decimal (assumed miles)) :: Abbs Cross Academy | 180 | 610 | 180 | 2 | 4 | - | 33 | - | 123 | 0 | - | 18 | - | - | - | 138 | 29 | 5 | 8 | 4.256",
      "Bower Park Academy -> 3.2 (decimal (assumed miles)) :: Bower Park | 210 | 435 | 210 | 3 | 3 | - | 39 | - | 165 | 0 | - | - | - | - | - | 185 | 14 | 7 | 4 | 3.200",
      "The Brittons Academy -> None (None) :: Brittons Academy | 230 | 244 | 120 | 0 | 0 | - | 36 | - | 68 | 16 | - | - | - | - | - | 79 | 20 | 3 | 2 | N/A",
-     "The Campion School -> None (None) :: Campion | 150 | 423 | 150 | 4 | 1 | 1 | 25 | - | 79 | 0 | - | - | 39 | - | - | 128 | 14 | 3 | 5 | 4.091*",
-     "The Coopers' Company and Coborn School -> None (None) :: Coopers' Co & Coborn | 210 | 1146 | 210 | 1 | 5 | 2 | 95 | 2 | 49 | 0 | - | 20 | 19 | 7 | 10 | 194 | 9 | 5 | 2 | 1.032**",
+     "The Campion School -> 4.091 (decimal (assumed miles)) :: Campion | 150 | 423 | 150 | 4 | 1 | 1 | 25 | - | 79 | 0 | - | - | 39 | - | - | 128 | 14 | 3 | 5 | 4.091*",
+     "The Coopers' Company and Coborn School -> 1.032 (decimal (assumed miles)) :: Coopers' Co & Coborn | 210 | 1146 | 210 | 1 | 5 | 2 | 95 | 2 | 49 | 0 | - | 20 | 19 | 7 | 10 | 194 | 9 | 5 | 2 | 1.032**",
      "Drapers' Academy -> None (None) :: Drapers' Academy | 210 | 327 | 210 | 7 | 0 | - | 61 | 63 | 18 | 7 | 54 | - | - | - | - | 158 | 25 | 13 | 7 | N/A",
      "Emerson Park Academy -> 3.555 (decimal (assumed miles)) :: Emerson Park Academy | 210 | 1041 | 210 | 1 | 0 | - | 60 | - | 148 | 0 | - | - | - | 1 | - | 176 | 20 | 8 | 6 | 3.555",
      "The Frances Bardsley Academy for Girls -> 3.028 (decimal (assumed miles)) :: Frances Bardsley Academy for Girls | 240 | 672 | 240 | 3 | 1 | - | 42 | - | 175 | 0 | 19 | - | - | 0 | - | 190 | 26 | 13 | 11 | 3.028",
@@ -2981,7 +3020,7 @@
     "title": "Secondary school statistics 2018 PDF 60kB downloadPDF 60kBDownload",
     "rows": 28,
     "matched": 19,
-    "with_distance": 7,
+    "with_distance": 9,
     "unit": null,
     "year": 2018,
     "phase": "S",
@@ -2993,8 +3032,8 @@
      "Bower Park Academy -> None (None) :: Bower Park | 180 | 332 | 180 | 0 | 1 | - | 45 | - | 109 | 25 | - | - | - | - | - | - | - | 140 | 11 | 3 | 1 | N/A",
      "The Brittons Academy -> None (None) :: Brittons Academy | 230 | 281 | 141 | 1 | 0 | - | 42 | - | 76 | 22 | - | - | - | - | - | - | - | 91 | 21 | 7 | 0 | N/A",
      "The Campion School -> None (None) :: Campion | 150 | 411 | 150 | 1 | 0 | - | 37 | - | 73 | 0 | - | - | 39 | - | - | 150 | - | 135 | 12 | 1 | 2 | 4.29*",
-     "The Coopers' Company and Coborn School -> None (None) :: Coopers' Co & Coborn | 200 | 1137 | 200 | 0 | 5 | 2 | 78 | 0 | 65 | 0 | - | 20 | 16 | 4 | 10 | - | - | 194 | 4 | 1 | 1 | 1.145**",
-     "Drapers' Academy -> None (None) :: Drapers' Academy | 210 | 469 | 210 | 5 | 1 | - | 72 | 59 | 0 | 0 | 73 | - | - | - | - | - | - | 176 | 23 | 9 | 2 | 1.940***",
+     "The Coopers' Company and Coborn School -> 1.145 (decimal (assumed miles)) :: Coopers' Co & Coborn | 200 | 1137 | 200 | 0 | 5 | 2 | 78 | 0 | 65 | 0 | - | 20 | 16 | 4 | 10 | - | - | 194 | 4 | 1 | 1 | 1.145**",
+     "Drapers' Academy -> 1.94 (decimal (assumed miles)) :: Drapers' Academy | 210 | 469 | 210 | 5 | 1 | - | 72 | 59 | 0 | 0 | 73 | - | - | - | - | - | - | 176 | 23 | 9 | 2 | 1.940***",
      "Emerson Park Academy -> 4.232 (decimal (assumed miles)) :: Emerson Park Academy | 210 | 1042 | 210 | 2 | 2 | - | 45 | - | 161 | 0 | - | - | - | - | - | - | - | 165 | 28 | 13 | 4 | 4.232",
      "The Frances Bardsley Academy for Girls -> 4.063 (decimal (assumed miles)) :: Frances Bardsley Academy for Girls | 240 | 628 | 240 | 6 | 3 | - | 41 | - | 186 | 0 | - | - | - | 4 | - | - | - | 202 | 26 | 6 | 6 | 4.063",
      "Gaynes School -> None (None) :: Gaynes | 150 | 202 | 52 | 1 | 1 | - | 22 | - | 27 | 1 | - | - | - | - | - | - | - | 21 | 15 | 5 | 10 | N/A",
@@ -3007,7 +3046,7 @@
     "title": "Secondary school statistics 2017 PDF 44kB downloadPDF 44kBDownload",
     "rows": 27,
     "matched": 19,
-    "with_distance": 10,
+    "with_distance": 11,
     "unit": null,
     "year": 2017,
     "phase": "S",
@@ -3019,7 +3058,7 @@
      "Bower Park Academy -> None (None) :: Bower Park | 180 | 308 | 178 | 0 | - | - | 29 | - | 91 | 58 | - | - | - | - | - | - | - | 81 | 30 | 5 | 4 | N/A",
      "The Brittons Academy -> None (None) :: Brittons Academy | 230 | 324 | 162 | 1 | - | - | 43 | - | 104 | 14 | - | - | - | - | - | - | - | 121 | 14 | 8 | 5 | N/A",
      "The Campion School -> 4.412 (decimal (assumed miles)) :: Campion | 150 | 403 | 150 | 0 | 1 | 0 | 31 | - | 73 | 0 | - | - | 45 | - | - | 150 | - | 132 | 12 | 5 | 1 | 4.412 *",
-     "The Coopers' Company and Coborn School -> None (None) :: Coopers' Co & Coborn | 189 | 1172 | 189 | 2 | 2 | 1 | 81 | - | 60 | 0 | - | 19 | 12 | 2 | 10 | 189 | - | 176 | 5 | 7 | 1 | 1.435**",
+     "The Coopers' Company and Coborn School -> 1.435 (decimal (assumed miles)) :: Coopers' Co & Coborn | 189 | 1172 | 189 | 2 | 2 | 1 | 81 | - | 60 | 0 | - | 19 | 12 | 2 | 10 | 189 | - | 176 | 5 | 7 | 1 | 1.435**",
      "Drapers' Academy -> 2.104 (decimal (assumed miles)) :: Drapers' Academy | 210 | 445 | 210 | 5 | - | - | 65 | 108 | 0 | 0 | 32 | - | - | 0 | - | - | - | 170 | 24 | 10 | 4 | 2.104 ***",
      "Emerson Park Academy -> 3.6 (decimal (assumed miles)) :: Emerson Park Academy | 210 | 1020 | 210 | 2 | 1 | - | 69 | - | 138 | 0 | - | - | - | 0 | - | - | - | 179 | 19 | 10 | 2 | 3.600",
      "The Frances Bardsley Academy for Girls -> 4.212 (decimal (assumed miles)) :: Frances Bardsley Academy for Girls | 240 | 652 | 240 | 1 | - | - | 49 | - | 190 | 0 | - | - | - | 0 | - | - | - | 198 | 20 | 11 | 11 | 4.212",
@@ -3033,7 +3072,7 @@
     "title": "Secondary school statistics 2016 PDF 216kB downloadPDF 216kBDownload",
     "rows": 31,
     "matched": 20,
-    "with_distance": 6,
+    "with_distance": 9,
     "unit": null,
     "year": 2016,
     "phase": "S",
@@ -3045,9 +3084,9 @@
      "Abbs Cross Academy and Arts College -> 4.92 (decimal (assumed miles)) :: Abbs Cross | 168 | 680 | 168 | 3 | 3 | - | 37 | - | 108 | - | - | 17 | - | - | - | - | - | 140 | 16 | 7 | 5 | 4.920",
      "Bower Park Academy -> None (None) :: Bower Park | 180 | 318 | 180 | 4 | 4 | 0 | 44 | - | 121 | 7 | - | - | - | - | - | - | - | 141 | 18 | 8 | 6 | N/A",
      "The Brittons Academy -> None (None) :: Brittons Academy | 230 | 335 | 151 | 1 | 1 | 0 | 46 | - | 93 | 10 | - | - | - | - | - | - | - | 110 | 16 | 4 | 11 | N/A",
-     "The Campion School -> None (None) :: Campion | 150 | 413 | 150 | 0 | 0 | - | 42 | - | 108 | - | - | - | - | - | - | 150 | - | 142 | 7 | 1 | 0 | 4.122*",
-     "The Coopers' Company and Coborn School -> None (None) :: Coopers' Co & Coborn | 189 | 1191 | 189 | 0 | 4 | 1 | 80 | - | 61 | - | - | 19 | 11 | 4 | 9 | - | - | 173 | 11 | 3 | 2 | 1.899**",
-     "Drapers' Academy -> None (None) :: Drapers' Academy | 200 | 455 | 200 | 4 | 0 | - | 58 | 112 | - | - | 26 | - | - | - | - | - | - | 179 | 14 | 1 | 6 | 2.069***",
+     "The Campion School -> 4.122 (decimal (assumed miles)) :: Campion | 150 | 413 | 150 | 0 | 0 | - | 42 | - | 108 | - | - | - | - | - | - | 150 | - | 142 | 7 | 1 | 0 | 4.122*",
+     "The Coopers' Company and Coborn School -> 1.899 (decimal (assumed miles)) :: Coopers' Co & Coborn | 189 | 1191 | 189 | 0 | 4 | 1 | 80 | - | 61 | - | - | 19 | 11 | 4 | 9 | - | - | 173 | 11 | 3 | 2 | 1.899**",
+     "Drapers' Academy -> 2.069 (decimal (assumed miles)) :: Drapers' Academy | 200 | 455 | 200 | 4 | 0 | - | 58 | 112 | - | - | 26 | - | - | - | - | - | - | 179 | 14 | 1 | 6 | 2.069***",
      "Emerson Park Academy -> 3.438 (decimal (assumed miles)) :: Emerson Park Academy | 210 | 987 | 210 | 3 | 1 | - | 66 | - | 140 | - | - | - | - | 0 | - | - | - | 166 | 33 | 10 | 1 | 3.438",
      "Gaynes School -> None (None) :: Gaynes | 192 | 406 | 114 | 1 | 0 | 0 | 20 | - | 85 | 8 | - | - | - | - | - | - | - | 31 | 31 | 14 | 30 | N/A",
      "Hall Mead School -> 2.29 (decimal (assumed miles)) :: Hall Mead | 192 | 1081 | 192 | 14 | 5 | - | 74 | - | 99 | - | - | - | - | - | - | - | - | 176 | 12 | 2 | 2 | 2.290",
@@ -3060,7 +3099,7 @@
     "title": "Secondary school statistics 2015 PDF 212kB downloadPDF 212kBDownload",
     "rows": 30,
     "matched": 19,
-    "with_distance": 6,
+    "with_distance": 10,
     "unit": null,
     "year": 2015,
     "phase": "S",
@@ -3071,9 +3110,9 @@
      "Abbs Cross Academy and Arts College -> 1.217 (decimal (assumed miles)) :: Abbs Cross | 168 | 842 | 168 | 2 | 2 | - | 64 | - | 83 | 0 | - | 17 | 0 | - | - | - | - | 151 | 13 | 4 | 0 | 1.217",
      "Bower Park Academy -> None (None) :: Bower Park | 180 | 310 | 180 | 1 | 0 | 0 | 42 | - | 109 | 28 | - | - | - | - | - | - | - | 115 | 20 | 8 | 9 | N/A",
      "The Brittons Academy -> None (None) :: Brittons Academy | 230 | 308 | 154 | 1 | 0 | 0 | 40 | - | 103 | 10 | - | - | - | - | - | - | - | 110 | 25 | 6 | 3 | N/A",
-     "The Campion School -> None (None) :: Campion | 150 | 399 | 150 | 2 | 1 | 0 | 41 | - | 106 | 0 | - | - | - | - | - | 150 | - | 136 | 10 | 2 | 2 | 4.875*",
-     "The Coopers' Company and Coborn School -> None (None) :: Coopers' Co & Coborn | 189 | 1167 | 189 | 1 | 5 | 1 | 82 | - | 63 | 0 | - | 19 | 9 | 2 | 7 | - | - | 176 | 8 | 3 | 3 | 1.396**",
-     "Drapers' Academy -> None (None) :: Drapers' Academy | 180 | 368 | 180 | 8 | 0 | - | 50 | 84 | 16 | 0 | 22 | - | - | - | - | - | - | 147 | 19 | 8 | 6 | 2.595***",
+     "The Campion School -> 4.875 (decimal (assumed miles)) :: Campion | 150 | 399 | 150 | 2 | 1 | 0 | 41 | - | 106 | 0 | - | - | - | - | - | 150 | - | 136 | 10 | 2 | 2 | 4.875*",
+     "The Coopers' Company and Coborn School -> 1.396 (decimal (assumed miles)) :: Coopers' Co & Coborn | 189 | 1167 | 189 | 1 | 5 | 1 | 82 | - | 63 | 0 | - | 19 | 9 | 2 | 7 | - | - | 176 | 8 | 3 | 3 | 1.396**",
+     "Drapers' Academy -> 2.595 (decimal (assumed miles)) :: Drapers' Academy | 180 | 368 | 180 | 8 | 0 | - | 50 | 84 | 16 | 0 | 22 | - | - | - | - | - | - | 147 | 19 | 8 | 6 | 2.595***",
      "Emerson Park Academy -> 3.347 (decimal (assumed miles)) :: Emerson Park Academy | 192 | 941 | 192 | 3 | 0 | - | 50 | - | 139 | 0 | - | - | - | 0 | - | - | - | 146 | 25 | 11 | 10 | 3.347",
      "Gaynes School -> None (None) :: Gaynes | 192 | 417 | 106 | 0 | 0 | 0 | 20 | - | 82 | 4 | - | - | - | - | - | - | - | 40 | 27 | 14 | 21 | N/A",
      "Hall Mead School -> 2.315 (decimal (assumed miles)) :: Hall Mead | 192 | 1083 | 192 | 9 | 4 | - | 59 | - | 120 | 0 | - | - | - | - | - | - | - | 167 | 21 | 3 | 1 | 2.315",
@@ -3139,12 +3178,12 @@
   "schools_with_cutoff": 35,
   "schools_total": 84,
   "years": {
-   "2026": 20,
+   "2026": 21,
    "2025": 3,
-   "2024": 9,
+   "2024": 8,
    "2023": 3
   },
-  "seconds": 107
+  "seconds": 122
  },
  {
   "name": "Hillingdon",
@@ -3374,7 +3413,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 98,
   "years": {},
-  "seconds": 22
+  "seconds": 30
  },
  {
   "name": "Hounslow",
@@ -3541,7 +3580,7 @@
    "2025": 2,
    "2026": 12
   },
-  "seconds": 72
+  "seconds": 106
  },
  {
   "name": "Islington",
@@ -3689,7 +3728,7 @@
    "2026": 21,
    "2025": 3
   },
-  "seconds": 7
+  "seconds": 5
  },
  {
   "name": "Kingston and Richmond",
@@ -4138,7 +4177,7 @@
     "title": "Lambeth voluntary-aided schools | Lambeth Council",
     "rows": 196,
     "matched": 20,
-    "with_distance": 3,
+    "with_distance": 4,
     "unit": "metres",
     "year": 2025,
     "phase": "P",
@@ -4148,7 +4187,7 @@
      "Iqra Primary School -> None (rejected 1303.10 mi) :: Iqra Primary School … Distance for last child (under criteria 4): 1303.1 miles (walking distance)",
      "Macaulay Church of England Primary School -> None (all offered) :: Macaulay Church of England Primary School",
      "The Orchard School -> 2.692 (block: column) :: Orchard Primary School … Distance for last child offered (with criteria 4): 4331.72 metres (safest walking route)",
-     "St Andrew's Catholic Primary School -> None (None) :: St Andrew’s Catholic Primary School",
+     "St Andrew's Catholic Primary School -> 2.104 (block: decimal (metres)) :: St Andrew’s Catholic Primary School … Distance for last child offered: 3385.88",
      "St Andrew's Church of England Primary School -> None (all offered) :: St Andrew’s Church of England Primary School",
      "St Anne's Catholic Primary School -> None (all offered) :: St Anne’s Catholic Primary School",
      "St Bede's Catholic Primary School -> None (all offered) :: St Bede’s Catholic Primary School",
@@ -4228,7 +4267,7 @@
     "title": "Lambeth voluntary-aided schools",
     "rows": 157,
     "matched": 19,
-    "with_distance": 3,
+    "with_distance": 4,
     "unit": "metres",
     "year": 2026,
     "phase": "P",
@@ -4238,7 +4277,7 @@
      "Iqra Primary School -> None (rejected 3902.77 mi) :: Iqra Primary School … Distance for last child (under criteria 4): 3902.77 miles (walking distance)",
      "Macaulay Church of England Primary School -> None (all offered) :: Macaulay Church of England Primary School",
      "The Orchard School -> 3.885 (block: column) :: Orchard Primary School … Distance for last child offered (with criteria 4): 6252.14 metres (safest walking route)",
-     "St Andrew's Catholic Primary School -> None (None) :: St Andrew’s Catholic Primary School",
+     "St Andrew's Catholic Primary School -> 2.34 (block: decimal (metres)) :: St Andrew’s Catholic Primary School … Distance for last child offered: 3765.62",
      "St Andrew's Church of England Primary School -> None (all offered) :: St Andrew’s Church of England Primary School",
      "St Anne's Catholic Primary School -> None (all offered) :: St Anne’s Catholic Primary School",
      "St Bede's Catholic Primary School -> None (all offered) :: St Bede’s Catholic Primary School",
@@ -4467,6 +4506,9 @@
     "unit": "metres",
     "year": 2026,
     "phase": "S",
+    "unmatched_with_distance": [
+     "The initial band set up was not exactly 135.6 per band, it was best fit to ensure that those with the same"
+    ],
     "sample": [
      "The Norwood School -> None (None) :: The Norwood School",
      "The Norwood School -> 1.105 (block: column) :: The Norwood School … 1 | 33 | 117 - 138 | 32 | 0 | 8 | 0 | 1 | 23 | 1778.07 |  |  | 1"
@@ -4778,6 +4820,9 @@
     "unit": "metres",
     "year": 2025,
     "phase": "S",
+    "unmatched_with_distance": [
+     "The initial band set up was not exactly 132.2 per band, it was best fit to ensure that those with the same"
+    ],
     "sample": [
      "The Norwood School -> None (None) :: The Norwood School",
      "The Norwood School -> 1.282 (block: column) :: The Norwood School … 1 | 33 | 117 - 138 | 30 | 0 | 6 | 1 | 0 | 23 | 2062.87 | 3"
@@ -4997,7 +5042,8 @@
     "year": 2024,
     "phase": "S",
     "unmatched_with_distance": [
-     "Z non ability | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0"
+     "Z non ability | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0",
+     "The initial band set up was not exactly 68.4 per band, it was best fit to ensure that those with the same test"
     ],
     "sample": [
      "Lilian Baylis Technology School -> None (None) :: Lilian Baylis Technology School",
@@ -5038,7 +5084,8 @@
     "year": 2024,
     "phase": "S",
     "unmatched_with_distance": [
-     "Bursary | 18 | n/a | 18 | 0 | 0 | 0 | 0 | 18 | 4290.87 | 0"
+     "Bursary | 18 | n/a | 18 | 0 | 0 | 0 | 0 | 18 | 4290.87 | 0",
+     "The initial band set up was not exactly 133.8 per band, it was best fit to ensure that those with the same"
     ],
     "sample": [
      "The Norwood School -> None (None) :: The Norwood School",
@@ -5153,14 +5200,14 @@
   "errors": [],
   "fetched_pages": 11,
   "fetched_docs": 49,
-  "schools_with_cutoff": 33,
+  "schools_with_cutoff": 34,
   "schools_total": 92,
   "years": {
-   "2026": 28,
+   "2026": 29,
    "2025": 4,
    "2024": 1
   },
-  "seconds": 113
+  "seconds": 81
  },
  {
   "name": "Lewisham",
@@ -5248,6 +5295,10 @@
     "unit": null,
     "year": null,
     "phase": "S",
+    "unmatched_with_distance": [
+     "Word, 77.1KB",
+     "Word, 28.5KB"
+    ],
     "links": [
      "Lewisham SEND and Local Offer -> https://lewisham.gov.uk/myservices/children-and-young-people-service/local-offer",
      "Offer an apprenticeship within your company -> https://lewisham.gov.uk/myservices/business/offer-an-apprenticeship-within-your-company",
@@ -5268,6 +5319,12 @@
     "unit": null,
     "year": null,
     "phase": "P",
+    "unmatched_with_distance": [
+     "98.69% of children living in the Lewisham borough have been offered a place at one of the schools they have applied for.",
+     "Pdf, 925.9KB",
+     "Pdf, 192.5KB",
+     "Pdf, 166.2KB"
+    ],
     "links": [
      "Lewisham SEND and Local Offer -> https://lewisham.gov.uk/myservices/children-and-young-people-service/local-offer",
      "Offer an apprenticeship within your company -> https://lewisham.gov.uk/myservices/business/offer-an-apprenticeship-within-your-company",
@@ -5348,7 +5405,7 @@
   "years": {
    "2026": 21
   },
-  "seconds": 22
+  "seconds": 26
  },
  {
   "name": "Merton",
@@ -5462,7 +5519,7 @@
    "2025": 1,
    "2024": 4
   },
-  "seconds": 32
+  "seconds": 46
  },
  {
   "name": "Newham",
@@ -5604,6 +5661,9 @@
     "unit": null,
     "year": null,
     "phase": "P",
+    "unmatched_with_distance": [
+     "opacity:0,transform:\"scale(0.001)\""
+    ],
     "sample": [
      "Carpenters Primary School -> None (None) :: Regeneration project: Carpenters Estate"
     ],
@@ -5662,7 +5722,7 @@
     "title": "starting-school-in-september-2027",
     "rows": 3108,
     "matched": 180,
-    "with_distance": 0,
+    "with_distance": 20,
     "unit": "miles",
     "year": 2026,
     "phase": null,
@@ -5691,58 +5751,18 @@
      "Central Park Primary School -> None (None) :: Central Park Primary School | 120 | 90 | 209 | 0 | 0 | 0",
      "Cleves Primary School -> None (None) :: Cleves Primary School | 60 | 60 | 184 | 0 | 0 | 0",
      "Colegrave Primary School -> None (None) :: Colegrave Primary School | 90 | 90 | 243 | 3 | 0 | 0"
-    ],
-    "head": [
-     "Starting school",
-     "in Newham",
-     "Information and guidance about starting reception in September 2027",
-     "and In-Year admissions during the 2026/2027 school year.",
-     "newham.gov.uk",
-     "<table end>",
-     "Reception class entry for September 2027",
-     "A summary of the key steps you need to take to apply for a place in Reception for children born from",
-     "1 September 2022 to 31 August 2023.",
-     "Infant school to Junior school transition for entry in September 2027.",
-     "If your child attends an infant school, they will not automatically move to a Year 3 school, you must follow the steps below",
-     "and complete an application for your child to attend a junior school or a year 3 place in a primary school in September 2027.",
-     "REMEMBER – your chances of getting the school of your preference are better if you apply by national closing date",
-     "15 January 2027 as on time applicants are given places before those who apply late are considered.",
-     "1 READ |  | ",
-     " | 1 READ | ",
-     " | 2 RESEARCH | ",
-     " | 3 UNDERSTAND | ",
-     " | 4 DECIDE | ",
-     " | 5 SUBMIT | ",
-     " | 6 SIFS | ",
-     " | 7 OUTCOMES | ",
-     "<table end>",
-     "It is important that you understand the information in this booklet, so please dedicate",
-     "time to reading it. If you need support, your child’s nursery will be happy to help.",
-     "Do not just focus on the schools you know about. Take time to find out about all the",
-     "schools located in Newham. You can do this by reading their websites and requesting a",
-     "school visit. Note: Ofsted reports - remember to look for the date of the last inspection.",
-     "Read and understand how places are offered at the schools you are interested in. You can do",
-     "this by reading their admissions criteria and reviewing the placements for September 2026",
-     "which are published in this booklet on pages 16-19.",
-     "You can use these figures and our Home to school distance finder app https://schoolfinder.",
-     "UNDERSTAND gitechservices.com/primary.html on the Newham website to calculate your own distances.",
-     "This will help you understand the likelihood of your child being offered a place.",
-     "After considering all the information you have found out, decide the schools you are going",
-     "to name as your preferences, remembering that you can name six. It is important that you",
-     "check the locations of the schools you are interested in, so you know where your child may",
-     "DECIDE be travelling to each day and the cost of the journey.",
-     "5 Submit your application via the eAdmissions online portal by 11.59pm on 15 January 2027.",
-     "You should apply earlier to avoid the risk of technical issues close to the deadline. If you"
     ]
    }
   ],
   "errors": [],
   "fetched_pages": 3,
   "fetched_docs": 1,
-  "schools_with_cutoff": 0,
+  "schools_with_cutoff": 20,
   "schools_total": 103,
-  "years": {},
-  "seconds": 45
+  "years": {
+   "2026": 20
+  },
+  "seconds": 69
  },
  {
   "name": "Redbridge",
@@ -5926,12 +5946,13 @@
     "title": "primary-offer-day-16-april-2025-last-allocated-v2-3.pdf",
     "rows": 275,
     "matched": 49,
-    "with_distance": 39,
+    "with_distance": 41,
     "unit": "miles",
     "year": 2025,
     "phase": "P",
     "unmatched_with_distance": [
-     "Distance: On time distance applications offered 0.787 miles"
+     "Distance: On time distance applications offered 0.787 miles",
+     "Other Churches Wanstead/aldersbrook 0.955"
     ],
     "sample": [
      "Redbridge Primary School -> None (None) :: Please see below for allocations to Redbridge community primary schools, academies and",
@@ -5952,7 +5973,7 @@
     "title": "school places were offered for September 2026",
     "rows": 86,
     "matched": 15,
-    "with_distance": 7,
+    "with_distance": 5,
     "unit": "miles",
     "year": 2026,
     "phase": "S",
@@ -5965,7 +5986,7 @@
      "Atam Academy -> None (all offered) :: Atam Academy*: All on time applicants offered in order of oversubscription criteria .",
      "Beal High School -> 3.193 (block: column) :: Beal High School*: All on time sibling, catchment and on time out of catchment appli cants have … been offered up to 3.193 miles.",
      "Caterham High School -> None (all offered) :: Caterham High School: All on time applications offered",
-     "Ilford County High School -> 0.068 (block: decimal (metres)) :: Ilford County High School: Last offered on time candidate from within the common catchment … 2025: 109.35",
+     "Ilford County High School -> None (grammar school: needs an explicit distance) :: Ilford County High School: Last offered on time candidate from within the common catchment … 2025: 109.35",
      "King Solomon High School -> None (all offered) :: King Solomon High School*: All on time applicants offered.",
      "Loxford School -> 1.489 (block: unit in row) :: Loxford School Trust*: All 120 Year 6 automatic transfers and on time sibling, on time catchment … applicants have been offered up to a dist",
      "Mayfield School -> None (all offered) :: Mayfield School*: All on time applications offered.",
@@ -5985,6 +6006,7 @@
     "year": 2026,
     "phase": "P",
     "unmatched_with_distance": [
+     "Any Other Applicant Sibling 1.577 miles",
      "Any Other Applicant (Child Of Teaching Staff) 2.772 miles",
      "Any Other Applicant 0.188 miles",
      "Other Churches Wanstead/aldersbrook 1.130 miles",
@@ -6009,13 +6031,13 @@
   "errors": [],
   "fetched_pages": 3,
   "fetched_docs": 4,
-  "schools_with_cutoff": 48,
+  "schools_with_cutoff": 47,
   "schools_total": 82,
   "years": {
-   "2025": 19,
+   "2025": 18,
    "2026": 29
   },
-  "seconds": 33
+  "seconds": 36
  },
  {
   "name": "Southwark",
@@ -6363,7 +6385,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 95,
   "years": {},
-  "seconds": 28
+  "seconds": 58
  },
  {
   "name": "Waltham Forest",
@@ -6416,7 +6438,7 @@
   "schools_with_cutoff": 0,
   "schools_total": 79,
   "years": {},
-  "seconds": 4
+  "seconds": 2
  },
  {
   "name": "Wandsworth",
@@ -6895,7 +6917,7 @@
     "title": "Information about previous years' Year 6 test scores",
     "rows": 39,
     "matched": 4,
-    "with_distance": 0,
+    "with_distance": 1,
     "unit": null,
     "year": 2026,
     "phase": null,
@@ -6903,48 +6925,7 @@
      "Burntwood School -> None (all offered) :: Burntwood School (total NVR and VR score used)",
      "Graveney School -> None (None) :: Graveney School (total NVR and VR score used)",
      "Ashcroft Technology Academy -> None (None) :: Ashcroft Technology Academy (NVR test score only)",
-     "Chestnut Grove Academy -> None (None) :: Chestnut Grove Academy (average of NVR and VR test score)"
-    ],
-    "head": [
-     "Official",
-     "INFORMATION ABOUT WANDSWORTH YEAR 6 ADMISSIONS TEST SCORES IN PREVIOUS YEARS",
-     "SCHOOLS WITH SELECTIVE PLACES",
-     "(Minimum total NVR and VR score to be offered a selective place on initial offer day and by 31 August)",
-     "Burntwood School (total NVR and VR score used)",
-     "Year of Entry | 1st March offer date | By 31 August",
-     "2026 | 209 | TBC",
-     "2025 | 210 | All applicants offered",
-     "2024 | 200 | All applicants offered",
-     "2023 | 214 | All applicants offered",
-     "2022 | 212 | All applicants offered",
-     "<table end>",
-     "Graveney School (total NVR and VR score used)",
-     "Year of Entry | 1st March offer date | By 31 August",
-     "2026 | 250 | TBC",
-     "2025 | 249 | 243",
-     "2024 | 250 | 238",
-     "2023 | 254 | 239",
-     "2022 | 254 | 244",
-     "<table end>",
-     "SCHOOLS WITH BANDING",
-     "(Band widths based on test scores)",
-     "Ashcroft Technology Academy (NVR test score only)",
-     "Year of Entry | Band A | Band B | Band C | Band D | Band E",
-     "2026 | More than or equal to 111 | 102-110 | 94-101 | 86-93 | Less than or equal to 85",
-     "2025 | More than or equal to 111 | 103-110 | 96-102 | 86-95 | Less than or equal to 85",
-     "2024 | More than or equal to 111 | 102-110 | 94-101 | 85-93 | Less than or equal to 84",
-     "2023 | More than or equal to 112 | 104-111 | 97-103 | 88-96 | Less than or equal to 87",
-     "2022 | More than or equal to 114 | 106-113 | 98-105 | 90-97 | Less than or equal to 89",
-     "<table end>",
-     "Chestnut Grove Academy (average of NVR and VR test score)",
-     "Year of Entry | Band A | Band B | Band C | Band D | Band E",
-     "2026 | More than or equal to 113.5 | 104.5-113 | 96.5-104 | 87-96 | Less than or equal to 86.5",
-     "2025 | More than or equal to 112.5 | 103.5-112 | 96-103 | 87-95.5 | Less than or equal to 86.5",
-     "2024 | More than or equal to 113 | 103.5-112.5 | 96-103 | 87.5-95.5 | Less than or equal to 87",
-     "2023 | More than or equal to 114 | 105.5-113.5 | 98-105 | 89.5-97.5 | Less than or equal to 91.5",
-     "2022 | More than or equal to 115.5 | 108-115 | 100.5-107.5 | 92-100 | Less than or equal to 89",
-     "<table end>",
-     "<table end>"
+     "Chestnut Grove Academy -> 0.054 (block: decimal (metres)) :: Chestnut Grove Academy (average of NVR and VR test score) … 2026 | More than or equal to 113.5 | 104.5-113 | 96.5-104 | 87-96 | Less than or"
     ]
    }
   ],
@@ -6959,7 +6940,7 @@
    "2024": 6,
    "2023": 2
   },
-  "seconds": 140
+  "seconds": 195
  },
  {
   "name": "Westminster and Kensington & Chelsea",
@@ -6976,16 +6957,18 @@
     "year": null,
     "phase": null,
     "unmatched_with_distance": [
+     "Other Christians | 6 offers to those attending a feeder school up to a distance of 0.758 of a mile",
      "Community places | 80 offers (all Feeder School applicants offered and others offered up to 0.880 mile)",
      "Band A | 54 offers - 0 LACs, 11 siblings, 43 remaining places offered up to 1.091 miles straight-line | ",
+     "Band B | 54 offers - 1 LAC, 17 siblings, 36 remaining places offered up to 0.972 of a mile straight-line | ",
      "Band C | 54 offers - 0 LACs, 9 siblings, 45 remaining places offered up to 1.384 miles straight-line | ",
+     "Band D | 40 offers - 0 LACs, 13 siblings, 27 remaining places offered up to 0.807 of a mile straight-line | ",
      "Living within priority area | 84 offers (up to 0.716 miles straight-line distance within priority area)",
+     "Church of England Places | 24 offers (Category A - all siblings offered and up to 5.581 miles distance) | 50 offers (Category A - all siblings offered and up to 9.557 miles distance) | 24 offers (Cate",
      "Other Christian Places | 8 offers (Category A - all siblings offered and up to 3.194 miles distance) | 16 offers (Category A - all siblings offered and up to 1.993 miles distance) | 8 offers (Category",
+     "Open Places | 6 offers (siblings offered up to 3.975 miles only) | 10 offers (all siblings offered and up to 0.096 miles distance) | 3 offers (siblings offered up to 0.262 of a mile only)",
      "Distance | 139 offers up to 4.122 miles straight-line distance",
-     "Distance | 86 offers up to 2.090 miles shortest walking route",
-     "Any Other Applicants (Distance) | 11 offers under criterion 7 up to 0.828 miles straight-line distance",
-     "C of E Places criterion / distance | Up to 2.539 miles in criterion 2.1.2 | Up to 6.412 miles in criterion 2.1.2 | Up to 3.371 miles in criterion 2.1.2 | Up to 7.909 miles in criterion 2.1.2",
-     "Distance | 134 remaining places offered up to 3.579 miles shortest walking route"
+     "Distance | 86 offers up to 0.630 of a mile straight-line distance"
     ],
     "sample": [
      "Westminster Academy -> None (None) :: how-places-were-offered-in-westminster-and-kensington-and-chelsea",
@@ -7054,6 +7037,6 @@
   "schools_with_cutoff": 0,
   "schools_total": 97,
   "years": {},
-  "seconds": 11
+  "seconds": 13
  }
 ]
