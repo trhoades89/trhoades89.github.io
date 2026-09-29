@@ -445,7 +445,11 @@ def distance_from_row(cells, col, col_unit, hint, year_cols=None):
     if ms:
         m = ms[-1]
         return to_miles(float(m.group(1).replace(",", ".")), m.group(2)), "unit in row", None
-    # 4) Bare decimals: 0.532 style in miles/km documents, 1234.56 style in metres documents
+    # 4) Bare decimals: 0.532 style in miles/km documents, 1234.56 style in metres documents.
+    #    Not in prose or near test-score wording, where numbers are scores, averages or counts.
+    words = re.findall(r"[A-Za-z]{3,}", text)
+    if len(words) >= 8 or re.search(r"score|test|candidate|\bsat\b|points|mark|divide|average|ratio|%", text, re.I):
+        return None, None, None
     toks = [t for c in cells for t in c.split()]
     if hint in ("miles", "km", None):
         vals = [float(t) for t in toks if MILES_DEC.fullmatch(t)]
@@ -593,7 +597,7 @@ def process_doc(rows, matcher, title, url, borough, context=""):
                 continue
             first = next((c for c in cells if c.strip()), "")
             label_like = LABEL_RX.match(first) or len([c for c in cells if c.strip()]) <= 2
-            if cur and label_like and cur[3] < 40:
+            if cur and label_like and cur[3] < 40 and not matcher.distinct(text):
                 if mi is not None:
                     ly = re.match(r"\s*(20[12]\d)\b", first)
                     cur[2].append((mi, how, text, int(ly.group(1)) if ly else None))
